@@ -17,4 +17,21 @@ xlsx_to_jsonl(input_file_path, output_file_path)
 
 
 
+data = []
 
+with open('SD-Pairs.jsonl', 'r') as file:
+    for line in file:
+        json_obj = json.loads(line)
+        data.append(json_obj)
+
+formatted_data = []
+for entry in data:
+    formatted_entry = {
+        "text": f"<s> [INST] <<SYS>> You are a helpful, reliable, respectful, and honest doctor's assistant. Your goal is to offer the most accurate predictions of potential diseases based on the patient's symptoms. <</SYS>> These are patient's Symptoms {entry['Symptoms']}. What are the top 5 most likely diseases corresponding to these symptoms? Output only disease names. [/INST] {entry['Diseases']} </s>"
+    }
+    formatted_data.append(formatted_entry)
+
+with open('SD-Pairs-LLama2-formatted.jsonl', 'w') as file:
+    for entry in formatted_data:
+        json.dump(entry, file)
+        file.write('\n')
