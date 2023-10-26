@@ -1,0 +1,401 @@
+{"Symptoms": "Fever, Headache, Muscle Pain", "Diseases": "Malaria, Dengue, Typhoid"}
+{"Symptoms": "Cough, Sore Throat, Runny Nose", "Diseases": "Common Cold, Influenza, Measles"}
+{"Symptoms": "Nausea, Vomiting, Diarrhea", "Diseases": "Gastroenteritis, Food Poisoning, Cholera"}
+{"Symptoms": "Skin Rash, Fever, Joint Pain", "Diseases": "Zika Virus, Chikungunya, Dengue"}
+{"Symptoms": "Fever, Fatigue, Loss of Appetite", "Diseases": "COVID-19, Tuberculosis, Hepatitis B"}
+{"Symptoms": "Unexplained weight loss, Persistent fatigue, Irregular bowel movements", "Diseases": "Colon cancer, Pancreatic cancer, Stomach cancer"}
+{"Symptoms": "Persistent cough, Difficulty swallowing, Chest pain", "Diseases": "Lung cancer, Esophageal cancer, Thymoma"}
+{"Symptoms": "Abnormal bleeding, Changes in moles, Persistent indigestion", "Diseases": "Skin cancer, Leukemia, Stomach cancer"}
+{"Symptoms": "Headaches, Seizures, Memory loss", "Diseases": "Brain tumor, Leukemia, Lymphoma"}
+{"Symptoms": "Jaundice, Abdominal pain, Loss of appetite", "Diseases": "Liver cancer, Gallbladder cancer, Pancreatic cancer"}
+{"Symptoms": "Cough, Shortness of Breath, Wheezing", "Diseases": "Asthma, Chronic Bronchitis, Emphysema"}
+{"Symptoms": "Fatigue, Weight Loss, Chest Tightness", "Diseases": "Pulmonary Fibrosis, Tuberculosis, Sarcoidosis"}
+{"Symptoms": "Difficulty Breathing, Chest Pain, Fever", "Diseases": "Pneumonia, COVID-19, Lung Cancer"}
+{"Symptoms": "Chronic Cough, Blood in Sputum, Frequent Infections", "Diseases": "Cystic Fibrosis, Chronic Obstructive Pulmonary Disease (COPD), Bronchiectasis"}
+{"Symptoms": "Chronic Sore Throat, Nasal Congestion, Postnasal Drip", "Diseases": "Allergic Rhinitis, Sinusitis, Asthma"}
+{"Symptoms": "Chronic Cough, Fatigue, Poor Appetite", "Diseases": "Chronic Obstructive Pulmonary Disease (COPD), Lung Cancer, Pulmonary Hypertension"}
+{"Symptoms": "Shortness of Breath, Chest Tightness, Dry Cough", "Diseases": "Interstitial Lung Disease, Pulmonary Hypertension, Chronic Bronchitis"}
+{"Symptoms": "Wheezing, Difficulty Breathing, Frequent Chest Infections", "Diseases": "Asthma, Cystic Fibrosis, Bronchiolitis Obliterans"}
+{"Symptoms": "Muscle weakness, Difficulty walking, Vision loss", "Diseases": "Muscular dystrophy, Multiple sclerosis, Retinitis pigmentosa"}
+{"Symptoms": "Intellectual disability, Seizures, Delayed growth", "Diseases": "Down syndrome, Epilepsy, Turner syndrome"}
+{"Symptoms": "Infertility, Weight gain, Hair loss", "Diseases": "Polycystic ovary syndrome, Thyroid disorders, Cushing's disease"}
+{"Symptoms": "Joint pain, Skin rash, Fatigue", "Diseases": "Lupus, Rheumatoid arthritis, Psoriasis"}
+{"Symptoms": "Irregular heartbeat, Chest pain, Shortness of breath", "Diseases": "Arrhythmia, Coronary artery disease, Heart failure"}
+{"Symptoms": "Headache, Nausea, Dizziness", "Diseases": "Migraine, Vertigo, Brain Tumor"}
+{"Symptoms": "Tremors, Muscle Weakness, Difficulty Speaking", "Diseases": "Parkinson's Disease, Multiple Sclerosis, Stroke"}
+{"Symptoms": "Memory Loss, Confusion, Difficulty Concentrating", "Diseases": "Alzheimer's Disease, Dementia, Delirium"}
+{"Symptoms": "Numbness, Tingling Sensation, Difficulty Walking", "Diseases": "Peripheral Neuropathy, Spinal Cord Injury, Cerebral Palsy"}
+{"Symptoms": "Seizures, Loss of Consciousness, Vision Changes", "Diseases": "Epilepsy, Syncope, Brain Aneurysm"}
+{"Symptoms": "Joint pain, Fatigue, Skin rash", "Diseases": "Rheumatoid Arthritis, Lupus, Psoriasis"}
+{"Symptoms": "Hair loss, Weight gain, Cold intolerance", "Diseases": "Hypothyroidism, Hashimoto's Disease, Graves' Disease"}
+{"Symptoms": "Abdominal pain, Diarrhea, Weight loss", "Diseases": "Crohn's Disease, Ulcerative Colitis, Celiac Disease"}
+{"Symptoms": "Muscle weakness, Vision changes, Difficulty swallowing", "Diseases": "Multiple Sclerosis, Myasthenia Gravis, Scleroderma"}
+{"Symptoms": "Numbness/tingling, Memory loss, Mood changes", "Diseases": "Multiple Sclerosis, Alzheimer's Disease, Depression"}
+{"Symptoms": "Mood Swings, Loss of Appetite, Difficulty Concentrating", "Diseases": "Depression, Bipolar Disorder, Anorexia Nervosa, Attention Deficit Hyperactivity Disorder, Post-Traumatic Stress Disorder"}
+{"Symptoms": "Insomnia, Irritability, Social Withdrawal", "Diseases": "Anxiety Disorder, Schizophrenia, Obsessive Compulsive Disorder, Borderline Personality Disorder, Seasonal Affective Disorder"}
+{"Symptoms": "Hallucinations, Memory Loss, Delusions", "Diseases": "Alzheimer's Disease, Dementia, Parkinson's Disease, Schizoaffective Disorder, Huntington's Disease"}
+{"Symptoms": "Paranoia, Aggressiveness, Impulsive Behavior", "Diseases": "Antisocial Personality Disorder, Narcissistic Personality Disorder, Intermittent Explosive Disorder, Conduct Disorder, Oppositional Defiant Disorder"}
+{"Symptoms": "Panic Attacks, Flashbacks, Emotional Numbness", "Diseases": "Postpartum Depression, Panic Disorder, Dissociative Identity Disorder, Generalized Anxiety Disorder, Major Depressive Disorder"}
+{"Symptoms": "Abdominal Pain, Nausea, Vomiting, Bloating, Diarrhea", "Diseases": "Gastritis, Gastroenteritis, Irritable Bowel Syndrome, Food Poisoning, Peptic Ulcer"}
+{"Symptoms": "Constipation, Abdominal Cramps, Blood in Stool, Weight Loss, Fatigue", "Diseases": "Colon Cancer, Crohn's Disease, Diverticulitis, Ulcerative Colitis, Pancreatic Cancer"}
+{"Symptoms": "Heartburn, Difficulty Swallowing, Regurgitation, Nausea, Vomiting", "Diseases": "Gastroesophageal Reflux Disease, Hiatal Hernia, Esophagitis, Gastroparesis, Peptic Ulcer"}
+{"Symptoms": "Jaundice, Dark Urine, Pale Stools, Abdominal Pain, Loss of Appetite", "Diseases": "Hepatitis, Cirrhosis, Gallstones, Pancreatitis, Liver Cancer"}
+{"Symptoms": "Rectal Bleeding, Change in Bowel Habits, Abdominal Pain, Anemia, Unexplained Weight Loss", "Diseases": "Colorectal Cancer, Inflammatory Bowel Disease, Hemorrhoids, Diverticulosis, Anal Fissures"}
+{"Symptoms": "Weight gain, Hair loss, Dry skin, Feeling cold, Constipation", "Diseases": "Hypothyroidism, Hashimoto's disease, Cushing's syndrome, Addison's disease, Hypopituitarism"}
+{"Symptoms": "Increased thirst, Frequent urination, Fatigue, Blurred vision, Nausea", "Diseases": "Diabetes mellitus, Diabetes insipidus, Hyperparathyroidism, Hyperthyroidism, Acromegaly"}
+{"Symptoms": "Muscle weakness, Weight gain, Mood swings, Irregular periods, Thinning hair", "Diseases": "Polycystic ovary syndrome, Cushing's syndrome, Hypothyroidism, Premenstrual syndrome, Premature ovarian failure"}
+{"Symptoms": "Excessive sweating, Rapid heart rate, Anxiety, Tremors, Weight loss", "Diseases": "Hyperthyroidism, Pheochromocytoma, Graves' disease, Pituitary adenoma, Adrenal insufficiency"}
+{"Symptoms": "Fatigue, Muscle pain, Low blood pressure, Dizziness, Darkening of skin", "Diseases": "Addison's disease, Hypopituitarism, Adrenal insufficiency, Pheochromocytoma, Hypothyroidism"}
+{"Symptoms": "Joint pain, Swelling, Stiffness", "Diseases": "Rheumatoid Arthritis, Osteoarthritis, Gout"}
+{"Symptoms": "Back pain, Numbness, Weakness", "Diseases": "Sciatica, Herniated Disc, Spinal Stenosis"}
+{"Symptoms": "Muscle weakness, Fatigue, Difficulty walking", "Diseases": "Multiple Sclerosis, Fibromyalgia, Myasthenia Gravis"}
+{"Symptoms": "Joint redness, Limited range of motion, Joint deformity", "Diseases": "Psoriatic Arthritis, Ankylosing Spondylitis, Juvenile Idiopathic Arthritis"}
+{"Symptoms": "Muscle spasms, Tingling sensation, Muscle cramps", "Diseases": "Amyotrophic Lateral Sclerosis, Peripheral Neuropathy, Polymyositis"}
+{"Symptoms": "Rash, Itching, Swelling", "Diseases": "Eczema, Psoriasis, Allergic Contact Dermatitis"}
+{"Symptoms": "Acne, Blackheads, Whiteheads", "Diseases": "Acne Vulgaris, Rosacea, Folliculitis"}
+{"Symptoms": "Hair Loss, Redness, Flaky Scalp", "Diseases": "Alopecia Areata, Seborrheic Dermatitis, Scalp Psoriasis"}
+{"Symptoms": "Blisters, Cracked Skin, Dryness", "Diseases": "Eczema Herpeticum, Athlete's Foot, Hand-Foot-Mouth Disease"}
+{"Symptoms": "Skin Lesions, Discoloration, Ulcers", "Diseases": "Lichen Planus, Vitiligo, Skin Cancer"}
+{"Symptoms": "Irregular Menstruation, Weight Gain, Mood Swings", "Diseases": "Polycystic Ovary Syndrome, Hypothyroidism, Premenstrual Syndrome"}
+{"Symptoms": "Hair Loss, Fatigue, Dry Skin", "Diseases": "Hypothyroidism, Cushing's Syndrome, Addison's Disease"}
+{"Symptoms": "Increased Thirst, Frequent Urination, Blurred Vision", "Diseases": "Diabetes Mellitus, Diabetes Insipidus, Hyperthyroidism"}
+{"Symptoms": "Growth Delay, Delayed Puberty, Excessive Hunger", "Diseases": "Hypopituitarism, Turner Syndrome, Prader-Willi Syndrome"}
+{"Symptoms": "Excessive Facial Hair, Acne, Irregular Periods", "Diseases": "Polycystic Ovary Syndrome, Cushing's Syndrome, Congenital Adrenal Hyperplasia"}
+{"Symptoms": "Sneezing, Itchy Eyes, Runny Nose", "Diseases": "Allergic Rhinitis, Hay Fever, Allergic Conjunctivitis"}
+{"Symptoms": "Hives, Swollen Lips, Difficulty Breathing", "Diseases": "Anaphylaxis, Food Allergy, Insect Sting Allergy"}
+{"Symptoms": "Skin Rash, Stomach Pain, Nausea", "Diseases": "Food Allergy, Eczema, Dermatitis"}
+{"Symptoms": "Wheezing, Shortness of Breath, Chest Tightness", "Diseases": "Asthma, Allergic Bronchitis, COPD"}
+{"Symptoms": "Headache, Fatigue, Sinus Pressure", "Diseases": "Sinusitis, Allergic Rhinitis, Migraines"}
+{"Symptoms": "Blurred Vision, Eye Pain, Redness, Sensitivity to Light, Headache", "Diseases": "Glaucoma, Cataracts, Conjunctivitis, Migraine, Uveitis"}
+{"Symptoms": "Double Vision, Difficulty Seeing at Night, Halos Around Lights, Floaters, Eye Strain", "Diseases": "Astigmatism, Presbyopia, Macular Degeneration, Diabetic Retinopathy, Refractive Error"}
+{"Symptoms": "Dry Eyes, Itching, Burning Sensation, Excessive Tearing, Discharge", "Diseases": "Blepharitis, Allergic Conjunctivitis, Sjogren's Syndrome, Corneal Abrasion, Pink Eye"}
+{"Symptoms": "Color Blindness, Tunnel Vision, Blurred Peripheral Vision, Difficulty Seeing in Low Light, Night Blindness", "Diseases": "Retinitis Pigmentosa, Optic Neuritis, Retinal Detachment, Glaucoma, Cataracts"}
+{"Symptoms": "Eye Twitching, Drooping Eyelid, Blurred Vision, Headache, Nausea", "Diseases": "Bell's Palsy, Myasthenia Gravis, Multiple Sclerosis, Migraine, Brain Tumor"}
+{"Symptoms": "Earache, Hearing Loss", "Diseases": "Otitis Media, Swimmer's Ear, Meniere's Disease"}
+{"Symptoms": "Tinnitus, Vertigo", "Diseases": "Labyrinthitis, Acoustic Neuroma, Temporomandibular Joint Disorder"}
+{"Symptoms": "Ear Discharge, Itching", "Diseases": "Cholesteatoma, Otitis Externa, Allergic Rhinitis"}
+{"Symptoms": "Ear Fullness, Ringing in Ears", "Diseases": "Eustachian Tube Dysfunction, Noise-induced Hearing Loss, Earwax Blockage"}
+{"Symptoms": "Facial Numbness, Headache", "Diseases": "Bell's Palsy, Temporal Arteritis, Migraine"}
+{"Symptoms": "Frequent urination, Back pain, Loss of appetite", "Diseases": "Urinary Tract Infection, Kidney Stones, Polycystic Kidney Disease"}
+{"Symptoms": "Swelling in legs, Nausea, High blood pressure", "Diseases": "Chronic Kidney Disease, Glomerulonephritis, Diabetic Nephropathy"}
+{"Symptoms": "Dark urine, Fatigue, Headaches", "Diseases": "Kidney Infection, Lupus Nephritis, IgA Nephropathy"}
+{"Symptoms": "Muscle cramps, Difficulty concentrating, Metallic taste in mouth", "Diseases": "Acute Kidney Failure, Chronic Pyelonephritis, Renal Tubular Acidosis"}
+{"Symptoms": "Swollen face, Anemia, Itchy skin", "Diseases": "Nephrotic Syndrome, Alport Syndrome, Amyloidosis"}
+{"Symptoms": "Jaundice, Nausea, Loss of Appetite", "Diseases": "Hepatitis A, Hepatitis B, Hepatitis C"}
+{"Symptoms": "Abdominal Pain, Vomiting, Fever", "Diseases": "Cholangitis, Cirrhosis, Liver Abscess"}
+{"Symptoms": "Weight Loss, Weakness, Itchy Skin", "Diseases": "Hepatocellular Carcinoma, Primary Biliary Cholangitis, Primary Sclerosing Cholangitis"}
+{"Symptoms": "Swollen Abdomen, Dark Urine, Clay-colored Stool", "Diseases": "Cirrhosis, Alcoholic Hepatitis, Wilson's Disease"}
+{"Symptoms": "Confusion, Drowsiness, Muscle Tremors", "Diseases": "Hepatic Encephalopathy, Hepatopulmonary Syndrome, Budd-Chiari Syndrome"}
+{"Symptoms": "Painful urination, Abnormal discharge, Genital sores", "Diseases": "Gonorrhea, Chlamydia, Syphilis"}
+{"Symptoms": "Bumps or sores on genitals, Fever, Headache", "Diseases": "Genital herpes, HIV, Zika virus"}
+{"Symptoms": "Abdominal pain, Vaginal bleeding, Pain during sex", "Diseases": "Pelvic inflammatory disease, Gonorrhea, Chlamydia"}
+{"Symptoms": "Anal itching, Rectal bleeding, Painful bowel movements", "Diseases": "Hemorrhoids, Anal fissures, Syphilis"}
+{"Symptoms": "Painful intercourse, Vaginal itching, Vaginal discharge", "Diseases": "Trichomoniasis, Bacterial vaginosis, Chlamydia"}
+{"Symptoms": "Fatigue, Weakness, Dizziness, Shortness of Breath, Pale Skin", "Diseases": "Anemia, Iron Deficiency, Vitamin B12 Deficiency, Folate Deficiency, Hemolytic Anemia"}
+{"Symptoms": "Muscle Cramps, Numbness, Tingling Sensation, Confusion, Irregular Heartbeat", "Diseases": "Electrolyte Imbalance, Vitamin D Deficiency, Vitamin B1 Deficiency, Vitamin B6 Deficiency, Vitamin B9 Deficiency"}
+{"Symptoms": "Hair Loss, Brittle Nails, Dry Skin, Mouth Ulcers, Difficulty Swallowing", "Diseases": "Iron Deficiency, Zinc Deficiency, Vitamin C Deficiency, Vitamin B3 Deficiency, Vitamin B7 Deficiency"}
+{"Symptoms": "Poor Wound Healing, Easy Bruising, Gum Bleeding, Joint Pain, Bone Pain", "Diseases": "Vitamin K Deficiency, Vitamin C Deficiency, Vitamin D Deficiency, Vitamin B6 Deficiency, Vitamin B12 Deficiency"}
+{"Symptoms": "Night Blindness, Dry Eyes, Dry Skin, Dry Hair, Infertility", "Diseases": "Vitamin A Deficiency, Vitamin E Deficiency, Vitamin D Deficiency, Vitamin B7 Deficiency, Iron Deficiency"}
+{"Symptoms": "Severe Headache, Vision Loss, Nausea", "Diseases": "Migraine, Glaucoma, Brain Tumor"}
+{"Symptoms": "Muscle Weakness, Joint Pain, Skin Rash", "Diseases": "Lupus, Rheumatoid Arthritis, Lyme Disease"}
+{"Symptoms": "Difficulty Swallowing, Muscle Cramps, Weakness", "Diseases": "Amyotrophic Lateral Sclerosis, Multiple Sclerosis, Guillain-Barre Syndrome"}
+{"Symptoms": "Abdominal Pain, Diarrhea, Fatigue", "Diseases": "Crohn's Disease, Irritable Bowel Syndrome, Celiac Disease"}
+{"Symptoms": "Numbness, Tingling Sensation, Difficulty Balancing", "Diseases": "Multiple Sclerosis, Peripheral Neuropathy, Parkinson's Disease"}
+{"Symptoms": "Insomnia, Restlessness, Difficulty falling asleep, Anxiety", "Diseases": "Generalized Anxiety Disorder, Depression, Sleep Apnea, Restless Leg Syndrome"}
+{"Symptoms": "Excessive daytime sleepiness, Snoring, Gasping for air during sleep, Morning headaches", "Diseases": "Obstructive Sleep Apnea, Chronic Fatigue Syndrome, Narcolepsy, Hypersomnia"}
+{"Symptoms": "Frequent nightmares, Difficulty staying asleep, Night terrors, Sleepwalking", "Diseases": "Post-Traumatic Stress Disorder, Night Eating Syndrome, REM Sleep Behavior Disorder, Anxiety"}
+{"Symptoms": "Excessive sleepiness during the day, Loud snoring, Difficulty concentrating, Feeling irritable", "Diseases": "Narcolepsy, Obstructive Sleep Apnea, Restless Leg Syndrome, Attention Deficit Hyperactivity Disorder"}
+{"Symptoms": "Difficulty staying awake during the day, Difficulty staying asleep, Loud snoring, Fatigue", "Diseases": "Narcolepsy, Insomnia, Obstructive Sleep Apnea, Chronic Fatigue Syndrome"}
+{"Symptoms": "Excessive Thirst, Frequent Urination, Fatigue, Blurred Vision, Unintentional Weight Loss", "Diseases": "Type 1 Diabetes, Type 2 Diabetes, Gestational Diabetes, LADA, MODY"}
+{"Symptoms": "Abdominal Pain, Nausea, Vomiting, Yellowing of Skin, Fatigue", "Diseases": "Hepatitis A, Hepatitis B, Hepatitis C, Alcoholic Liver Disease, Cirrhosis"}
+{"Symptoms": "Muscle Weakness, Weight Gain, Constipation, Cold Intolerance, Dry Skin", "Diseases": "Hypothyroidism, Hashimoto's Disease, Cushing's Syndrome, Polycystic Ovary Syndrome, Diabetes Insipidus"}
+{"Symptoms": "Confusion, Headache, Blurry Vision, Nausea, Vomiting", "Diseases": "Hyperglycemic Hyperosmolar Nonketotic Syndrome, Diabetic Ketoacidosis, Diabetic Hypoglycemia, Diabetic Retinopathy, Diabetic Neuropathy"}
+{"Symptoms": "Frequent Urination, Excessive Thirst, Fatigue, Nausea, Vomiting", "Diseases": "Chronic Kidney Disease, Diabetic Nephropathy, Polycystic Kidney Disease, Nephrotic Syndrome, Acute Kidney Failure"}
+{"Symptoms": "Toothache, Sensitive Teeth, Bleeding Gums", "Diseases": "Cavities, Gingivitis, Periodontitis"}
+{"Symptoms": "Difficulty Chewing, Bad Breath, Jaw Pain", "Diseases": "TMJ Disorder, Halitosis, Periodontal Disease"}
+{"Symptoms": "Tooth Sensitivity, Mouth Sores, Dry Mouth", "Diseases": "Tooth Erosion, Oral Thrush, Sjogren's Syndrome"}
+{"Symptoms": "Loose Teeth, Tooth Discoloration, Swollen Gums", "Diseases": "Gum Disease, Tooth Abscess, Oral Cancer"}
+{"Symptoms": "Tooth Mobility, Difficulty Swallowing, Metallic Taste in Mouth", "Diseases": "Temporomandibular Joint Disorder, Throat Infection, Metal Poisoning"}
+{"Symptoms": "Difficulty with learning, Poor social skills, Slow development", "Diseases": "Down Syndrome, Fragile X Syndrome, Fetal Alcohol Syndrome"}
+{"Symptoms": "Intellectual disability, Speech delay, Impaired motor skills", "Diseases": "Cerebral Palsy, Autism Spectrum Disorder, Rett Syndrome"}
+{"Symptoms": "Memory problems, Difficulty with problem-solving, Impulsivity", "Diseases": "Alzheimer's Disease, Lewy Body Dementia, Frontotemporal Dementia"}
+{"Symptoms": "Hyperactivity, Inattention, Impulsivity", "Diseases": "Attention Deficit Hyperactivity Disorder, Oppositional Defiant Disorder, Conduct Disorder"}
+{"Symptoms": "Anxiety, Depression, Low self-esteem", "Diseases": "Intellectual Disability, Schizophrenia, Bipolar Disorder"}
+{"Symptoms": "Loss of appetite, Insomnia, Agitation", "Diseases": "Cocaine Use Disorder, Amphetamine Use Disorder, Opioid Use Disorder"}
+{"Symptoms": "Nausea, Vomiting, Tremors", "Diseases": "Alcohol Use Disorder, Cannabis Use Disorder, Benzodiazepine Use Disorder"}
+{"Symptoms": "Irritability, Memory loss, Confusion", "Diseases": "Alcohol Withdrawal, Benzodiazepine Withdrawal, Opioid Withdrawal"}
+{"Symptoms": "Muscle cramps, Headache, Seizures", "Diseases": "Opioid Overdose, Alcohol Poisoning, Barbiturate Overdose"}
+{"Symptoms": "Hallucinations, Paranoia, Delusions", "Diseases": "Amphetamine-induced Psychotic Disorder, Cannabis-induced Psychotic Disorder, Cocaine-induced Psychotic Disorder"}
+{"Symptoms": "Memory loss, Difficulty walking, Tremors", "Diseases": "Alzheimer's disease, Parkinson's disease, Multiple sclerosis"}
+{"Symptoms": "Muscle weakness, Twitching, Vision problems", "Diseases": "Amyotrophic lateral sclerosis, Myasthenia gravis, Muscular dystrophy"}
+{"Symptoms": "Numbness, Tingling sensation, Bladder dysfunction", "Diseases": "Multiple sclerosis, Guillain-Barre syndrome, Charcot-Marie-Tooth disease"}
+{"Symptoms": "Balance problems, Dizziness, Slurred speech", "Diseases": "Vertigo, Cerebellar ataxia, Huntington's disease"}
+{"Symptoms": "Difficulty swallowing, Muscle cramps, Fatigue", "Diseases": "Amyotrophic lateral sclerosis, Myasthenia gravis, Muscular dystrophy"}
+{"Symptoms": "Fever, Joint Pain, Skin Rash", "Diseases": "Rheumatoid Arthritis, Systemic Lupus Erythematosus, Psoriasis"}
+{"Symptoms": "Abdominal Pain, Diarrhea, Weight Loss", "Diseases": "Crohn's Disease, Ulcerative Colitis, Celiac Disease"}
+{"Symptoms": "Muscle Weakness, Fatigue, Difficulty Swallowing", "Diseases": "Polymyositis, Dermatomyositis, Inclusion Body Myositis"}
+{"Symptoms": "Fever, Joint Swelling, Eye Pain", "Diseases": "Behcet's Disease, Familial Mediterranean Fever, Reactive Arthritis"}
+{"Symptoms": "Fever, Rash, Headache", "Diseases": "Kawasaki Disease, Juvenile Idiopathic Arthritis, Muckle-Wells Syndrome"}
+{"Symptoms": "Headache, Dizziness, Numbness, Vision Changes, Difficulty Speaking", "Diseases": "Stroke, Migraine, Aneurysm, Temporal Arteritis, Transient Ischemic Attack"}
+{"Symptoms": "Leg Pain, Swelling, Weakness, Cramping, Discoloration", "Diseases": "Peripheral Artery Disease, Deep Vein Thrombosis, Venous Insufficiency, Atherosclerosis, Varicose Veins"}
+{"Symptoms": "Chest Tightness, Irregular Heartbeat, Shortness of Breath, Nausea, Fatigue", "Diseases": "Angina, Heart Attack, Heart Failure, Atrial Fibrillation, Cardiomyopathy"}
+{"Symptoms": "Abdominal Pain, Nausea, Vomiting, Bloating, Diarrhea", "Diseases": "Gastritis, Peptic Ulcer, Gastroenteritis, Diverticulitis, Irritable Bowel Syndrome"}
+{"Symptoms": "Headache, Nausea, Blurred Vision, Fatigue, Confusion", "Diseases": "Hypertension, Atherosclerosis, Carotid Artery Disease, Intracranial Hemorrhage, Cerebral Aneurysm"}
+{"Symptoms": "Abdominal pain, Nausea, Vomiting, Diarrhea", "Diseases": "Gastroenteritis, Food poisoning, Crohn's disease, Appendicitis"}
+{"Symptoms": "Heartburn, Bloating, Constipation", "Diseases": "Gastritis, Irritable bowel syndrome, Diverticulitis, Gastroparesis"}
+{"Symptoms": "Rectal bleeding, Changes in bowel habits, Abdominal bloating", "Diseases": "Colorectal cancer, Inflammatory bowel disease, Irritable bowel syndrome, Celiac disease"}
+{"Symptoms": "Loss of appetite, Unintentional weight loss, Abdominal discomfort", "Diseases": "Gastric cancer, Peptic ulcer disease, Pancreatitis, Gallstones"}
+{"Symptoms": "Difficulty swallowing, Persistent indigestion, Abdominal pain after eating", "Diseases": "Esophageal cancer, GERD, Gastritis, Pancreatic cancer"}
+{"Symptoms": "Fever, Skin rash, Joint pain", "Diseases": "Lupus, Rheumatoid arthritis, Multiple sclerosis"}
+{"Symptoms": "Abdominal pain, Diarrhea, Weight loss", "Diseases": "Crohn's disease, Ulcerative colitis, Celiac disease"}
+{"Symptoms": "Nausea, Vomiting, Fatigue", "Diseases": "Chronic fatigue syndrome, Fibromyalgia, Hashimoto's thyroiditis"}
+{"Symptoms": "Swollen lymph nodes, Night sweats, Loss of appetite", "Diseases": "HIV/AIDS, Hodgkin's lymphoma, Tuberculosis"}
+{"Symptoms": "Shortness of breath, Wheezing, Chest tightness", "Diseases": "Asthma, Chronic obstructive pulmonary disease (COPD), Allergic rhinitis"}
+{"Symptoms": "Joint pain, Swelling, Stiffness", "Diseases": "Osteoarthritis, Rheumatoid Arthritis, Gout"}
+{"Symptoms": "Bone Fracture, Limited Mobility, Bone Deformity", "Diseases": "Osteoporosis, Osteogenesis Imperfecta, Paget's Disease"}
+{"Symptoms": "Back Pain, Muscle Weakness, Numbness", "Diseases": "Osteomalacia, Multiple Myeloma, Spinal Stenosis"}
+{"Symptoms": "Bone Tenderness, Bone Loss, Fatigue", "Diseases": "Osteomyelitis, Bone Cancer, Osteonecrosis"}
+{"Symptoms": "Bone Infection, Fever, Night Sweats", "Diseases": "Osteitis Pubis, Osteochondritis, Osteosarcoma"}
+{"Symptoms": "Joint Pain, Fatigue, Rash", "Diseases": "Lupus, Rheumatoid Arthritis, Sjogren's Syndrome"}
+{"Symptoms": "Muscle Weakness, Joint Stiffness, Dry Eyes", "Diseases": "Polymyositis, Systemic Sclerosis, Mixed Connective Tissue Disease"}
+{"Symptoms": "Abdominal Pain, Diarrhea, Mouth Sores", "Diseases": "Crohn's Disease, Ulcerative Colitis, Behcet's Disease"}
+{"Symptoms": "Chest Pain, Difficulty Swallowing, Acid Reflux", "Diseases": "Scleroderma, Eosinophilic Esophagitis, Systemic Lupus Erythematosus"}
+{"Symptoms": "Skin Thickening, Raynaud's Phenomenon, Shortness of Breath", "Diseases": "Systemic Sclerosis, Rheumatoid Arthritis, Sarcoidosis"}
+{"Symptoms": "Fever, Joint Pain, Rash", "Diseases": "Rheumatoid Arthritis, Lupus, Psoriasis"}
+{"Symptoms": "Abdominal Pain, Diarrhea, Nausea", "Diseases": "Crohn's Disease, Ulcerative Colitis, Irritable Bowel Syndrome"}
+{"Symptoms": "Headache, Stiff Neck, Confusion", "Diseases": "Meningitis, Encephalitis, Lyme Disease"}
+{"Symptoms": "Swollen Joints, Fatigue, Weight Loss", "Diseases": "Ankylosing Spondylitis, Sarcoidosis, Behcet's Disease"}
+{"Symptoms": "Chest Pain, Difficulty Breathing, Dry Cough", "Diseases": "Pulmonary Fibrosis, Sarcoidosis, Vasculitis"}
+{"Symptoms": "Joint pain, Swelling, Stiffness", "Diseases": "Rheumatoid Arthritis, Osteoarthritis, Gout, Lupus, Psoriatic Arthritis"}
+{"Symptoms": "Limited range of motion, Joint deformity, Redness", "Diseases": "Juvenile Idiopathic Arthritis, Septic Arthritis, Ankylosing Spondylitis, Reactive Arthritis, Rheumatic Fever"}
+{"Symptoms": "Joint tenderness, Fatigue, Weight loss", "Diseases": "Fibromyalgia, Sjogren's Syndrome, Polymyalgia Rheumatica, Systemic Lupus Erythematosus, Osteoporosis"}
+{"Symptoms": "Joint stiffness in the morning, Bony enlargements, Hesitant to move", "Diseases": "Osteoarthritis, Psoriatic Arthritis, Ankylosing Spondylitis, Rheumatoid Arthritis, Reactive Arthritis"}
+{"Symptoms": "Difficulty walking, Joint stiffness, Joint instability", "Diseases": "Osteoarthritis, Gout, Bursitis, Osteoporosis, Lyme Disease"}
+{"Symptoms": "Coughing, Shortness of Breath, Wheezing", "Diseases": "Asthma, Chronic Bronchitis, Pulmonary Fibrosis"}
+{"Symptoms": "Chest Tightness, Difficulty Breathing, Chronic Cough", "Diseases": "Chronic Obstructive Pulmonary Disease (COPD), Lung Cancer, Tuberculosis"}
+{"Symptoms": "Fatigue, Weight Loss, Chronic Cough", "Diseases": "Pulmonary Tuberculosis, Sarcoidosis, Lung Cancer"}
+{"Symptoms": "Chest Pain, Difficulty Swallowing, Hoarseness", "Diseases": "Lung Cancer, Pulmonary Embolism, Tuberculosis"}
+{"Symptoms": "Coughing up Blood, Shortness of Breath, Chest Pain", "Diseases": "Pulmonary Embolism, Lung Cancer, Pneumonia"}
+{"Symptoms": "Abdominal pain, Nausea, Vomiting, Jaundice", "Diseases": "Pancreatitis, Pancreatic Cancer, Acute Cholecystitis"}
+{"Symptoms": "Unexplained weight loss, Loss of appetite, Fatigue", "Diseases": "Pancreatic Cancer, Chronic Pancreatitis, Diabetes"}
+{"Symptoms": "Upper abdominal pain, Back pain, Indigestion", "Diseases": "Pancreatitis, Pancreatic Cancer, Peptic Ulcer Disease"}
+{"Symptoms": "Pale stools, Dark urine, Itchy skin", "Diseases": "Biliary Tract Obstruction, Pancreatic Cancer, Alcoholic Liver Disease"}
+{"Symptoms": "Diarrhea, Fever, Fatigue, Weight loss", "Diseases": "Pancreatitis, Pancreatic Cancer, Celiac Disease"}
+{"Symptoms": "Weight gain, Fatigue, Dry skin, Constipation, Hair loss", "Diseases": "Hypothyroidism, Graves' disease, Hashimoto's disease, Subacute thyroiditis, Thyroid cancer"}
+{"Symptoms": "Weight loss, Rapid heartbeat, Tremors, Insomnia, Anxiety", "Diseases": "Hyperthyroidism, Graves' disease, Toxic adenoma, Thyroiditis, Thyrotoxicosis"}
+{"Symptoms": "Swelling in neck, Difficulty swallowing, Hoarse voice, Cough, Difficulty breathing", "Diseases": "Goiter, Thyroid nodules, Thyroid cancer, Hashimoto's disease, Thyroiditis"}
+{"Symptoms": "Irregular menstrual periods, Infertility, Hair loss, Cold intolerance, Weight gain", "Diseases": "Polycystic ovary syndrome, Hypothyroidism, Turner syndrome, Premature ovarian failure, Hyperprolactinemia"}
+{"Symptoms": "Depression, Memory problems, Fatigue, Dry skin, Constipation", "Diseases": "Hypothyroidism, Depression, Chronic fatigue syndrome, Fibromyalgia, Vitamin B12 deficiency"}
+{"Symptoms": "Painful urination, Frequent urination, Blood in urine", "Diseases": "Urinary tract infection, Kidney stones, Bladder cancer"}
+{"Symptoms": "Abdominal pain, Nausea, Vomiting", "Diseases": "Appendicitis, Kidney infection, Acute pancreatitis"}
+{"Symptoms": "Difficulty urinating, Urinary incontinence, Weak urine stream", "Diseases": "Prostate enlargement, Urinary retention, Bladder prolapse"}
+{"Symptoms": "Fever, Chills, Lower back pain", "Diseases": "Pyelonephritis, Kidney abscess, Glomerulonephritis"}
+{"Symptoms": "Cloudy urine, Strong odor, Pelvic pain", "Diseases": "Urinary tract infection, Pelvic inflammatory disease, Cystitis"}
+{"Symptoms": "Muscle weakness, Loss of muscle mass, Difficulty walking", "Diseases": "Muscular dystrophy, Amyotrophic lateral sclerosis, Myasthenia gravis"}
+{"Symptoms": "Twitching muscles, Cramping, Stiffness", "Diseases": "Fibromyalgia, Polymyalgia rheumatica, Myositis"}
+{"Symptoms": "Muscle pain, Fatigue, Joint pain", "Diseases": "Rheumatoid arthritis, Polymyositis, Fibromyalgia"}
+{"Symptoms": "Muscle spasms, Numbness, Tingling", "Diseases": "Multiple sclerosis, Peripheral neuropathy, Myopathy"}
+{"Symptoms": "Difficulty swallowing, Speech difficulties, Facial drooping", "Diseases": "Myasthenia gravis, Stroke, Bell's palsy"}
+{"Symptoms": "Fever, Headache, Muscle aches, Fatigue, Nausea", "Diseases": "Influenza, Dengue, Zika, Chikungunya, Measles"}
+{"Symptoms": "Rash, Joint pain, Vomiting, Diarrhea, Abdominal pain", "Diseases": "Norovirus, Rotavirus, Hepatitis A, Mumps, Rubella"}
+{"Symptoms": "Sore throat, Runny nose, Sneezing, Cough, Fatigue", "Diseases": "Common Cold, Rhinovirus, Respiratory Syncytial Virus, Adenovirus, Coronavirus"}
+{"Symptoms": "Fever, Chills, Sweating, Muscle aches, Headache", "Diseases": "Malaria, Yellow fever, Dengue fever, Japanese encephalitis, West Nile virus"}
+{"Symptoms": "Nausea, Vomiting, Diarrhea, Abdominal pain, Fatigue", "Diseases": "Norovirus, Rotavirus, E. coli infection, Salmonella infection, Campylobacter infection"}
+{"Symptoms": "Fever, Cough, Fatigue, Diarrhea", "Diseases": "Salmonellosis, Listeriosis, Tuberculosis, Legionnaires' Disease, Typhoid Fever"}
+{"Symptoms": "Nausea, Vomiting, Abdominal Pain", "Diseases": "Food Poisoning, Shigellosis, Campylobacteriosis, Cholera, E. coli Infection"}
+{"Symptoms": "Rash, Joint Pain, Headache", "Diseases": "Lyme Disease, Rocky Mountain Spotted Fever, Tularemia, Leptospirosis, Brucellosis"}
+{"Symptoms": "Fever, Muscle Aches, Sore Throat", "Diseases": "Strep Throat, Diphtheria, Pertussis, Tuberculosis, Scarlet Fever"}
+{"Symptoms": "Diarrhea, Abdominal Cramps, Dehydration", "Diseases": "Cholera, Shigellosis, E. coli Infection, Campylobacteriosis, Salmonellosis"}
+{"Symptoms": "Itchy skin, Red rash, Peeling skin", "Diseases": "Athlete's foot, Jock itch, Ringworm"}
+{"Symptoms": "Fever, Headache, Chills", "Diseases": "Valley fever, Histoplasmosis, Blastomycosis"}
+{"Symptoms": "Nausea, Vomiting, Abdominal pain", "Diseases": "Aspergillosis, Candidiasis, Cryptococcosis"}
+{"Symptoms": "Difficulty breathing, Coughing up blood, Night sweats", "Diseases": "Aspergilloma, Coccidioidomycosis, Histoplasmosis"}
+{"Symptoms": "Joint pain, Swelling, Stiffness", "Diseases": "Septic arthritis, Osteomyelitis, Rheumatoid arthritis"}
+{"Symptoms": "Abdominal pain, Diarrhea, Nausea, Vomiting", "Diseases": "Giardiasis, Amoebiasis, Cryptosporidiosis, Cyclosporiasis"}
+{"Symptoms": "Skin rash, Fever, Fatigue, Headache", "Diseases": "Malaria, Dengue, Chikungunya, Leishmaniasis"}
+{"Symptoms": "Cough, Wheezing, Difficulty breathing", "Diseases": "Pneumocystis pneumonia, Ascaris infection, Trichuriasis, Schistosomiasis"}
+{"Symptoms": "Muscle pain, Joint pain, Headache, Nausea", "Diseases": "Lyme disease, Chagas disease, Toxoplasmosis, Filariasis"}
+{"Symptoms": "Anemia, Loss of appetite, Abdominal pain, Nausea", "Diseases": "Hookworm infection, Tapeworm infection, Strongyloidiasis, Ascariasis"}
+{"Symptoms": "Insomnia, Irritability, Poor Concentration, Loss of Appetite", "Diseases": "Depression, Anxiety Disorder, Bipolar Disorder, Attention Deficit Hyperactivity Disorder"}
+{"Symptoms": "Hallucinations, Delusions, Disorganized Thinking, Social Withdrawal", "Diseases": "Schizophrenia, Major Depressive Disorder, Delusional Disorder, Psychotic Disorder"}
+{"Symptoms": "Mood Swings, Fatigue, Hopelessness, Difficulty Sleeping", "Diseases": "Bipolar Disorder, Depression, Seasonal Affective Disorder, Dysthymia"}
+{"Symptoms": "Paranoia, Agitation, Delirium, Confusion", "Diseases": "Delirium, Dementia, Schizophrenia, Bipolar Disorder"}
+{"Symptoms": "Anorexia, Excessive Exercise, Body Image Distortion, Fear of Weight Gain", "Diseases": "Anorexia Nervosa, Bulimia Nervosa, Body Dysmorphic Disorder, Orthorexia Nervosa"}
+{"Symptoms": "Delayed Milestones, Difficulty with Language, Behavioral Issues", "Diseases": "Autism Spectrum Disorder, Attention Deficit Hyperactivity Disorder, Specific Language Impairment"}
+{"Symptoms": "Delayed Milestones, Poor Coordination, Learning Difficulties", "Diseases": "Developmental Coordination Disorder, Dyslexia, Intellectual Disability"}
+{"Symptoms": "Poor Social Skills, Repetitive Behaviors, Sensory Sensitivity", "Diseases": "Asperger's Syndrome, Obsessive Compulsive Disorder, Sensory Processing Disorder"}
+{"Symptoms": "Poor Attention, Impulsivity, Hyperactivity", "Diseases": "Attention Deficit Hyperactivity Disorder, Oppositional Defiant Disorder, Developmental Trauma Disorder"}
+{"Symptoms": "Delayed Speech, Poor Eye Contact, Lack of Imagination", "Diseases": "Autism Spectrum Disorder, Social Communication Disorder, Childhood Disintegrative Disorder"}
+{"Symptoms": "Delayed Motor Skills, Intellectual Delay, Seizures", "Diseases": "Cerebral Palsy, Down Syndrome, Epilepsy"}
+{"Symptoms": "Poor Fine Motor Skills, Difficulty with Math, Poor Memory", "Diseases": "Developmental Dyscalculia, Nonverbal Learning Disorder, Auditory Processing Disorder"}
+{"Symptoms": "Poor Gross Motor Skills, Difficulty with Handwriting, Difficulty with Spelling", "Diseases": "Developmental Dyspraxia, Dysgraphia, Dyslexia"}
+{"Symptoms": "Chest Pain, Shortness of Breath, Dizziness", "Diseases": "Myocardial Infarction, Angina, Pulmonary Embolism"}
+{"Symptoms": "Irregular Heartbeat, Fatigue, Swollen Feet", "Diseases": "Atrial Fibrillation, Heart Failure, Peripheral Artery Disease"}
+{"Symptoms": "High Blood Pressure, Headache, Nausea", "Diseases": "Hypertension, Stroke, Aortic Dissection"}
+{"Symptoms": "Difficulty Breathing, Coughing up Blood, Rapid Heart Rate", "Diseases": "Pulmonary Hypertension, Heart Attack, Cardiomyopathy"}
+{"Symptoms": "Chest Tightness, Fainting, Palpitations", "Diseases": "Hypertrophic Cardiomyopathy, Arrhythmia, Cardiac Arrest"}
+{"Symptoms": "Easy bruising, Fatigue, Weakness", "Diseases": "Anemia, Leukemia, Thrombocytopenia"}
+{"Symptoms": "Shortness of breath, Pale skin, Dizziness", "Diseases": "Iron deficiency anemia, Hemolytic anemia, Sickle cell anemia"}
+{"Symptoms": "Frequent infections, Abdominal pain, Enlarged spleen", "Diseases": "Hemophilia, Thalassemia, Immunodeficiency disorders"}
+{"Symptoms": "Bleeding gums, Joint pain, Nosebleeds", "Diseases": "Von Willebrand disease, Polycythemia, Hemophilia B"}
+{"Symptoms": "Swollen lymph nodes, Night sweats, Unexplained weight loss", "Diseases": "Lymphoma, Chronic myeloid leukemia, Myelodysplastic syndrome"}
+{"Symptoms": "Pain during intercourse, Abnormal vaginal discharge, Irregular periods", "Diseases": "Endometriosis, Pelvic inflammatory disease, Polycystic ovary syndrome"}
+{"Symptoms": "Erectile dysfunction, Testicular pain, Difficulty urinating", "Diseases": "Prostate cancer, Epididymitis, Benign prostatic hyperplasia"}
+{"Symptoms": "Lower abdominal pain, Vaginal itching, Painful urination", "Diseases": "Urinary tract infection, Genital herpes, Bacterial vaginosis"}
+{"Symptoms": "Infertility, Heavy menstrual bleeding, Pelvic pressure", "Diseases": "Uterine fibroids, Ovarian cysts, Adenomyosis"}
+{"Symptoms": "Breast tenderness, Nipple discharge, Irregular menstrual cycle", "Diseases": "Breast cancer, Fibrocystic breast disease, Hyperprolactinemia"}
+{"Symptoms": "Chest Pain, Shortness of Breath, Dizziness, Nausea, Sweating", "Diseases": "Myocardial Infarction, Angina, Aortic Stenosis, Heart Attack, Cardiomyopathy"}
+{"Symptoms": "Palpitations, Breathlessness, Fatigue, Swelling in legs, Rapid heartbeat", "Diseases": "Atrial Fibrillation, Heart Failure, Hypertension, Mitral Valve Prolapse, Coronary Artery Disease"}
+{"Symptoms": "Headache, Blurred Vision, Numbness/Weakness, Difficulty speaking, Memory loss", "Diseases": "Stroke, Transient Ischemic Attack, Hypertensive Encephalopathy, Cerebral Aneurysm, Intracranial Hemorrhage"}
+{"Symptoms": "Abdominal Pain, Nausea/Vomiting, Loss of Appetite, Jaundice, Dark Urine", "Diseases": "Hepatitis, Cirrhosis, Fatty Liver Disease, Pancreatitis, Cholecystitis"}
+{"Symptoms": "Chest Tightness, Wheezing, Coughing, Shortness of Breath, Difficulty Breathing", "Diseases": "Asthma, Chronic Obstructive Pulmonary Disease, Pulmonary Hypertension, Bronchitis, Interstitial Lung Disease"}
+{"Symptoms": "Excessive thirst, Fatigue, Blurry vision", "Diseases": "Type 2 Diabetes, Gestational Diabetes, Prediabetes"}
+{"Symptoms": "Frequent urination, Slow wound healing, Unexplained weight loss", "Diseases": "Type 1 Diabetes, Diabetic Nephropathy, Diabetic Retinopathy"}
+{"Symptoms": "Numbness or tingling in hands or feet, Dry, itchy skin, Recurring infections", "Diseases": "Type 2 Diabetes, Diabetic Neuropathy, Diabetic Foot Infection"}
+{"Symptoms": "Nausea, Vomiting, Abdominal pain", "Diseases": "Diabetic Ketoacidosis, Hyperosmolar Hyperglycemic State, Gastroparesis"}
+{"Symptoms": "Extreme hunger, Irritability, Confusion", "Diseases": "Hypoglycemia, Insulin Resistance, Diabetic Coma"}
+{"Symptoms": "Cough, Difficulty breathing, Chest tightness", "Diseases": "Asthma, Chronic Obstructive Pulmonary Disease (COPD), Bronchitis"}
+{"Symptoms": "Fever, Sore throat, Runny nose", "Diseases": "Tuberculosis, Meningitis, Influenza"}
+{"Symptoms": "Wheezing, Shortness of breath, Fatigue", "Diseases": "Pneumonia, Pulmonary Embolism, Lung Cancer"}
+{"Symptoms": "Chest pain, Persistent cough, Night sweats", "Diseases": "Pulmonary Tuberculosis, Lung Abscess, Chronic Bronchitis"}
+{"Symptoms": "Difficulty swallowing, Chronic cough, Weight loss", "Diseases": "Lung Cancer, Bronchiectasis, Pulmonary Fibrosis"}
+{"Symptoms": "Abdominal pain, Diarrhea, Nausea, Vomiting, Bloating", "Diseases": "Gastroenteritis, Food Poisoning, Irritable Bowel Syndrome, Peptic Ulcer Disease, Gallstones"}
+{"Symptoms": "Loss of Appetite, Weight Loss, Jaundice, Abdominal Distention, Dark Urine", "Diseases": "Liver Cirrhosis, Hepatitis A, Cholangiocarcinoma, Pancreatitis, Ascites"}
+{"Symptoms": "Heartburn, Difficulty Swallowing, Chest Pain, Regurgitation, Hiccups", "Diseases": "Gastroesophageal Reflux Disease, Esophageal Cancer, Achalasia, Hiatal Hernia, Gastric Ulcer"}
+{"Symptoms": "Constipation, Diarrhea, Rectal Bleeding, Abdominal Pain, Anorectal Pain", "Diseases": "Colorectal Cancer, Hemorrhoids, Diverticulitis, Inflammatory Bowel Disease, Anal Fissures"}
+{"Symptoms": "Abdominal Pain, Fever, Joint Pain, Diarrhea, Rash", "Diseases": "Typhoid Fever, Dengue Fever, Chikungunya, Gastrointestinal Tuberculosis, Crohn's Disease"}
+{"Symptoms": "Red, Itchy Rashes, Dry Skin", "Diseases": "Eczema, Psoriasis, Atopic Dermatitis"}
+{"Symptoms": "Bumps, Swelling, Hives", "Diseases": "Allergic Contact Dermatitis, Urticaria, Pruritus"}
+{"Symptoms": "Hair loss, Brittle Nails, Fatigue", "Diseases": "Alopecia Areata, Onychomycosis, Iron Deficiency Anemia"}
+{"Symptoms": "Dark Spots, Scaly Patches, Excessive Hair Growth", "Diseases": "Vitiligo, Seborrheic Dermatitis, Polycystic Ovary Syndrome"}
+{"Symptoms": "Blisters, Painful Sores, Fever", "Diseases": "Herpes Zoster, Impetigo, Cellulitis"}
+{"Symptoms": "Joint pain, Swelling, Stiffness", "Diseases": "Osteoarthritis, Rheumatoid Arthritis, Gout"}
+{"Symptoms": "Difficulty walking, Muscle weakness, Foot deformities", "Diseases": "Muscular Dystrophy, Charcot-Marie-Tooth Disease, Clubfoot"}
+{"Symptoms": "Back pain, Leg numbness, Loss of bowel/bladder control", "Diseases": "Herniated Disc, Spinal Stenosis, Cauda Equina Syndrome"}
+{"Symptoms": "Knee instability, Popping sound, Difficulty straightening knee", "Diseases": "Anterior Cruciate Ligament (ACL) Tear, Meniscus Tear, Patellar Dislocation"}
+{"Symptoms": "Shoulder pain, Limited range of motion, Muscle spasms", "Diseases": "Rotator Cuff Injury, Frozen Shoulder, Bursitis"}
+{"Symptoms": "Headache, Nausea, Dizziness", "Diseases": "Migraine, Vertigo, Brain Tumor"}
+{"Symptoms": "Tremors, Memory Loss, Difficulty Speaking", "Diseases": "Parkinson's Disease, Alzheimer's Disease, Stroke"}
+{"Symptoms": "Numbness, Tingling Sensation, Muscle Weakness", "Diseases": "Peripheral Neuropathy, Multiple Sclerosis, ALS"}
+{"Symptoms": "Seizures, Loss of Consciousness, Confusion", "Diseases": "Epilepsy, Hypoglycemia, Encephalitis"}
+{"Symptoms": "Vision Changes, Difficulty Walking, Balance Problems", "Diseases": "Glaucoma, Parkinson's Disease, Cerebellar Ataxia"}
+{"Symptoms": "Easy bruising, Pale skin, Fatigue, Frequent infections", "Diseases": "Anemia, Leukemia, Hemophilia, Thalassemia, Aplastic Anemia"}
+{"Symptoms": "Joint pain, Swollen lymph nodes, Night sweats", "Diseases": "Hodgkin's Lymphoma, Rheumatoid Arthritis, Lupus, Chronic Leukemia"}
+{"Symptoms": "Bleeding gums, Nosebleeds, Petechiae, Heavy menstrual bleeding", "Diseases": "Von Willebrand Disease, Hemophilia, Blood clotting disorders, ITP, AML"}
+{"Symptoms": "Irregular heartbeat, Shortness of breath, Chest pain, Dizziness", "Diseases": "Atrial Fibrillation, Heart Failure, Angina, Anemia"}
+{"Symptoms": "Bone pain, Easy fractures, Fatigue, Elevated calcium levels", "Diseases": "Multiple Myeloma, Osteoporosis, Paget's Disease, Hyperparathyroidism"}
+{"Symptoms": "Depressed mood, Low energy, Difficulty concentrating", "Diseases": "Major Depressive Disorder, Bipolar Disorder, Generalized Anxiety Disorder"}
+{"Symptoms": "Hallucinations, Delusions, Disorganized thinking", "Diseases": "Schizophrenia, Schizoaffective Disorder, Bipolar Disorder"}
+{"Symptoms": "Insomnia, Restlessness, Difficulty falling asleep", "Diseases": "Insomnia Disorder, Anxiety Disorder, Depression"}
+{"Symptoms": "Mood swings, Irritability, Impulsivity", "Diseases": "Borderline Personality Disorder, Bipolar Disorder, Attention-Deficit/Hyperactivity Disorder"}
+{"Symptoms": "Panic attacks, Rapid heartbeat, Shortness of breath", "Diseases": "Panic Disorder, Generalized Anxiety Disorder, Heart Disease"}
+{"Symptoms": "Weight gain, Fatigue, Dry skin, Irregular periods, Hair loss", "Diseases": "Hypothyroidism, Polycystic ovary syndrome, Diabetes Mellitus, Premature ovarian failure, Addison's disease"}
+{"Symptoms": "Weight loss, Increased thirst, Frequent urination, Fatigue, Blurred vision", "Diseases": "Hyperthyroidism, Diabetes Mellitus, Addison's disease, Cushing's syndrome, Type 1 Diabetes"}
+{"Symptoms": "Mood swings, Weight gain, Increased appetite, Fatigue, Irregular periods", "Diseases": "Premenstrual syndrome, Polycystic ovary syndrome, Hypothyroidism, Depression, Premature ovarian failure"}
+{"Symptoms": "Muscle weakness, Weight gain, Dry skin, Constipation, Fatigue", "Diseases": "Hypothyroidism, Polycystic ovary syndrome, Cushing's syndrome, Hypopituitarism, Hypothyroid myopathy"}
+{"Symptoms": "Excessive hair growth, Weight gain, Fatigue, Acne, Irregular periods", "Diseases": "Polycystic ovary syndrome, Cushing's syndrome, Hypothyroidism, Hirsutism, Premature ovarian failure"}
+{"Symptoms": "Irregular Menstruation, Abdominal Pain, Vaginal Discharge", "Diseases": "Polycystic Ovary Syndrome, Endometriosis, Pelvic Inflammatory Disease"}
+{"Symptoms": "Pregnancy, Nausea, Fatigue", "Diseases": "Ectopic Pregnancy, Hyperemesis Gravidarum, Preeclampsia"}
+{"Symptoms": "Vaginal Bleeding, Painful Intercourse, Vaginal Itching", "Diseases": "Cervical Cancer, Vaginal Infection, Vulvodynia"}
+{"Symptoms": "Urinary Incontinence, Pelvic Pressure, Frequent Urination", "Diseases": "Urinary Tract Infection, Overactive Bladder, Pelvic Organ Prolapse"}
+{"Symptoms": "Breast Pain, Nipple Discharge, Lump", "Diseases": "Breast Cancer, Fibrocystic Breast Changes, Mastitis"}
+{"Symptoms": "Fever, Rash, Loss of Appetite", "Diseases": "Measles, Rubella, Dengue"}
+{"Symptoms": "Vomiting, Diarrhea, Abdominal Pain", "Diseases": "Gastroenteritis, Rotavirus, Typhoid"}
+{"Symptoms": "Cough, Wheezing, Difficulty Breathing", "Diseases": "Asthma, Pneumonia, Bronchiolitis"}
+{"Symptoms": "Frequent Urination, Thirst, Fatigue", "Diseases": "Type 1 Diabetes, Urinary Tract Infection, Dehydration"}
+{"Symptoms": "Joint Pain, Fatigue, Headache", "Diseases": "Dengue, Chikungunya, Malaria"}
+{"Symptoms": "Blurred Vision, Eye Pain, Redness", "Diseases": "Conjunctivitis, Glaucoma, Uveitis"}
+{"Symptoms": "Double Vision, Headache, Nausea", "Diseases": "Migraine, Optic Neuritis, Brain Tumor"}
+{"Symptoms": "Dry Eyes, Sensitivity to Light, Discharge", "Diseases": "Blepharitis, Keratitis, Allergic Conjunctivitis"}
+{"Symptoms": "Floaters, Loss of Peripheral Vision, Blurred Vision", "Diseases": "Retinal Detachment, Macular Degeneration, Diabetic Retinopathy"}
+{"Symptoms": "Eye Strain, Difficulty Focusing, Headache", "Diseases": "Astigmatism, Presbyopia, Refractive Error"}
+{"Symptoms": "Pain or burning during urination, Frequent urination, Blood in urine", "Diseases": "Urinary Tract Infection, Bladder Cancer, Kidney Stones, Prostate Cancer, Interstitial Cystitis"}
+{"Symptoms": "Lower back pain, Difficulty urinating, Erectile dysfunction", "Diseases": "Benign Prostatic Hyperplasia, Prostatitis, Kidney Infection, Spinal Stenosis, Testicular Cancer"}
+{"Symptoms": "Urgency to urinate, Inability to empty bladder, Pelvic pain", "Diseases": "Urinary Incontinence, Overactive Bladder, Prostate Enlargement, Bladder Prolapse, Ovarian Cysts"}
+{"Symptoms": "Urinary retention, Urine leakage, Pain in pelvic area", "Diseases": "Bladder Spasms, Urethral Stricture, Bladder Cancer, Ovarian Cancer, Bladder Diverticulum"}
+{"Symptoms": "Frequent urination at night, Pain in testicles, Difficulty starting urination", "Diseases": "Prostate Cancer, Testicular Torsion, Kidney Stones, Enlarged Prostate, Renal Cell Carcinoma"}
+{"Symptoms": "Sore throat, Difficulty swallowing, Ear pain", "Diseases": "Tonsillitis, Pharyngitis, Otitis media"}
+{"Symptoms": "Nasal congestion, Sneezing, Postnasal drip", "Diseases": "Allergic rhinitis, Sinusitis, Nasal polyps"}
+{"Symptoms": "Ear discharge, Hearing loss, Dizziness", "Diseases": "Otitis externa, Otitis media, Meniere's disease"}
+{"Symptoms": "Snoring, Daytime fatigue, Headaches", "Diseases": "Obstructive sleep apnea, Sinusitis, Deviated nasal septum"}
+{"Symptoms": "Hoarse voice, Difficulty breathing, Cough", "Diseases": "Laryngitis, Asthma, COPD"}
+{"Symptoms": "Frequent Urination, Painful Urination, Blood in Urine", "Diseases": "Urinary Tract Infection, Kidney Stones, Urinary Tract Obstruction"}
+{"Symptoms": "Swelling in Legs, Decreased Urine Output, Nausea", "Diseases": "Chronic Kidney Disease, Acute Kidney Injury, Nephrotic Syndrome"}
+{"Symptoms": "High Blood Pressure, Fatigue, Difficulty in Breathing", "Diseases": "Polycystic Kidney Disease, Glomerulonephritis, Diabetic Nephropathy"}
+{"Symptoms": "Back Pain, Fever, Loss of Appetite", "Diseases": "Pyelonephritis, Nephritis, Renal Tuberculosis"}
+{"Symptoms": "Muscle Cramps, Itching, Metallic Taste in Mouth", "Diseases": "End Stage Renal Disease, Uremic Pruritus, Secondary Hyperparathyroidism"}
+{"Symptoms": "Jaundice, Abdominal Pain, Nausea, Loss of Appetite", "Diseases": "Hepatitis A, Hepatitis B, Hepatitis C, Fatty Liver Disease, Cirrhosis"}
+{"Symptoms": "Ascites, Swelling in Legs, Loss of Weight", "Diseases": "Liver Cancer, Liver Failure, Portal Hypertension, Primary Sclerosing Cholangitis"}
+{"Symptoms": "Dark Urine, Pale Stool, Chronic Fatigue", "Diseases": "Gilbert's Syndrome, Hemochromatosis, Wilson's Disease"}
+{"Symptoms": "Mental Confusion, Hand Tremors, Slurred Speech", "Diseases": "Hepatic Encephalopathy, Alcoholic Liver Disease, Hepatic Steatosis"}
+{"Symptoms": "Itchy Skin, Spider Angiomas, Easy Bruising", "Diseases": "Autoimmune Hepatitis, Primary Biliary Cholangitis, Primary Sclerosing Cholangitis"}
+{"Symptoms": "Joint Pain, Skin Rash, Hair Loss", "Diseases": "Lupus, Rheumatoid Arthritis, Scleroderma"}
+{"Symptoms": "Abdominal Pain, Diarrhea, Weight Loss", "Diseases": "Crohn's Disease, Ulcerative Colitis, Celiac Disease"}
+{"Symptoms": "Extreme Fatigue, Depression, Memory Loss", "Diseases": "Multiple Sclerosis, Myasthenia Gravis, Lupus"}
+{"Symptoms": "Dry Eyes, Dry Mouth, Joint Stiffness", "Diseases": "Sjogren's Syndrome, Rheumatoid Arthritis, Systemic Sclerosis"}
+{"Symptoms": "Muscle Weakness, Difficulty Swallowing, Difficulty Breathing", "Diseases": "Myositis, Polymyositis, Dermatomyositis"}
+{"Symptoms": "Sneezing, Runny Nose, Itchy Eyes, Rash", "Diseases": "Hay Fever, Asthma, Allergic Rhinitis, Eczema, Dermatitis"}
+{"Symptoms": "Difficulty Breathing, Wheezing, Chest Tightness, Cough", "Diseases": "Asthma, Allergic Bronchitis, Chronic Obstructive Pulmonary Disease (COPD), Anaphylaxis"}
+{"Symptoms": "Stomach Pain, Diarrhea, Vomiting, Hives", "Diseases": "Food Allergy, Lactose Intolerance, Celiac Disease, Irritable Bowel Syndrome"}
+{"Symptoms": "Swollen Lips, Itchy Throat, Difficulty Swallowing, Nausea", "Diseases": "Oral Allergy Syndrome, Food Allergy, Anaphylaxis, Drug Allergy"}
+{"Symptoms": "Headache, Fatigue, Dizziness, Nasal Congestion", "Diseases": "Sinusitis, Allergic Rhinitis, Migraine, Chronic Fatigue Syndrome, Fibromyalgia"}
+{"Symptoms": "Joint pain, Stiffness, Swelling", "Diseases": "Osteoarthritis, Rheumatoid Arthritis, Gout"}
+{"Symptoms": "Fever, Rash, Joint inflammation", "Diseases": "Lupus, Sjogren's Syndrome, Rheumatic Fever"}
+{"Symptoms": "Fatigue, Muscle weakness, Numbness", "Diseases": "Fibromyalgia, Polymyositis, Multiple Sclerosis"}
+{"Symptoms": "Dry eyes, Dry mouth, Joint pain", "Diseases": "Sjogren's Syndrome, Rheumatoid Arthritis, Systemic Sclerosis"}
+{"Symptoms": "Morning stiffness, Fatigue, Tender points", "Diseases": "Fibromyalgia, Ankylosing Spondylitis, Polymyalgia Rheumatica"}
+{"Symptoms": "Toothache, Swollen Gums, Bad Breath", "Diseases": "Cavities, Gingivitis, Periodontitis"}
+{"Symptoms": "Tooth Sensitivity, Jaw Pain, Difficulty Chewing", "Diseases": "Tooth Abscess, Temporomandibular Joint Disorder, Oral Cancer"}
+{"Symptoms": "Bleeding Gums, Loose Teeth, Red or White Patches in Mouth", "Diseases": "Gingivitis, Periodontitis, Oral Cancer"}
+{"Symptoms": "Dry Mouth, Difficulty Swallowing, Changes in Taste", "Diseases": "Xerostomia, Esophageal Disorders, Oral Thrush"}
+{"Symptoms": "Mouth Sores, Cracked Lips, Dry Tongue", "Diseases": "Canker Sores, Angular Cheilitis, Dry Mouth Syndrome"}
+{"Symptoms": "Weight gain, Increased thirst, Frequent urination", "Diseases": "Diabetes, Hypothyroidism, Polycystic Ovary Syndrome"}
+{"Symptoms": "Extreme fatigue, Unexplained weight loss, Increased appetite", "Diseases": "Hyperthyroidism, Cushing's Syndrome, Addison's Disease"}
+{"Symptoms": "Jaundice, Abdominal pain, Loss of appetite", "Diseases": "Hepatitis B, Fatty Liver Disease, Celiac Disease"}
+{"Symptoms": "Muscle weakness, Numbness in hands and feet, Blurred vision", "Diseases": "Diabetic Neuropathy, Vitamin B12 Deficiency, Diabetic Retinopathy"}
+{"Symptoms": "Confusion, Difficulty speaking, Paralysis", "Diseases": "Stroke, Dementia, Multiple Sclerosis"}
+{"Symptoms": "Headache, Blurred Vision, Dizziness", "Diseases": "Hypertensive Crisis, Hypertensive Retinopathy, Hypertensive Encephalopathy"}
+{"Symptoms": "Chest Pain, Difficulty Breathing, Irregular Heartbeat", "Diseases": "Hypertensive Heart Disease, Heart Attack, Stroke"}
+{"Symptoms": "Nausea, Vomiting, Fatigue", "Diseases": "Hypertensive Emergency, Chronic Kidney Disease, Preeclampsia"}
+{"Symptoms": "Nosebleeds, Facial Flushing, Anxiety", "Diseases": "Essential Hypertension, Renal Artery Stenosis, Hyperthyroidism"}
+{"Symptoms": "Swelling in Feet and Ankles, Fatigue, Shortness of Breath", "Diseases": "Congestive Heart Failure, Chronic Obstructive Pulmonary Disease, Pulmonary Hypertension"}
+{"Symptoms": "Weight Loss, Poor Appetite, Fatigue, Dry Skin, Weakness", "Diseases": "Malnutrition, Anorexia Nervosa, Celiac Disease, Diabetes, Thyroid Disorders"}
+{"Symptoms": "Pale Skin, Brittle Hair, Dizziness, Numbness in Hands and Feet, Difficulty Concentrating", "Diseases": "Iron Deficiency Anemia, Vitamin B12 Deficiency, Hypothyroidism, Kidney Disease, Chronic Malnutrition"}
+{"Symptoms": "Abdominal Pain, Diarrhea, Bloating, Nausea, Vomiting", "Diseases": "Gastroenteritis, Irritable Bowel Syndrome, Inflammatory Bowel Disease, Malabsorption Syndrome, Food Allergies"}
+{"Symptoms": "Delayed Growth, Irritability, Frequent Infections, Poor Wound Healing, Muscle Weakness", "Diseases": "Protein-Energy Malnutrition, Kwashiorkor, Marasmus, Zinc Deficiency, Vitamin D Deficiency"}
+{"Symptoms": "Dry Eyes, Night Blindness, Dry Skin, Delayed Wound Healing, Easy Bruising", "Diseases": "Vitamin A Deficiency, Zinc Deficiency, Essential Fatty Acid Deficiency, Vitamin K Deficiency, Cystic Fibrosis"}
+{"Symptoms": "Redness, Itching, Scaly rash", "Diseases": "Psoriasis, Eczema, Ringworm"}
+{"Symptoms": "Blisters, Fever, Muscle aches", "Diseases": "Chickenpox, Shingles, Impetigo"}
+{"Symptoms": "Painful sores, Swelling, Headache", "Diseases": "Herpes, Syphilis, Gonorrhea"}
+{"Symptoms": "Bumps, Flaking skin, Hair loss", "Diseases": "Leprosy, Scabies, Alopecia"}
+{"Symptoms": "Foul odor, Discharge, Painful urination", "Diseases": "Yeast infection, Trichomoniasis, Chlamydia"}
+{"Symptoms": "Heartburn, Regurgitation, Difficulty Swallowing", "Diseases": "GERD, Peptic Ulcer Disease, Gastritis"}
+{"Symptoms": "Nausea, Vomiting, Abdominal Pain", "Diseases": "Gallstones, Pancreatitis, Gastric Cancer"}
+{"Symptoms": "Chronic Cough, Hoarseness, Asthma", "Diseases": "GERD, Laryngopharyngeal Reflux Disease (LPRD), Chronic Obstructive Pulmonary Disease (COPD)"}
+{"Symptoms": "Bloating, Gas, Constipation", "Diseases": "Irritable Bowel Syndrome (IBS), Lactose Intolerance, Celiac Disease"}
+{"Symptoms": "Chest Pain, Difficulty Breathing, Anxiety", "Diseases": "GERD, Esophageal Spasm, Panic Disorder"}
+{"Symptoms": "Weight gain, Fatigue, Dry skin, Constipation, Puffy face", "Diseases": "Hypothyroidism, Hashimoto's disease, Graves' disease, Goiter, Thyroid nodules"}
+{"Symptoms": "Weight loss, Rapid heart rate, Anxiety, Tremors, Diarrhea", "Diseases": "Hyperthyroidism, Graves' disease, Thyroiditis, Thyroid storm, Thyroid cancer"}
+{"Symptoms": "Hair loss, Depression, Memory problems, Cold intolerance, Muscle cramps", "Diseases": "Hypothyroidism, Hashimoto's disease, Thyroiditis, Thyroid nodules, Thyroid cancer"}
+{"Symptoms": "Irritability, Sleep disturbances, Heat intolerance, Hand tremors, Weight loss", "Diseases": "Hyperthyroidism, Graves' disease, Thyroiditis, Thyroid storm, Thyroid cancer"}
+{"Symptoms": "Irregular periods, Infertility, Decreased libido, Dry skin, Weight gain", "Diseases": "Hypothyroidism, Hashimoto's disease, Thyroiditis, Thyroid nodules, Thyroid cancer"}
+{"Symptoms": "Excessive bruising, Bleeding gums, Heavy menstruation", "Diseases": "Hemophilia, von Willebrand disease, Idiopathic thrombocytopenic purpura"}
+{"Symptoms": "Joint pain, Swollen legs, Shortness of breath", "Diseases": "Deep vein thrombosis, Factor V Leiden, Antiphospholipid syndrome"}
+{"Symptoms": "Easy bruising, Red spots on skin, Nosebleeds", "Diseases": "Von Willebrand disease, Hemophilia, Thrombotic thrombocytopenic purpura"}
+{"Symptoms": "Frequent headaches, Vision changes, Numbness or weakness in limbs", "Diseases": "Stroke, Cerebral venous sinus thrombosis, Thrombotic thrombocytopenic purpura"}
+{"Symptoms": "Painful periods, Fatigue, Dizziness", "Diseases": "Von Willebrand disease, Hemophilia, Antiphospholipid syndrome"}
+{"Symptoms": "Cough, Sore Throat, Fever", "Diseases": "Common Cold, Influenza, COVID-19, Bronchitis, Pneumonia"}
+{"Symptoms": "Cough, Sore Throat, Fatigue", "Diseases": "Tuberculosis, Respiratory Syncytial Virus, Measles, Pertussis, Sinusitis"}
+{"Symptoms": "Cough, Sore Throat, Difficulty Breathing", "Diseases": "Lung Cancer, Pulmonary Fibrosis, Pulmonary Hypertension, Asthma, Chronic Obstructive Pulmonary Disease (COPD)"}
+{"Symptoms": "Cough, Sore Throat, Headache", "Diseases": "Diphtheria, Legionnaires' Disease, Meningitis, Scarlet Fever, Streptococcal Infection"}
+{"Symptoms": "Cough, Sore Throat, Runny Nose", "Diseases": "Allergies, Adenovirus, Rhinovirus, Coxsackievirus, Parainfluenza Virus"}
+{"Symptoms": "Weight gain, Fatigue, Hair loss", "Diseases": "Hypothyroidism, Hashimoto's thyroiditis, Graves' disease"}
+{"Symptoms": "Weight loss, Anxiety, Rapid heartbeat", "Diseases": "Hyperthyroidism, Graves' disease, Thyroid storm"}
+{"Symptoms": "Dry skin, Constipation, Muscle cramps", "Diseases": "Hypothyroidism, Hashimoto's thyroiditis, Thyroid nodules"}
+{"Symptoms": "Sensitivity to cold, Depression, Thinning hair", "Diseases": "Hypothyroidism, Hashimoto's thyroiditis, Thyroid cancer"}
+{"Symptoms": "Heart palpitations, Tremors, Insomnia", "Diseases": "Hyperthyroidism, Graves' disease, Thyroiditis"}
+{"Symptoms": "Inattention, Hyperactivity, Impulsivity", "Diseases": "Attention Deficit Hyperactivity Disorder (ADHD), Oppositional Defiant Disorder (ODD), Conduct Disorder (CD)"}
+{"Symptoms": "Difficulty staying organized, Forgetfulness, Difficulty following through", "Diseases": "Dyslexia, Dyscalculia, Dysgraphia"}
+{"Symptoms": "Trouble concentrating, Difficulty sitting still, Poor time management", "Diseases": "Bipolar Disorder, Generalized Anxiety Disorder (GAD), Obsessive Compulsive Disorder (OCD)"}
+{"Symptoms": "Aggressive behavior, Restlessness, Difficulty completing tasks", "Diseases": "Intermittent Explosive Disorder (IED), Conduct Disorder (CD), Oppositional Defiant Disorder (ODD)"}
+{"Symptoms": "Frequent mood swings, Difficulty paying attention, Poor decision-making skills", "Diseases": "Borderline Personality Disorder (BPD), Substance Use Disorder (SUD), Bipolar Disorder"}
