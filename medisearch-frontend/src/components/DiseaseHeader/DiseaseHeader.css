@@ -1,0 +1,46 @@
+.disease-header {
+    text-align: center;
+}
+
+.diseasecards-row-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.diseasecards-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    /* Adjust the margin as needed to control the spacing between the columns */
+}
+
+/* You may need to set the width of the cards as needed */
+.DiseaseSingleCard {
+    width: 200px;
+    /* Adjust the width as needed */
+    margin: 10px;
+    /* Adjust the margin as needed to control the spacing between the cards */
+}
+
+.patient-details {
+    text-align: center;
+    justify-content: center;
+}
+
+.patient-heading {
+    padding-top: 75px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font: bolder;
+}
+
+.symptoms-details {
+    text-align: center;
+    justify-content: center;
+}
+
+.symptoms-heading {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: bolder;
+}

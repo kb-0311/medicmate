@@ -1,0 +1,113 @@
+header {
+    margin-top: 50px;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(160deg, #34C9B6, #34C9B6 60%, #f8fbff 60%, #f8fbff);
+}
+
+.header-row {
+    display: flex;
+}
+
+.header-row-left-column {
+    float: left;
+    width: 70%;
+}
+
+.header-row-right-column {
+    width: 30%;
+}
+
+.header-row-left-column-head {
+ color: #ffffff;
+ font-family: "Roboto-Bold",
+ Helvetica;
+ font-size: 38px;
+ font-weight: 700;
+ left: 110px;
+ letter-spacing: 0;
+ line-height: normal;
+ position: absolute;
+ top: 120px;
+ width: 900px;
+}
+
+.header-row-left-column-desc {
+    color: #ffffff;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 25px;
+    font-weight: 400;
+    left: 110px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 180px;
+    width: 700px;
+}
+
+
+.header-row-left-column-desc-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+.usage-guide-button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+.usage-guide-button:hover {
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.start-diagnosis-button {
+    background-color: #C7F2FF;
+    border: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+.start-diagnosis-button:hover {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.phone-img {
+    padding-top: 95px;
+    width: 300px;
+    height: 520px;
+}

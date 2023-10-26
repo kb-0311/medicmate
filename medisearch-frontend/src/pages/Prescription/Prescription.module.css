@@ -1,0 +1,48 @@
+/* Prescription.module.css */
+
+.prescriptionContainer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.prescriptionTitle {
+    color: #333;
+    font-size: 24px;
+}
+
+.medicinesList {
+    list-style: none;
+    padding: 0;
+}
+
+.medicineItem {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.medicineName {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.medicineDosage {
+    color: #666;
+    font-size: 16px;
+}
+
+.changeDosageButton {
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.changeDosageButton:hover {
+    background-color: #005f92;
+}

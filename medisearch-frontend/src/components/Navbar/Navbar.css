@@ -1,0 +1,68 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #11263D;
+    color: #fff;
+    padding: 5px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-right: 20px;
+}
+
+.navbar-logo {
+    padding-top: 5px;
+    height: 45px;
+    width: 45px;
+    /* max-width: 100%;     */
+}
+
+.navbar-brand {
+    font-size: 50px;
+    font-family: sans-serif;
+    padding-left: 20px;
+    /* Adjust the left margin to your preference */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    /* Remove the default margin */
+}
+
+.navbar-links li {
+    margin: 0 10px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-buttons {
+    padding-right: 20px;
+    margin-right: 20px;
+    /* Adjust the right margin to your preference */
+}
+
+.login-button {
+    text-decoration: none;
+    background-color: #fff;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* Adjust the left margin to create space between the links and login */
+}
+
+/* Align links and login to the top right */
+.navbar-links {
+    margin-left: auto;
+    display: flex;  
+}
