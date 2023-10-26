@@ -1,0 +1,57 @@
+.disease-header {
+    background-color: #f8fbff;
+    text-align: center;
+}
+
+.disease-heading {
+    color: black;
+    margin-top: 75px;
+    padding-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font: bolder;
+    /* margin-left: 30px; */
+    /* text-align: center; */
+}
+
+.diseasecards-row {
+    display: flex;
+    /* flex-direction: column; */
+    padding: 5px;
+    justify-content: center;
+}
+
+.diseasecards-row-all {
+    padding-bottom: 30px;
+}
+
+
+.workflow-heading {
+    display: flex;
+    /* Use Flexbox to center content vertically and horizontally */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    padding-top: 80px;
+    /* This is optional to center vertically within the viewport height */
+}
+
+.workflow-head {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: bolder;
+    /* Center-align the text horizontally within the heading element */
+}
+
+.workflow-diagram {
+    /* padding-top: 90px; */
+    text-align: center;
+    /* Center-align the child elements horizontally */
+}
+
+.workflow-img {
+    display: block;
+    /* Make the image a block element for centering */
+    margin: 0 auto;
+    /* Center-align the image horizontally using margin */
+}
