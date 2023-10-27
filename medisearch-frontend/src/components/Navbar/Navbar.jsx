@@ -72,19 +72,25 @@ function Navbar() {
         <li>
           <a href="#a">{windowWidth < 467 ? "About" : "About Us"}</a>
         </li>
-        {/* <li>
-          <a href="#a">Contact Us</a>
-        </li> */}
+        <li>
+          <a href="/join">Sign-Up</a>
+        </li>
       </ul>
       <div className="navbar-buttons">
-        {!isAuthenticated ? <div>
-        {/* <a href="/login" className="login-button">
+        {!isAuthenticated ? (
+          <div>
+            {/* <a href="/login" className="login-button">
           Login
         </a> */}
-        <button className="login-button" onClick={handleSignInClick}>Sign In</button>
-        </div> : <div>
-          <button className="login-button">Sign Out</button>    
-        </div>}
+            <button className="login-button" onClick={handleSignInClick}>
+              Sign In
+            </button>
+          </div>
+        ) : (
+          <div>
+            <button className="login-button">Sign Out</button>
+          </div>
+        )}
       </div>
     </nav>
   );
