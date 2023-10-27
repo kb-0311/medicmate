@@ -2,7 +2,7 @@ import time
 import requests
 
 while 1:
-    url = 'http://17ce-35-239-255-102.ngrok-free.app'  # This is a simple HTTP request and response service
+    url = 'http://be65-34-83-73-24.ngrok-free.app/predict_disease'  # This is a simple HTTP request and response service
     data = {'key1': 'value1', 'key2': 'value2'}
 
     # Making the POST request
