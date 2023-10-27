@@ -97,3 +97,34 @@ export const loaddiseases = (Symptoms) => async (dispatch) => {
     });
   }
 };
+
+export const loadPrescription = (Symptoms, disease) => async (dispatch) => {
+  try {
+      dispatch({
+          type: "PrescriptionRequest",
+      });
+    
+    const { data }  = await axios.post(
+        `http://6491-34-125-63-211.ngrok-free.app/predict_medicine`,
+        {
+          Symptoms: Symptoms,
+          Disease: disease,},
+      ).then((res) => { 
+        console.log(res.data.Medicines, "res")
+        return res;
+      });
+    
+    // console.log(data.Medicines, "kkkkkk")
+    
+      dispatch({
+        type: "PrescriptionSuccess",
+        data:data.Medicines,
+      });
+    
+  } catch (error) {
+    dispatch({
+      type: "PrescriptionFailure",
+      payload: error.response.data.message,
+    });
+  }
+};

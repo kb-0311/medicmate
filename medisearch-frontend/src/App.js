@@ -20,11 +20,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/diagnosis" element={<InputPage />} />
-          <Route path="/disease-list" element={<DiseasePage />} />
+          <Route path="/disease-list/:id" element={<DiseasePage />} />
           <Route path="/usage" element={<UsagePage />} />
-          <Route path="/prescription/:id" element={<Prescription />} />
+          <Route path="/prescription/:prescriptionId/:disease" element={<Prescription />} />
           <Route path="/login" element={<LoginForm />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/join" element={<CreateAcc />} />
           <Route path="/allreq" element={<RequestFeed />} />
           <Route path="/operatorfeed" element={<OperatorFeed />} />

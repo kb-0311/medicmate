@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import RequestCard from "../../components/RequestCard/RequestCard";
 import Navbar from "../../components/Navbar/Navbar";
@@ -7,159 +7,11 @@ import { abi, contractAddress } from "../../data/metamask";
 import { ethers, utils } from "ethers";
 
 export default function RequestFeed() {
-  const requests = [
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-    {
-      id: 1,
-      age: 30,
-      gender: "Male",
-      symptoms: ["Fever", "Cough"],
-      disease: ["Common Cold"],
-    },
-  ];
+  const [cards, setCards] = useState([]);
 
   const handleAcceptRequest = (acceptedRequest) => {
     // Implement the logic to accept the request
-    console.log("Accepted request ID"`${acceptedRequest.id}`);
+    console.log("Accepted request ID:", acceptedRequest.id);
   };
 
   useEffect(() => {
@@ -169,14 +21,30 @@ export default function RequestFeed() {
         const signer = await provider.getSigner();
         const contract = new ethers.Contract(contractAddress, abi, signer);
         try {
-          // const deseaseList =
-          // console.log(Dlist.data.Diseases, "geted")
           const tx = await contract.getPending();
-          // const responseFormat = ["uint256[]"];
           const array = tx.map((item) => item.toString());
-          console.log(array);
-          for (var i = 0; i < array.length; i++) {}
-          // const tx1 = await contract.get();
+          // console.log(array)
+      
+          const requests = []; 
+
+          for (var i = 0; i < array.length; i++) {
+            const index = parseInt(array[i], 10); 
+            const prescription = await contract.getPrescription(index);
+            const arrayx = prescription.map((item) => item.toString());
+ 
+            requests.push({
+              prescriptionId: arrayx[0],
+              operatorId: arrayx[2],
+              symptoms: arrayx[5],
+              disease: arrayx[6],
+            });
+          }
+
+          setCards(requests.map((request) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={request.id}>
+              <RequestCard request={request} onAccept={handleAcceptRequest} />
+            </Grid>
+          )));
         } catch (error) {
           alert("Error writing to contract: " + error.message);
         }
@@ -187,12 +55,6 @@ export default function RequestFeed() {
 
     getReq();
   }, []);
-
-  const cards = requests.map((request) => (
-    <Grid item xs={12} sm={6} md={4} lg={3} key={request.id}>
-      <RequestCard request={request} onAccept={handleAcceptRequest} />
-    </Grid>
-  ));
 
   return (
     <>

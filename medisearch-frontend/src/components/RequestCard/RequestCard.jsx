@@ -6,23 +6,27 @@ export default function RequestCard({ request, onAccept, access }) {
   const navigate = useNavigate();
   
   const handleAcceptClick = () => {
-    console.log(access)
-    onAccept(request);
+    const requestId = request.prescriptionId;
+    navigate(`/disease-list/${requestId}`);
   };
 
   const handleDetailsClick = () => {
-    const requestId = request.id;
-    navigate(`/prescription/${requestId}`);
+    const requestId = request.prescriptionId;
+    navigate(`/disease-list/${requestId}`);
   };
 
   return (
     <div className={styles.customCard}>
       <div className={styles.cardContent}>
         <h5 className={styles.cardTitle}>
-          Age: {request.age}, Gender: {request.gender}
+        PrescriptionId:{request.prescriptionId} 
         </h5>
-        <p className={styles.cardText}>Symptoms: {request.symptoms.join(", ")}</p>
-        <p className={styles.cardText}>Disease: {request.disease.join(", ")}</p>
+        <p className={styles.cardText}>
+          <strong>Symptoms:</strong> {request.symptoms} 
+        </p>
+        <p className={styles.cardText}>
+          <strong>Disease:</strong> {request.disease} 
+        </p>
         {access === 'op-accepted' ? (
           <button className={styles.stateButton} onClick={handleDetailsClick}>
             Details

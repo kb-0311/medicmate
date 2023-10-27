@@ -9,6 +9,7 @@
     transition: transform 0.3s; /* Add transition for smooth scaling on hover */
     background-color: #d8f0f9;
     overflow-y: auto;
+    word-wrap: break-word;
 }
 
 .customCard::-webkit-scrollbar {

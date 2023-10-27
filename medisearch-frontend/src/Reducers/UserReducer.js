@@ -42,4 +42,15 @@ export const userReducer = createReducer(initialState, {
             state.loading = false;
             state.error = action.payload;
         },
+        PrescriptionRequest: (state) => {
+            state.loading = true;
+        },
+        PrescriptionSuccess: (state, action) => {
+            state.loading = false;
+            state.Prescription = action.data;
+        },
+        PrescriptionFailure: (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        },
     });

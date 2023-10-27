@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./DiseaseHeader.css";
 import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 
-const DiseaseHeader = ({ data }) => {
-  const { patientIndex, patientData, diseaseData } = data;
+const DiseaseHeader = ({data}) => {
+  const { prescriptionID, patientData, diseaseData } = data;
 
   const groupedDiseaseData = [];
   for (let i = 0; i < diseaseData.length; i += 2) {
     const diseasePair = diseaseData.slice(i, i + 2);
     groupedDiseaseData.push(diseasePair);
   }
+
+  useEffect(() => {
+    console.log(data, "ghdghfg")
+  }, []);
 
   return (
     <div>
@@ -76,7 +80,7 @@ const DiseaseHeader = ({ data }) => {
               {diseasePair.map((diseaseName, subIndex) => (
                 <DiseaseSingleCard
                   key={subIndex}
-                  patientIndex={patientIndex}
+                  PrescriptionID={prescriptionID}
                   diseaseName={diseaseName}
                 />
               ))}

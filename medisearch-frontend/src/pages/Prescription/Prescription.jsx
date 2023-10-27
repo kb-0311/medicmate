@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import MedicineItem from "../../components/MedicineItem/MedicineItem";
 import styles from "./Prescription.module.css";
+import { useParams } from "react-router";
+import { ethers } from "ethers";
+import { abi, contractAddress } from "../../data/metamask";
+import { useDispatch, useSelector } from "react-redux";
+import { loadPrescription } from "../../Actions/UserActions";
 
 export const Prescription = () => {
+  const dispatch = useDispatch();
   const [medicines, setMedicines] = useState([
     {
       name: "Medicine A",
@@ -17,8 +23,14 @@ export const Prescription = () => {
       dose: "1-0-1",
       duration: "3 weeks",
     },
-    
   ]);
+
+  const [newMedicineName, setNewMedicineName] = useState(""); // State for the new medicine input
+  const [isAddingMedicine, setIsAddingMedicine] = useState(false); // State to toggle input field visibility
+
+  const prescription = useSelector((state) => state.user.Prescription);
+
+  const { prescriptionId, disease } = useParams();
 
   const handleDosageChange = (index, newDosage) => {
     setMedicines((prevMedicines) => {
@@ -63,9 +75,67 @@ export const Prescription = () => {
     setSearchVisible(false);
   };
 
+  const handleNewMedicineNameChange = (event) => {
+    setNewMedicineName(event.target.value);
+  };
+
+
   const handlesubmit = () => {
-    console.log(medicines, "hello")
-  }
+    console.log(medicines, "hello");
+  };
+
+  useEffect(() => {
+    async function getReq() {
+      if (typeof window.ethereum !== "undefined") {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, abi, signer);
+        try {
+          const prescription = await contract.getPrescription(prescriptionId);
+          const arrayx = prescription.map((item) => item.toString());
+          console.log(arrayx, "hello");
+          const symptoms = arrayx[5];
+
+          dispatch(loadPrescription(symptoms, disease));
+        } catch (error) {
+          alert("Error writing to contract: " + error.message);
+        }
+      } else {
+        alert("MetaMask is not installed.");
+      }
+    }
+
+    getReq();
+  }, [prescriptionId, disease]);
+
+  useEffect(() => {
+    console.log(prescription, "f")
+    if (prescription && prescription.length > 0) {
+      
+      const newMedicines = prescription.map((medicineName) => ({
+        name: medicineName,
+        strength: "0mg",
+        dose: "0-0-0",
+        duration: "0 weeks",
+      }));
+      setMedicines(newMedicines);
+    }
+  }, [prescription]);
+
+  const handleAddNewMedicine = () => {
+    if (newMedicineName) {
+      setMedicines((prevMedicines) => [
+        ...prevMedicines,
+        {
+          name: newMedicineName,
+          strength: "0mg",
+          dose: "0-0-0",
+          duration: "0 weeks",
+        },
+      ]);
+      setNewMedicineName(""); 
+    }
+  };
 
   return (
     <>
@@ -108,24 +178,22 @@ export const Prescription = () => {
         <div className={styles.addButtonContainer}>
           {searchVisible ? (
             <div className={styles.searchBar}>
-              <input
+              {/* <input
                 type="text"
                 placeholder="Search for medicines"
                 value={searchText}
                 className={styles.searchBarinput}
                 onChange={handleSearchTextChange}
-              />
-              <div className={styles.suggestedMedicines}>
-                {suggestedMedicines.map((suggestedMedicine, index) => (
-                  <div
-                    key={index}
-                    className={styles.suggestedMedicine}
-                    onClick={() => addSuggestedMedicine(suggestedMedicine)}
-                  >
-                    {suggestedMedicine}
-                  </div>
-                ))}
-              </div>
+              /> */}
+              <div>
+            <input
+              type="text"
+              placeholder="Enter Medicine Name"
+              value={newMedicineName}
+              onChange={handleNewMedicineNameChange}
+            />
+            <button onClick={handleAddNewMedicine}>Add Medicine</button>
+          </div>
             </div>
           ) : (
             <div
@@ -136,10 +204,19 @@ export const Prescription = () => {
             </div>
           )}
         </div>
-        <div
-              className={styles.submit}
-              onClick={handlesubmit()}
-        >
+        {isAddingMedicine ? (
+          <div>
+            <input
+              type="text"
+              placeholder="Enter Medicine Name"
+              value={newMedicineName}
+              onChange={handleNewMedicineNameChange}
+            />
+            <button onClick={handleAddNewMedicine}>Add Medicine</button>
+          </div>
+        ) : null}
+        <div className={styles.submit} onClick={handlesubmit}>
+          Submit
         </div>
       </div>
     </>
