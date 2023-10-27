@@ -8,6 +8,7 @@ import { Prescription } from "./pages/Prescription/Prescription";
 import LoginForm from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import RequestFeed from "./pages/RequestFeed/RequestFeed";
+import OperatorFeed from "./pages/OperatorFeed/OperatorFeed";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/prescription/:id" element={<Prescription />} />
         <Route path="/login" element={<LoginForm/>} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/allreq" element={<RequestFeed/>} />
+        <Route path="/allreq" element={<RequestFeed />} />
+        <Route path="/operatorfeed" element={<OperatorFeed/>} />
       </Routes>
     </Router>
   );

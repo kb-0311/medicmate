@@ -37,7 +37,7 @@
     word-wrap: break-word;
 }
 
-.acceptButton {
+.stateButton {
     background-color: #345171;
     color: white;
     padding: 10px;
@@ -48,6 +48,21 @@
     transition: background-color 0.3s;
 }
 
-.acceptButton:hover {
+.stateButton:hover {
     background-color: #11263D;
+}
+
+.pendingButton {
+    background-color: #345171;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pendingButton:hover {
+    background-color: #345171;
 }

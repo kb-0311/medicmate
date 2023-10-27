@@ -1,8 +1,8 @@
 import React from "react";
-import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Grid } from "@mui/material";
 import RequestCard from "../../components/RequestCard/RequestCard";
 import Navbar from "../../components/Navbar/Navbar";
-import styles from "./RequestFeed.module.css"; // Import the CSS module
+import styles from "./RequestFeed.module.css"; 
 
 export default function RequestFeed() {
   const requests = [
@@ -136,9 +136,6 @@ export default function RequestFeed() {
     // Implement the logic to accept the request
     console.log(`Accepted request ID ${acceptedRequest.id}`);
   };
-
-  const theme = useTheme();
-  const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const cards = requests.map((request) => (
     <Grid item xs={12} sm={6} md={4} lg={3} key={request.id}>
