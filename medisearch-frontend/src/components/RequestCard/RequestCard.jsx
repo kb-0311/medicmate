@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function RequestCard({ request, onAccept, access }) {
   const navigate = useNavigate();
-
+  
   const handleAcceptClick = () => {
     console.log(access)
     onAccept(request);
@@ -22,6 +22,7 @@ export default function RequestCard({ request, onAccept, access }) {
           Age: {request.age}, Gender: {request.gender}
         </h5>
         <p className={styles.cardText}>Symptoms: {request.symptoms.join(", ")}</p>
+        <p className={styles.cardText}>Disease: {request.disease.join(", ")}</p>
         {access === 'op-accepted' ? (
           <button className={styles.stateButton} onClick={handleDetailsClick}>
             Details

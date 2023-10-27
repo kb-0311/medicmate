@@ -76,17 +76,18 @@ export const loaddiseases = (Symptoms) => async (dispatch) => {
       });
     
       const  data  = await axios.post(
-        `http://b2c5-35-232-117-22.ngrok-free.app/predict_disease`,
+        `http://be65-34-83-73-24.ngrok-free.app/predict_disease`,
         {Symptoms:Symptoms},
       ).then((res) => { 
         console.log(res, "res")
         return res;
       });
   
-    // console.log(data, "fbgfjffashgaf")
+    console.log(data, "fbgfjffashgaf")
     
       dispatch({
-          type: "DiseasesSuccess",
+        type: "DiseasesSuccess",
+        data:data,
       });
     
   } catch (error) {

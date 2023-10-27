@@ -1,24 +1,68 @@
-import React, { useState } from "react";
+
+import React, { Children, useEffect } from "react";
 import "./InputHeader.css";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { abi, contractAddress } from "../../data/metamask";
+import { useDispatch, useSelector } from "react-redux";
 import { loaddiseases } from "../../Actions/UserActions";
 
+const abiobj = abi;
+const contractAddressobj = contractAddress;
+const ethers = require("ethers");
+var inpsymp;
+var stringList;
+var Dlist;
+
+async function writeContract() {
+  if (typeof window.ethereum !== "undefined") {
+    const abi = abiobj;
+    const contractAddress = contractAddressobj;
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, abi, signer);
+    try {
+      // const deseaseList =
+      console.log(Dlist.data.Diseases, "geted")
+      const tx = await contract.addPrescriptionStep1(stringList, Dlist.data.Diseases);
+      console.log("Transaction Hash: ", tx.hash);
+      const receipt = await tx.wait();
+      console.log("Transaction Receipt: ", receipt);
+      
+    } catch (error) {
+      alert("Error writing to contract: " + error.message);
+    }
+  } else {
+    alert("MetaMask is not installed.");
+  }
+}
+
 const InputHeader = () => {
-  const isButtonEnabled = true; // Set it to true or false based on your logic
+  const isButtonEnabled = true; 
   const navigate = useNavigate();
+  const Diseases = useSelector((state) => state.user.Diseases);
   const dispatch = useDispatch();
-  const [symptoms, setSymptoms] = useState("");
+
+  useEffect(() => {
+    Dlist = Diseases;
+  }, [Diseases]);
 
   const viewDiseases = () => {
-    dispatch(loaddiseases(symptoms));
-    // navigate("/disease-list");
+    navigate("/disease-list");
   };
 
+  const [symptoms, setSymptoms] = React.useState("");
   const handleSymptomsChange = (event) => {
     setSymptoms(event.target.value);
   };
+
+  async function handleClick(e) {
+    console.log({ symptoms });
+    inpsymp = symptoms;
+    stringList = inpsymp.split(",");
+    await dispatch(loaddiseases(symptoms))
+    writeContract();
+  }
 
   return (
     <div>
@@ -41,14 +85,14 @@ const InputHeader = () => {
               justifyContent: "center",
             }}
           >
-             <TextField
+            <TextField
               id="outlined-multiline-static"
               label="Symptoms"
               multiline
               rows={4}
               placeholder="eg. Cough, Headache, etc..."
               style={{ width: "75%" }}
-              value={symptoms}
+              value={symptoms} // Set the value of the text field to the state variable
               onChange={handleSymptomsChange}
             />
             <div style={{ margin: "8px 0" }}>
@@ -121,9 +165,9 @@ const InputHeader = () => {
             </div>
           </div>
           <div className="submit-and-view-buttons">
-            <button class="submit-detail-button"
-              onClick={viewDiseases}
-            >SUBMIT</button>
+            <button class="submit-detail-button" onClick={handleClick}>
+              SUBMIT
+            </button>
           </div>
         </div>
       </div>

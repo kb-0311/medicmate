@@ -17,7 +17,7 @@ export const Prescription = () => {
       dose: "1-0-1",
       duration: "3 weeks",
     },
-    // Add more medicines here
+    
   ]);
 
   const handleDosageChange = (index, newDosage) => {

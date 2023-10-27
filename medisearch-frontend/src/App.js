@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import RequestFeed from "./pages/RequestFeed/RequestFeed";
 import OperatorFeed from "./pages/OperatorFeed/OperatorFeed";
 import store from './store';
+import CreateAcc from "./pages/CreateAcc/CreateAcc";
 
 function App() {
   return (
@@ -25,8 +26,10 @@ function App() {
           <Route path="/prescription/:id" element={<Prescription />} />
           <Route path="/login" element={<LoginForm/>} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/join" element={<CreateAcc />} />
           <Route path="/allreq" element={<RequestFeed />} />
-          <Route path="/operatorfeed" element={<OperatorFeed/>} />
+          <Route path="/operatorfeed" element={<OperatorFeed />} />
+          
         </Routes>
       </Router>
     </Provider>

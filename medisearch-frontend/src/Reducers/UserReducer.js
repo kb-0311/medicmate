@@ -31,4 +31,15 @@ export const userReducer = createReducer(initialState, {
             state.error = action.payload;
             state.isAuthenticated = true;
         },
+        DiseasesRequest: (state) => {
+            state.loading = true;
+        },
+        DiseasesSuccess: (state, action) => {
+            state.loading = false;
+            state.Diseases = action.data;
+        },
+        DiseasesFailure: (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        },
     });
