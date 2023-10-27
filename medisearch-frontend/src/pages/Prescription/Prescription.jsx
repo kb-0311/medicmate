@@ -53,13 +53,13 @@ export const Prescription = () => {
                 <h1 className={styles.testTitle}>Prescription</h1>
                 <div className={styles.patientDoctorInfo}>
                     <div>
-                        <strong>Doctor:</strong> 123hybw8y89688
+                        <strong>Doctor:</strong> Dr. Sushrut Lachure
                     </div>
                     <div>
-                        <strong>Patient:</strong> J9863873byeby
+                        <strong>Patient Name:</strong> Vishal Singh Tanwar
                     </div>
                     <div>
-                        <strong>Patient Age:</strong> 30 years
+                        <strong>Patient Age:</strong> 12 years
                     </div>
                     <div>
                         <strong>Patient Gender:</strong> Male

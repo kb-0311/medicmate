@@ -44,7 +44,7 @@ function Navbar() {
         </li> */}
       </ul>
       <div className="navbar-buttons">
-        <a href="#a" className="login-button">
+        <a href="/login" className="login-button">
           Login
         </a>
       </div>
