@@ -7,6 +7,7 @@ import { UsagePage } from "./pages/UsagePage";
 import { Prescription } from "./pages/Prescription/Prescription";
 import LoginForm from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import RequestFeed from "./pages/RequestFeed/RequestFeed";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/usage" element={<UsagePage />} />
         <Route path="/prescription/:id" element={<Prescription />} />
         <Route path="/login" element={<LoginForm/>} />
-        <Route path="/signup" element={<Signup/>} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/allreq" element={<RequestFeed/>} />
       </Routes>
     </Router>
   );
