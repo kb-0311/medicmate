@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import { useDispatch, useSelector } from 'react-redux';
-// import { loginUser, registerUser } from '../../Actions/UserActions';
 import SignupCSS from "./Signup.module.css";
-// import { useNavigate } from 'react-router-dom';
+import { ethers } from 'ethers'
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -10,14 +8,20 @@ const Signup = () => {
   const [regnum, setregnum] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   const navigate = useNavigate();
-  //   const dispatch = useDispatch();
-  //   const { loading } = useSelector((state) => state.user);
-  //   const { isAuthenticated, user } = useSelector((state) => state.user);
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    // await dispatch(registerUser(username, email, password));
+    console.log(username, name, regnum, email, password, window.ethereum);
+    
+    if (window.etherium) {
+      const contractAddress = "0x0Cd36a6526311eDD7b5C8C92F8B64dcFe7030218";
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      // const contract = new ethers.Contract(contractAddress, abi, signer);
+    }
+    else {
+      console.log("Not connected");
+    }
   };
 
   //   useEffect(() => {

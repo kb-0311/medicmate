@@ -1,21 +1,52 @@
 import React, { useEffect, useState } from 'react'; 
-// import { useDispatch, useSelector } from 'react-redux';
-// import { loginUser } from '../../Actions/UserActions';
 import LoginCSS from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
+import { ethers } from 'ethers';
+import { loginUser, logoutUser } from '../../Actions/UserActions';
+import {useSelector, useDispatch } from 'react-redux'
 
 const LoginForm = () => {
-  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-//   const dispatch = useDispatch();
-//   const { isAuthenticated , loading, user} = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const { isAuthenticated, loading } = useSelector((state) => state.user);
+  const x = useSelector((state) => state.user);;
   
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    // await dispatch(loginUser(email, password));
-  };
+    const navigate = useNavigate();
+
+    const handleLogin = async () => {
+      try {
+        
+        if (typeof window.ethereum !== "undefined") {
+          const provider = new ethers.BrowserProvider(window.ethereum);
+
+          
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+
+          // Get the connected account
+          const accounts = await provider.listAccounts();
+
+          if (accounts.length > 0) {
+            // console.log(x, accounts, provider);
+            await dispatch(loginUser(accounts[0], provider));
+            // console.log("lj")
+            console.log(x)
+            // navigate("/");
+          }
+        }
+      } catch (error) {
+        console.error("Error while connecting with MetaMask: ", error);
+      }
+    };
+
+      const handleLogout = () => {
+        dispatch(logoutUser());
+        navigate("/");
+      };
+
+
 
 
 //   useEffect(() => {

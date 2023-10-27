@@ -1,14 +1,17 @@
 import React from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
+  const x = useSelector((state) => state.user);
 
   const startDiagnosis = () => {
     navigate("/diagnosis");
   };
   const usageGuide = () => {
+    // console.log(x, "oj")
     navigate("/usage");
   };
 
