@@ -20,6 +20,19 @@ contract MediContract {
         admin.push(ad);
     }
 
+    uint256[] public pending;
+    function removeElement(uint256 index) private {
+        require(index < pending.length, "Index out of bounds");
+
+        // Move the last element to the index being removed
+        pending[index] = pending[pending.length - 1];
+
+        // Remove the last element
+        pending.pop();
+    }
+    function getPending() public view returns(uint256 [] memory){
+        return pending;
+    }
     struct Patient {
         address patient_address;
         uint256 age;
@@ -63,6 +76,7 @@ contract MediContract {
         address pharmacist_address;
         string[] symptoms;
         string[] diseases;
+        string final_disease;
         string [] medicines;
         // Medicine[] medicines;
         bool allDone;
@@ -130,59 +144,70 @@ contract MediContract {
         prescriptions.push(createDefaultStruct());
         prescription_count++;
     }
-    function addPrescriptionStep1(uint256 prescription_id, string[] memory _symptoms)public{
+    function addPrescriptionStep1(string[] memory _symptoms,string[] memory _diseases)public{
         require(Assistant_mapper[msg.sender]!=0, "Unauthorized action");
-        require(prescriptions[prescription_id].assistant_address==address(0),"Overriding not allowed");
-        prescriptions[prescription_id].assistant_address = msg.sender;
-        prescriptions[prescription_id].symptoms = _symptoms;
+        uint256 _prescription_id = prescription_count;
+        prescription_count++;
+        require(prescriptions[_prescription_id].assistant_address==address(0),"Overriding not allowed");
+        prescriptions[_prescription_id].assistant_address = msg.sender;
+        prescriptions[_prescription_id].symptoms = _symptoms;
+        prescriptions[_prescription_id].diseases = _diseases;
+        pending.push(_prescription_id);
     }
-    function addPrescriptionStep2(uint256 prescription_id, string[] memory _diseases,string[] memory _medicines)public{
+    function addPrescriptionStep2(uint256 _prescription_id, string memory _final_disease,string[] memory _medicines)public{
         require(Doctor_mapper[msg.sender]!=0, "Unauthorized action");
-        require(prescriptions[prescription_id].doctor_address==address(0),"Overriding not allowed");
+        require(prescriptions[_prescription_id].doctor_address==address(0),"Overriding not allowed");
 
         for (uint256 i = 0; i < _medicines.length; i++) {
             string memory m = _medicines[i];
             bytes1 charToCount = '#';
             uint256 hash_cnt = countChar(m,charToCount);
-            require(hash_cnt==2,"Wrong string passed");
+            require(hash_cnt==3,"Wrong string passed");
         }
-        prescriptions[prescription_id].doctor_address = msg.sender;
-        prescriptions[prescription_id].medicines = _medicines;
-        prescriptions[prescription_id].diseases = _diseases;
+        prescriptions[_prescription_id].doctor_address = msg.sender;
+        prescriptions[_prescription_id].medicines = _medicines;
+        prescriptions[_prescription_id].final_disease = _final_disease;
+        removeElement(_prescription_id);
     }
-    function addPrescriptionStep3(uint256 prescription_id)public{
+
+    function addPrescriptionStep3(uint256 _prescription_id)public{
         require(Doctor_mapper[msg.sender]!=0, "Unauthorized action");
-        require(prescriptions[prescription_id].doctor_address==address(0),"Overriding not allowed");
-        prescriptions[prescription_id].pharmacist_address = msg.sender;
+        require(prescriptions[_prescription_id].doctor_address==address(0),"Overriding not allowed");
+        prescriptions[_prescription_id].pharmacist_address = msg.sender;
 
         //Debatable
-        prescriptions[prescription_id].allDone = true;
+        prescriptions[_prescription_id].allDone = true;
     }
 
-    function getPrescription(uint index) public view returns (string[] memory) {
+
+    //Get by Index
+
+
+    //All getter functions
+    function getPatient(uint index) public view returns (Patient memory) {
+        require(index < patients.length, "Index out of bounds");
+        Patient memory p = patients[index];
+        return p;
+    }
+    function getDoctor(uint index) public view returns (Doctor memory) {
+        require(index < doctors.length, "Index out of bounds");
+        Doctor memory p = doctors[index];
+        return p;
+    }
+    function getAssistant(uint index) public view returns (Assistant memory) {
+        require(index < assistants.length, "Index out of bounds");
+        Assistant memory p = assistants[index];
+        return p;
+    }
+    function getPharmacist(uint index) public view returns (Pharmacist memory) {
+        require(index < pharmacists.length, "Index out of bounds");
+        Pharmacist memory p = pharmacists[index];
+        return p;
+    }
+
+    function getPrescription(uint index) public view returns (Prescription memory) {
         require(index < prescriptions.length, "Index out of bounds");
         Prescription memory p = prescriptions[index];
-        return (p.medicines);
+        return p;
     }
-    //Get by Index
-    // function getPatient(uint index) public view returns (uint, string memory, uint) {
-    //     require(index < patients.length, "Index out of bounds");
-    //     Patient memory p = patients[index];
-    //     return (p.id, p.name, p.age);
-    // }
-    // function getDoctor(uint index) public view returns (uint, string memory, uint) {
-    //     require(index < doctors.length, "Index out of bounds");
-    //     Doctor memory p = doctors[index];
-    //     return (p.id, p.name, p.age);
-    // }
-    // function getAssistant(uint index) public view returns (uint, string memory, uint) {
-    //     require(index < assistants.length, "Index out of bounds");
-    //     Assistant memory p = assistants[index];
-    //     return (p.id, p.name, p.age);
-    // }
-    // function getPharmacist(uint index) public view returns (uint, string memory, uint) {
-    //     require(index < pharmacists.length, "Index out of bounds");
-    //     Pharmacist memory p = pharmacists[index];
-    //     return (p.id, p.name, p.age);
-    // }
 }
