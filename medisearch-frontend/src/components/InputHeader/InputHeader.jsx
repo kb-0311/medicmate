@@ -118,6 +118,7 @@ const InputHeader = () => {
                 id="predictButton"
                 onClick={viewDiseases}
               >
+                
                 View Probable Diseases
               </button>
             ) : (

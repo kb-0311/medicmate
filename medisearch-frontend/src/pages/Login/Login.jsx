@@ -26,31 +26,38 @@ const LoginForm = () => {
   
 
   return (
-    <div className={LoginCSS['bg-container']}>
+    <div className={LoginCSS["bg-container"]}>
       <div className={LoginCSS.container}>
-        <div className={LoginCSS['login-form']}>
+        <div className={LoginCSS["login-form"]}>
+          <img
+            src="https://i.imgur.com/ogkauCf.png"
+            alt="logo"
+            style={{ width: "20%", marginBottom: "10px", borderRadius: "20px" }}
+          ></img>
           <div className={LoginCSS.logo}>Login</div>
           <input
-            className={LoginCSS['input-field']}
+            className={LoginCSS["input-field"]}
             type="email"
-            placeholder="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className={LoginCSS['input-field']}
+            className={LoginCSS["input-field"]}
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className={LoginCSS['action-buttons']}>
-            <button className={LoginCSS['submit-button']} onClick={handleLogin}>
+          <div className={LoginCSS["action-buttons"]}>
+            <button className={LoginCSS["submit-button"]} onClick={handleLogin}>
               Sign In
             </button>
           </div>
-          <button className={LoginCSS['forgot-password-button']}>Forgot your password?</button>
-          <p className={LoginCSS['signup-link']}>
+          <button className={LoginCSS["forgot-password-button"]}>
+            Forgot your password?
+          </button>
+          <p className={LoginCSS["signup-link"]}>
             Don't have an account? <a href="/signup">Sign up</a>
           </p>
         </div>

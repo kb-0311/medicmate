@@ -30,7 +30,7 @@
 }
 
 .patient-heading {
-    padding-top: 75px;
+    /* padding-top: 75px; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font: bolder;
 }
@@ -41,6 +41,18 @@
 }
 
 .symptoms-heading {
+    /* padding-top: 75px; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font: bolder;
+    font: bolder;
+}
+
+
+
+.request-history-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }

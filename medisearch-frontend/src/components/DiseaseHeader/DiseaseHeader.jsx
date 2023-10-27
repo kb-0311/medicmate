@@ -13,24 +13,60 @@ const DiseaseHeader = ({ data }) => {
 
   return (
     <div>
-      <div className="patient-details">
-        <h1 className="patient-heading">Patient Details</h1>
-        <p>Age: {patientData.patientAge}</p>
-        <p>Gender: {patientData.patientGender}</p>
-        <button
-          // onClick={navigate('/prescription/:pro')}
-          className="request-history-button"
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          // gap: "1px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          className="patient-details"
+          style={{
+            backgroundColor: "#C7F2FF",
+            marginTop: "90px",
+            paddingBottom: "20px",
+            paddingLeft: "40px",
+            paddingRight: "40px",
+            borderRadius: "30px",
+            maxWidth: "400px",
+            width: "100%",
+          }}
         >
-          Request Patient Medical History
-        </button>
-      </div>
-      <div className="symptoms-details">
-        <h1 className="symptoms-heading">Symptoms</h1>
-        <li className="symptoms-heading">
-          {patientData.symptoms.map((symptom, index) => (
-            <li key={index}>{" "}{symptom}</li>
-          ))}
-        </li>
+          <h1 className="patient-heading">Patient Details</h1>
+          <p>Name: {patientData.patientName}</p>
+          <p>Gender: {patientData.patientGender}</p>
+          <p>Age: {patientData.patientAge}</p>
+          <button
+            // onClick={navigate('/prescription/:pro')}
+            className="request-history-button"
+          >
+            Request Patient Medical History
+          </button>
+        </div>
+
+        <div
+          className="symptoms-details"
+          style={{
+            backgroundColor: "#C7F2FF",
+            marginTop: "20px",
+            paddingBottom: "20px",
+            paddingLeft: "40px",
+            paddingRight: "40px",
+            borderRadius: "30px",
+            maxWidth: "400px",
+            width: "100%",
+          }}
+        >
+          <h1 className="symptoms-heading">Symptoms</h1>
+          <div className="symptoms-heading">
+            {patientData.symptoms.map((symptom, index) => (
+              <div key={index}> ➜ {symptom}</div>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="disease-header">
         <h1 className="disease-heading">Disease Prediction Result</h1>
