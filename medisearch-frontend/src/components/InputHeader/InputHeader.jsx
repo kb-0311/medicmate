@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./InputHeader.css";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loaddiseases } from "../../Actions/UserActions";
 
 const InputHeader = () => {
   const isButtonEnabled = true; // Set it to true or false based on your logic
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [symptoms, setSymptoms] = useState("");
 
   const viewDiseases = () => {
-    navigate("/disease-list");
+    dispatch(loaddiseases(symptoms));
+    // navigate("/disease-list");
+  };
+
+  const handleSymptomsChange = (event) => {
+    setSymptoms(event.target.value);
   };
 
   return (
@@ -32,13 +41,15 @@ const InputHeader = () => {
               justifyContent: "center",
             }}
           >
-            <TextField
+             <TextField
               id="outlined-multiline-static"
               label="Symptoms"
               multiline
               rows={4}
               placeholder="eg. Cough, Headache, etc..."
               style={{ width: "75%" }}
+              value={symptoms}
+              onChange={handleSymptomsChange}
             />
             <div style={{ margin: "8px 0" }}>
               {/* Add margin (space) between the two TextField components */}
@@ -110,27 +121,9 @@ const InputHeader = () => {
             </div>
           </div>
           <div className="submit-and-view-buttons">
-            <button class="submit-detail-button">SUBMIT</button>
-            {isButtonEnabled ? (
-              <button
-                type="button"
-                class="predict-disease-button"
-                id="predictButton"
-                onClick={viewDiseases}
-              >
-                
-                View Probable Diseases
-              </button>
-            ) : (
-              <button
-                type="button"
-                class="predict-disease-button"
-                id="predictButton"
-                disabled
-              >
-                View Probable Diseases
-              </button>
-            )}
+            <button class="submit-detail-button"
+              onClick={viewDiseases}
+            >SUBMIT</button>
           </div>
         </div>
       </div>

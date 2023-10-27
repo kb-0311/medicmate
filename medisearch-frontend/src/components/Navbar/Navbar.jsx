@@ -1,8 +1,41 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { ethers } from 'ethers';
+import { loginUser } from '../../Actions/UserActions';
+import { useDispatch, useSelector } from "react-redux";
+
 
 function Navbar() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const dispatch = useDispatch();
+  const { isAuthenticated, loading } = useSelector((state) => state.user);
+  
+    async function handleSignInClick() {
+      try {
+        
+        if (typeof window.ethereum !== "undefined") {
+          const provider = new ethers.BrowserProvider(window.ethereum);
+
+          
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+
+          // Get the connected account
+          const accounts = await provider.listAccounts();
+
+          if (accounts.length > 0) {
+            // console.log(x, accounts, provider);
+            await dispatch(loginUser(accounts[0], provider));
+            // console.log("lj")
+            // console.log(x)
+            // navigate("/");
+          }
+        }
+      } catch (error) {
+        console.error("Error while connecting with MetaMask: ", error);
+      }
+    };
+
+  
 
   useEffect(() => {
     // Update the windowWidth state when the window is resized
@@ -44,9 +77,14 @@ function Navbar() {
         </li> */}
       </ul>
       <div className="navbar-buttons">
-        <a href="/login" className="login-button">
+        {!isAuthenticated ? <div>
+        {/* <a href="/login" className="login-button">
           Login
-        </a>
+        </a> */}
+        <button className="login-button" onClick={handleSignInClick}>Sign In</button>
+        </div> : <div>
+          <button className="login-button">Sign Out</button>    
+        </div>}
       </div>
     </nav>
   );

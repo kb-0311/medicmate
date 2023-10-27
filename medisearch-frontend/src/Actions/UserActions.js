@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
     // console.log("bjdhjfhd")
   try {
@@ -64,4 +66,33 @@ export const logoutUser = () => async (dispatch) => {
         payload: error.response.data.message,
       });
     }
-  };
+};
+  
+
+export const loaddiseases = (Symptoms) => async (dispatch) => {
+  try {
+      dispatch({
+          type: "DiseasesRequest",
+      });
+    
+      const  data  = await axios.post(
+        `http://b2c5-35-232-117-22.ngrok-free.app/predict_disease`,
+        {Symptoms:Symptoms},
+      ).then((res) => { 
+        console.log(res, "res")
+        return res;
+      });
+  
+    // console.log(data, "fbgfjffashgaf")
+    
+      dispatch({
+          type: "DiseasesSuccess",
+      });
+    
+  } catch (error) {
+    dispatch({
+      type: "DiseasesFailure",
+      payload: error.response.data.message,
+    });
+  }
+};

@@ -63,6 +63,10 @@ export const Prescription = () => {
     setSearchVisible(false);
   };
 
+  const handlesubmit = () => {
+    console.log(medicines, "hello")
+  }
+
   return (
     <>
       <Navbar />
@@ -131,6 +135,11 @@ export const Prescription = () => {
               +
             </div>
           )}
+        </div>
+        <div
+              className={styles.submit}
+              onClick={handlesubmit()}
+        >
         </div>
       </div>
     </>
