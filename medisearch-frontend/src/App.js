@@ -14,7 +14,7 @@ function App() {
         <Route path="/diagnosis" element={<InputPage />} />
         <Route path="/disease-list" element={<DiseasePage />} />
         <Route path="/usage" element={<UsagePage />} />
-        <Route path="/prescription/1123" element={<Prescription/>} />
+        <Route path="/prescription/:id" element={<Prescription/>} />
       </Routes>
     </Router>
   );

@@ -1,40 +1,115 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import styles from './Prescription.module.css'; // Import your CSS Module
+import MedicineItem from '../../components/MedicineItem/MedicineItem';
+import styles from './Prescription.module.css';
 
 export const Prescription = () => {
     const [medicines, setMedicines] = useState([
-        { name: 'Medicine A', dosage: '10mg' },
-        { name: 'Medicine B', dosage: '20mg' },
-        { name: 'Medicine C', dosage: '30mg' },
+        { name: 'Medicine A', strength: '500mg', dose: '1-0-1', duration: '4 weeks' },
+        { name: 'Medicine B', strength: '250mg', dose: '1-0-1', duration: '3 weeks' },
+        // Add more medicines here
     ]);
 
     const handleDosageChange = (index, newDosage) => {
-        setMedicines(prevMedicines => {
+        setMedicines((prevMedicines) => {
             const newMedicines = [...prevMedicines];
-            newMedicines[index].dosage = newDosage;
+            newMedicines[index].dose = newDosage;
             return newMedicines;
         });
     };
 
+    const handleRemoveMedicine = (medicineToRemove) => {
+        setMedicines((prevMedicines) => prevMedicines.filter((medicine) => medicine !== medicineToRemove));
+    };
+
+    const [searchVisible, setSearchVisible] = useState(false);
+    const [searchText, setSearchText] = useState('');
+    const [suggestedMedicines, setSuggestedMedicines] = useState([
+        'Suggested Medicine 1',
+        'Suggested Medicine 2',
+        'Suggested Medicine 3',
+    ]);
+
+    const toggleSearchBar = () => {
+        setSearchVisible(!searchVisible);
+    };
+
+    const handleSearchTextChange = (event) => {
+        setSearchText(event.target.value);
+    };
+
+    const addSuggestedMedicine = (suggestedMedicine) => {
+        setMedicines((prevMedicines) => [
+            ...prevMedicines,
+            { name: suggestedMedicine, strength: '0mg', dose: '0-0-0', duration: '0 weeks' },
+        ]);
+        setSearchVisible(false);
+    };
+
     return (
-        <div className={styles.prescriptionContainer}>
+        <>
             <Navbar />
-            <h1 className={styles.prescriptionTitle}>Prescription</h1>
-            <ul className={styles.medicinesList}>
-                {medicines.map((medicine, index) => (
-                    <li key={index} className={styles.medicineItem}>
-                        <div className={styles.medicineName}>{medicine.name}</div>
-                        <div className={styles.medicineDosage}>Dosage: {medicine.dosage}</div>
-                        <button
-                            onClick={() => handleDosageChange(index, prompt('Enter new dosage:'))}
-                            className={styles.changeDosageButton}
-                        >
-                            Change Dosage
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </div>
+            <div className={styles.testContainer}>
+                <h1 className={styles.testTitle}>Prescription</h1>
+                <div className={styles.patientDoctorInfo}>
+                    <div>
+                        <strong>Doctor:</strong> 123hybw8y89688
+                    </div>
+                    <div>
+                        <strong>Patient:</strong> J9863873byeby
+                    </div>
+                    <div>
+                        <strong>Patient Age:</strong> 30 years
+                    </div>
+                    <div>
+                        <strong>Patient Gender:</strong> Male
+                    </div>
+                </div>
+                <ul className={styles.medicinesList}>
+                    {medicines.map((medicine, index) => (
+                        <div key={index} className={styles.medicineRow}>
+                            <MedicineItem
+                                medicine={medicine}
+                                onDosageChange={(newDosage) => handleDosageChange(index, newDosage)}
+                            />
+                            <button
+                                onClick={() => handleRemoveMedicine(medicine)}
+                                className={styles.removeMedicineButton}
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    ))}
+                </ul>
+                <div className={styles.addButtonContainer}>
+                    {searchVisible ? (
+                        <div className={styles.searchBar}>
+                            <input
+                                type="text"
+                                placeholder="Search for medicines"
+                                value={searchText}
+                                className={styles.searchBarinput}
+                                onChange={handleSearchTextChange}
+                            />
+                            <div className={styles.suggestedMedicines}>
+                                {suggestedMedicines.map((suggestedMedicine, index) => (
+                                    <div
+                                        key={index}
+                                        className={styles.suggestedMedicine}
+                                        onClick={() => addSuggestedMedicine(suggestedMedicine)}
+                                    >
+                                        {suggestedMedicine}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        <div className={styles.changeDosageButton} onClick={toggleSearchBar}>
+                            +
+                        </div>
+                    )}
+                </div>
+            </div>
+        </>
     );
 }

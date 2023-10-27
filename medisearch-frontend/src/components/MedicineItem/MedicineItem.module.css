@@ -1,0 +1,57 @@
+/* MedicineItem.module.css */
+
+.medicineItem {
+    /* Style for each medicine item in the list */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .medicineName {
+    /* Style for the medicine name */
+    font-weight: bold;
+  }
+  
+  .medicineInfo {
+    /* Style for the medicine information */
+    display: flex; /* Arrange items horizontally */
+    align-items: center; /* Center items vertically in case they have different heights */
+  }
+  
+  .dose {
+    margin-right: 10px; /* Add spacing between dose and duration */
+  }
+  
+  .changeDosageButton {
+    /* Style for the change dosage button */
+    background-color: #345171;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    max-width: 80px;
+  }
+  
+  .changeDosageButton:hover {
+    background-color: #11263D;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Add margin at the bottom of each label */
+  }
+  
+  .fieldContainer {
+    margin: auto 5px;
+  }
+  
+  .input {
+    width: 50%; /* Set the width for the input fields */
+  }
+  
