@@ -2,145 +2,164 @@ import React, { useEffect } from "react";
 import { Grid } from "@mui/material";
 import RequestCard from "../../components/RequestCard/RequestCard";
 import Navbar from "../../components/Navbar/Navbar";
-import styles from "./RequestFeed.module.css"; 
+import styles from "./RequestFeed.module.css";
 import { abi, contractAddress } from "../../data/metamask";
-import { ethers } from "ethers";
+import { ethers, utils } from "ethers";
 
 export default function RequestFeed() {
   const requests = [
     {
       id: 1,
       age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
     },
     {
       id: 1,
       age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
-    },{
-      id: 1,
-      age: 30,
-      gender: 'Male',
-      symptoms: ['Fever', 'Cough'],
-      disease: ['Common Cold'],
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
     },
-  ]
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+    {
+      id: 1,
+      age: 30,
+      gender: "Male",
+      symptoms: ["Fever", "Cough"],
+      disease: ["Common Cold"],
+    },
+  ];
 
   const handleAcceptRequest = (acceptedRequest) => {
     // Implement the logic to accept the request
-    console.log(`Accepted request ID ${acceptedRequest.id}`);
+    console.log("Accepted request ID"`${acceptedRequest.id}`);
   };
 
   useEffect(() => {
@@ -153,17 +172,11 @@ export default function RequestFeed() {
           // const deseaseList =
           // console.log(Dlist.data.Diseases, "geted")
           const tx = await contract.getPending();
-          console.log("Transaction: ", tx);
-          // const receipt = await tx.wait();
-          // console.log("Transaction Receipt: ", receipt);
-          // for (var i = 0; i < tx.events.length; i++) {
-          //   var event = receipt.events[i];
-          //   if (event.event == "Pending") {
-          //     console.log(event.args[0].toNumber(), "hello")
-          //   }
-          // }
+          // const responseFormat = ["uint256[]"];
+          const array = tx.map((item) => item.toString());
+          console.log(array);
+          for (var i = 0; i < array.length; i++) {}
           // const tx1 = await contract.get();
-          
         } catch (error) {
           alert("Error writing to contract: " + error.message);
         }
