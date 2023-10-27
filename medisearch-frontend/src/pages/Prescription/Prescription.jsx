@@ -80,8 +80,20 @@ export const Prescription = () => {
   };
 
 
-  const handlesubmit = () => {
-    console.log(medicines, "hello");
+  const handlesubmit = async() => {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, abi, signer);
+      
+      const concatenatedMedicines = medicines.map((medicine) => {
+        return `${medicine.name}#${medicine.strength}#${medicine.dose}#${medicine.duration}`;
+      });
+    
+    console.log(concatenatedMedicines, "hellojkgfhh")
+        
+        const tx = await contract.addPrescriptionStep2(prescriptionId, disease, concatenatedMedicines);
+    // const array = tx.map((item) => item.toString());
+    console.log("hello", tx)
   };
 
   useEffect(() => {
