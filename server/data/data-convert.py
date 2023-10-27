@@ -27,7 +27,7 @@ with open('SD-Pairs.jsonl', 'r') as file:
 formatted_data = []
 for entry in data:
     formatted_entry = {
-        "text": f"<s> [INST] <<SYS>> You are a helpful, reliable, respectful, and honest doctor's assistant. Your goal is to offer the most accurate predictions of potential diseases based on the patient's symptoms. <</SYS>> These are patient's Symptoms {entry['Symptoms']}. What are the top 5 most likely diseases corresponding to these symptoms? Output only disease names. [/INST] {entry['Diseases']} </s>"
+        "text": f"<s> [INST] <<SYS>> You are a helpful, reliable, respectful, and honest doctor's assistant. Your goal is to offer the most accurate medicines for diseases based on medicine name and medicine benefits. <</SYS>> This are the benefits of medicine {entry['Benefits of this Product']}. [/INST] {entry['Product Name']} </s>"
     }
     formatted_data.append(formatted_entry)
 
