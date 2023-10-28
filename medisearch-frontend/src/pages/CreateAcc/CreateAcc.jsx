@@ -48,7 +48,9 @@ const CreateAcc = () => {
     console.log(username, fullname, regnum, age, password, window.ethereum);
 
     if (window.etherium) {
-      const contractAddress = "0x0Cd36a6526311eDD7b5C8C92F8B64dcFe7030218";
+      const contractAddress = "0x4D0D4fCE4BB635709B586C9e7cE9cAaC0C739843";
+  // const contractAddress = "0x2cfe4165748aa94C35FC3Db008BA9727f431ccf0"; // old
+
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       // const contract = new ethers.Contract(contractAddress, abi, signer);

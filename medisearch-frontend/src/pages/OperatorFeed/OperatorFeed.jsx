@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import RequestCard from "../../components/RequestCard/RequestCard";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./OperatorFeed.module.css"; 
+import { ethers } from "ethers";
+import { abi, contractAddress } from "../../data/metamask";
 
 export default function OperatorFeed() {
-    const [selectedRequestType, setSelectedRequestType] = useState("pending");
-    const PendingRequests = [
+  const [selectedRequestType, setSelectedRequestType] = useState("pending");
+  const stt = [
     {
       id: 1,
       age: 25,
@@ -66,68 +68,33 @@ export default function OperatorFeed() {
       symptoms: ["Headache", "Fatigue"],
     },
     // Add more request objects
-    ];
-    const AcceptedRequests = [
-        {
-          id: 1,
-          age: 25,
-          gender: "Male",
-          symptoms: ["Fever", "Cough", "Sore Throat", "gxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"],
-        },
-       
-        {
-          id: 2,
-          age: 30,
-          gender: "Female",
-          symptoms: ["Headache", "Fatigue"],
-        },{
-          id: 1,
-          age: 25,
-          gender: "Male",
-          symptoms: ["Fever", "Cough", "Sore Throat"],
-        },
-        {
-          id: 2,
-          age: 30,
-          gender: "Female",
-          symptoms: ["Headache", "Fatigue"],
-        },{
-          id: 1,
-          age: 25,
-          gender: "Male",
-          symptoms: ["Fever", "Cough", "Sore Throat"],
-        },
-    
-        {
-          id: 2,
-          age: 30,
-          gender: "Female",
-          symptoms: ["Headache", "Fatigue"],
-        },{
-          id: 1,
-          age: 25,
-          gender: "Male",
-          symptoms: ["Fever", "Cough", "Sore Throat"],
-        },
-        {
-          id: 2,
-          age: 30,
-          gender: "Female",
-          symptoms: ["Headache", "Fatigue"],
-        },{
-          id: 1,
-          age: 25,
-          gender: "Male",
-          symptoms: ["Fever", "Cough", "Sore Throat"],
-        },
-        {
-          id: 2,
-          age: 30,
-          gender: "Female",
-          symptoms: ["Headache", "Fatigue"],
-        },
-        // Add more request objects
-    ];
+];
+    const [PendingRequests, setPendingRequests] = useState(stt);
+    const [AcceptedRequests, setAcceptedRequests] = useState(stt);
+
+  useEffect(() => { 
+    async function getReq() {
+      if (typeof window.ethereum !== "undefined") {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, abi, signer);
+        try {
+          const tx = await contract.getAllPrescription();
+          const array = tx.map((item) => item.toString());
+          // console.log(array)
+
+          // setPendingRequests(requests);
+        } catch (error) {
+          alert("Error writing to contract: " + error.message);
+        }
+      } else {
+        alert("MetaMask is not installed.");
+      }
+    }
+
+    getReq();
+  });
+
 
       const handleAcceptRequest = (acceptedRequest) => {
         // Implement the logic to accept the request

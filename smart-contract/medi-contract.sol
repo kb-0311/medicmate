@@ -26,7 +26,6 @@ contract MediContract {
 
         // Move the last element to the index being removed
         pending[index] = pending[pending.length - 1];
-
         // Remove the last element
         pending.pop();
     }
@@ -68,7 +67,7 @@ contract MediContract {
     //     string dosage;
     //     string duration;
     // }
-    struct Prescription{
+    struct Prescription {
         uint256 prescription_id;
         address patient_address;
         address assistant_address;
@@ -82,6 +81,9 @@ contract MediContract {
         bool allDone;
     }
     Prescription[] public prescriptions;
+    function getAllPrescription() public view returns (Prescription[] memory) {
+        return prescriptions;
+    }
 
     //Default Prescription struct to initialize
     function createDefaultStruct() public view returns (Prescription memory) {
@@ -111,19 +113,23 @@ contract MediContract {
 
 
 
-    function addPatient(address _address, uint256 _age, string memory _gender) public {
+    function addPatient(uint256 _age, string memory _gender) public {
+        address _address = msg.sender;
         patients.push(Patient(_address, _age, _gender));
         Patient_mapper[_address] = patients.length;
     }
-    function addAssistant(uint256 _lc_no, address _address,string memory _name, uint256 _age, string memory _gender) public {
+    function addAssistant(uint256 _lc_no,string memory _name, uint256 _age, string memory _gender) public {
+         address _address = msg.sender;
         assistants.push(Assistant(_lc_no,_address,_name, _age, _gender));
         Assistant_mapper[_address] = assistants.length;
     }
-    function addDoctor(uint256 _lc_no, address _address,string memory _name, uint256 _age, string memory _gender) public {
+    function addDoctor(uint256 _lc_no,string memory _name, uint256 _age, string memory _gender) public {
+        address _address = msg.sender;
         doctors.push(Doctor(_lc_no,_address,_name, _age, _gender));
         Doctor_mapper[_address] = doctors.length;
     }
-    function addPharmacist(uint256 _lc_no, address _address,string memory _name) public {
+    function addPharmacist(uint256 _lc_no,string memory _name) public {
+         address _address = msg.sender;
         pharmacists.push(Pharmacist(_lc_no,_address,_name));
         Pharmacist_mapper[_address] = pharmacists.length;
     }
@@ -148,8 +154,10 @@ contract MediContract {
         require(Assistant_mapper[msg.sender]!=0, "Unauthorized action");
         uint256 _prescription_id = prescription_count;
         prescription_count++;
+        prescriptions.push(createDefaultStruct());
         require(prescriptions[_prescription_id].assistant_address==address(0),"Overriding not allowed");
         prescriptions[_prescription_id].assistant_address = msg.sender;
+        prescriptions[_prescription_id].prescription_id = _prescription_id;
         prescriptions[_prescription_id].symptoms = _symptoms;
         prescriptions[_prescription_id].diseases = _diseases;
         pending.push(_prescription_id);
@@ -206,7 +214,7 @@ contract MediContract {
     }
 
     function getPrescription(uint index) public view returns (Prescription memory) {
-        require(index < prescriptions.length, "Index out of bounds");
+        // require(index < prescriptions.length, "Index out of bounds");
         Prescription memory p = prescriptions[index];
         return p;
     }
