@@ -21,6 +21,15 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+  
+  socket.on('message', (msg) => {
+    // Broadcast message to all clients
+    io.emit('message', msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
 });
 
 
