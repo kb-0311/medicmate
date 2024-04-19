@@ -27,6 +27,12 @@ export default function RequestCard({ request, onAccept, access }) {
         <p className={styles.cardText}>
           <strong>Disease:</strong> {request.disease} 
         </p>
+
+        {/* Chat Button */}
+        <button className={styles.chatButton} onClick={() => navigate(`/chat/${request.prescriptionId}`)}>
+          P2P Chat
+        </button>
+
         {access === 'op-accepted' ? (
           <button className={styles.stateButton} onClick={handleDetailsClick}>
             Details

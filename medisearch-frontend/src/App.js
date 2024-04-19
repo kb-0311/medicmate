@@ -12,6 +12,7 @@ import RequestFeed from "./pages/RequestFeed/RequestFeed";
 import OperatorFeed from "./pages/OperatorFeed/OperatorFeed";
 import store from "./store";
 import CreateAcc from "./pages/CreateAcc/CreateAcc";
+import Chat from './components/Chat/Chat';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/prescription/:prescriptionId/:disease" element={<Prescription />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/join" element={<CreateAcc />} />
+          <Route path="/chat/:prescriptionId" element={<Chat />} />
           <Route path="/allreq" element={<RequestFeed />} />
           <Route path="/operatorfeed" element={<OperatorFeed />} />
         </Routes>
