@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
     } ,
     uuid: {
         type:String , 
-        required:true
+        // required:true
     },
     createdAt: {
         type: Date,
