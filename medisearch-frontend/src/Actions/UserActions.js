@@ -12,11 +12,11 @@ export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
     dispatch({
         type: "LoginSuccess",
         account: account,
-        MetaMaskProvider: MetaMaskProvider,
+        // MetaMaskProvider: MetaMaskProvider,
     });
 
       console.log("login succ");
-      console.log(account, MetaMaskProvider, "yep")
+      // console.log(account, MetaMaskProvider, "yep")
 
   } catch (error) {
     dispatch({

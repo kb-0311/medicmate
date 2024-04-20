@@ -33,4 +33,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the application.
-CMD node index.js
+CMD node index.mjs

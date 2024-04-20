@@ -9,7 +9,7 @@ export const userReducer = createReducer(initialState, {
         LoginSuccess: (state, action) => {
             state.loading = false;
             state.account = action.account;
-            state.MetaMaskProvider = action.MetaMaskProvider;
+            // state.MetaMaskProvider = action.MetaMaskProvider;
             state.isAuthenticated = true;
         },
         LoginFailure: (state, action) => {
