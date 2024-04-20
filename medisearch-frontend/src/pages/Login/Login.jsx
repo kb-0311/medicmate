@@ -1,60 +1,33 @@
-import React, { useEffect, useState } from 'react'; 
+import React, { useState } from 'react'; 
 import LoginCSS from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
-import { ethers } from 'ethers';
-import { loginUser, logoutUser } from '../../Actions/UserActions';
-import {useSelector, useDispatch } from 'react-redux'
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../Actions/UserActions';
 
 const LoginForm = () => {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('');
   const dispatch = useDispatch();
-  const { isAuthenticated, loading } = useSelector((state) => state.user);
-  const x = useSelector((state) => state.user);;
-  
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/v1/login', {
+        email,
+        password,
+        role
+      });
 
-    const handleLogin = async () => {
-      try {
-        
-        if (typeof window.ethereum !== "undefined") {
-          const provider = new ethers.BrowserProvider(window.ethereum);
-
-          
-          await window.ethereum.request({ method: "eth_requestAccounts" });
-
-          // Get the connected account
-          const accounts = await provider.listAccounts();
-
-          if (accounts.length > 0) {
-            // console.log(x, accounts, provider);
-            await dispatch(loginUser(accounts[0], provider));
-            // console.log("lj")
-            console.log(x)
-            // navigate("/");
-          }
-        }
-      } catch (error) {
-        console.error("Error while connecting with MetaMask: ", error);
-      }
-    };
-
-      const handleLogout = () => {
-        dispatch(logoutUser());
-        navigate("/");
-      };
-
-
-
-
-//   useEffect(() => {
-    // if (!loading && isAuthenticated) {
-    //   navigate("/");
-    // }
-//   }, [loading , isAuthenticated])
-  
+      console.log("Login successful", response.data);
+      dispatch(loginUser(email, response.data)); // Assuming loginUser action can handle this response
+      navigate("/"); // Navigate to home page or dashboard after successful login
+    } catch (error) {
+      console.error("Error during login:", error.response);
+      alert("Login failed: " + error.message);
+    }
+  };
 
   return (
     <div className={LoginCSS["bg-container"]}>
@@ -66,6 +39,16 @@ const LoginForm = () => {
             style={{ width: "20%", marginBottom: "10px", borderRadius: "20px" }}
           ></img>
           <div className={LoginCSS.logo}>Login</div>
+          <select
+            className={LoginCSS["input-field"]}
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="">Select a role</option>
+            <option value="doctor">Doctor</option>
+            <option value="operator">Operator</option>
+            <option value="pharmacy">Pharmacy</option>
+          </select>
           <input
             className={LoginCSS["input-field"]}
             type="email"
