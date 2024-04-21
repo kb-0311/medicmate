@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
-    // console.log("bjdhjfhd")
   try {
     dispatch({
       type: "LoginRequest",
@@ -12,11 +11,9 @@ export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
     dispatch({
         type: "LoginSuccess",
         account: account,
-        // MetaMaskProvider: MetaMaskProvider,
     });
 
       console.log("login succ");
-      // console.log(account, MetaMaskProvider, "yep")
 
   } catch (error) {
     dispatch({
@@ -26,28 +23,28 @@ export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
   }
 };
 
-// export const loadUser = () => async (dispatch) => {
-//     try {
-//       dispatch({
-//         type: "LoadUserRequest",
-//       });
+export const loadUser = () => async (dispatch) => {
+    try {
+      dispatch({
+        type: "LoadUserRequest",
+      });
   
-//       const  {data}  = await axios.get("/api/v1/me");
-//       dispatch({
-//         type: "LoadUserSuccess",
-//         payload: data,
-//       });
-//       dispatch({
-//         type: "LoginSuccess",
-//         payload: data.user,
-//       });
-//     } catch (error) {
-//       dispatch({
-//         type: "LoadUserFailure",
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
+      const  {data}  = await axios.get("http://localhost:8000/api/v1/me" , {
+        withCredentials:true
+      });
+
+      dispatch({
+        type: "LoadUserSuccess",
+        account: data.user,
+      });
+
+    } catch (error) {
+      dispatch({
+        type: "LoadUserFailure",
+        payload: error.response.data.message,
+      });
+    }
+  };
 
 
 export const logoutUser = () => async (dispatch) => {

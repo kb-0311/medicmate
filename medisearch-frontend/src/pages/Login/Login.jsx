@@ -18,12 +18,14 @@ const LoginForm = () => {
         email,
         password,
         role
+      }, {
+        withCredentials: true // Include cookies in cross-origin requests
       });
 
-      console.log("Login successful", response.data);
-      dispatch(loginUser(email, response.data)); // Assuming loginUser action can handle this response
+      dispatch(loginUser(response.data.user, null)); // Assuming loginUser action can handle this response
       // dispatch(loginUser({ email: response.data.email, ...response.data }));
       navigate("/"); // Navigate to home page or dashboard after successful login
+
     } catch (error) {
       console.error("Error during login:", error.response);
       alert("Login failed: " + error.message);

@@ -2,6 +2,21 @@ import { createReducer } from "@reduxjs/toolkit";
 const initialState = { isAuthenticated: false };
 
 export const userReducer = createReducer(initialState, {
+        LoadUserRequest: (state)=>{
+            state.loading = true;
+            state.isAuthenticated = false;
+        },
+        LoadUserSuccess: (state , action)=>{
+            state.loading = false;
+            state.account = action.account;
+            state.isAuthenticated = true;
+        },
+        LoadUserFailure: (state , action)=>{
+            state.loading = false;
+            state.error = action.payload;
+            state.isAuthenticated = false;
+            state.account = null;
+        },
         LoginRequest: (state) => {
             state.loading = true;
             state.isAuthenticated = false;
@@ -9,7 +24,6 @@ export const userReducer = createReducer(initialState, {
         LoginSuccess: (state, action) => {
             state.loading = false;
             state.account = action.account;
-            // state.MetaMaskProvider = action.MetaMaskProvider;
             state.isAuthenticated = true;
         },
         LoginFailure: (state, action) => {
