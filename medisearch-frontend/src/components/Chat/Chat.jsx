@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import io from 'socket.io-client';
 import styles from './Chat.module.css';
+// import { useSelector } from 'react-redux';
 
 const socket = io('http://localhost:8000');
 
@@ -9,6 +10,9 @@ function Chat() {
   const { prescriptionId } = useParams();
   const [message, setMessage] = useState('');
   const [chat, setChat] = useState([]);
+
+
+  // const userEmail = useSelector((state) => state.user.email);
 
   useEffect(() => {
     socket.on('message', (msg) => {
@@ -23,6 +27,7 @@ function Chat() {
     e.preventDefault();
     if (message.trim()) {
       socket.emit('message', { text: message, prescriptionId });
+      // socket.emit('message', { text: message, prescriptionId, email: userEmail });
       setMessage('');
     }
   };
@@ -33,6 +38,7 @@ function Chat() {
       <div className={styles.messagesContainer}>
         {chat.map((msg, index) => (
           <p key={index}>{msg.text}</p>
+          // <p key={index}><strong>{msg.email}:</strong> {msg.text}</p>
         ))}
       </div>
       <input

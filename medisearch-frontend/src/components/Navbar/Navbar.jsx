@@ -34,13 +34,13 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        {windowWidth >= 550 && "Medi"}
+        {windowWidth >= 550 && "Medic"}
         <img
           className="navbar-logo"
           src="https://i.imgur.com/V7hGxsI.png"
           alt="logo"
         ></img>
-        {windowWidth >= 550 && "Search"}
+        {windowWidth >= 550 && "Mate"}
       </div>
 
       <ul className="navbar-links">
