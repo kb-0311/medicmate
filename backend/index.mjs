@@ -1,5 +1,5 @@
 import express from 'express';
-import { createServer } from 'node:http';
+import { createServer, request } from 'node:http';
 import { Server } from 'socket.io';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -8,7 +8,9 @@ import cookieParser from "cookie-parser";
 import bodyParser from 'body-parser';
 import dotenv from "dotenv";
 import connectDatabase from "./db.js";
-import user from "./routes/userRoutes.js"
+import user from "./routes/userRoutes.js";
+import requests from "./routes/RequestRoutes.js"
+
 
 const app = express();
 app.use(express.json());
@@ -20,6 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true },{limit : '50mb'}));
 app.use(cookieParser());
 
 app.use("/api/v1" , user);
+app.use("/api/v1" , requests);
+
 
 const server = createServer(app);
 const io = new Server(server , {

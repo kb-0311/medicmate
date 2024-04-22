@@ -6,13 +6,11 @@ const User = require("../models/userModels.js");
 
 exports.isAuthenticatedUser= catchAsyncErros(async (req, res , next)=> {
     const { token } = await req.cookies;
-    console.log(token);
     if (!token) {
         return await next(new ErrorHandler("please login to access this resource" , 401));
     }
 
     const decodedData = jwt.verify( `${token}` , process.env.JWT_SECRET)
-    console.log(decodedData);
     req.user = await User.findById(decodedData.id) ;
 
     next()
@@ -21,13 +19,13 @@ exports.isAuthenticatedUser= catchAsyncErros(async (req, res , next)=> {
 
 // Admin roles 
 
-exports.autherizeRoles = (...roles) => {
+exports.autherizeRoles = (roles) => catchAsyncErros(async (req, res , next)=> {
 
-    return (req,res,next)=>{
-        if (!roles.includes( req.user.role)) {
+    console.log(roles);
+    if (roles != req.user.role) {
            return next(new ErrorHandler(`Role ${req.user.role} is not allowed to access this resource` , 403));
         }
-        next();
-    }
+    next();
+    
 
-}
+})
