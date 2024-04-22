@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { useNavigate } from 'react-router-dom';
 import { loginUser, logoutUser } from '../../Actions/UserActions';
 import { useDispatch, useSelector } from "react-redux";
 
 
 
 function Navbar() {
+  const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
   const { isAuthenticated, loading } = useSelector((state) => state.user);
@@ -14,8 +16,9 @@ function Navbar() {
   const handleSignOutClick = () => {
     dispatch(logoutUser()); // Dispatch the logout action
     alert("Logged Out")
-    // Iske Baad redirect the user to the homepage or login page
-    window.location.reload(); // Reload krdiya.. (just a Hack for logout)
+    // window.location.reload();
+    window.location.reload();
+    navigate('/login');
   };
 
   useEffect(() => {
@@ -53,9 +56,11 @@ function Navbar() {
         <li>
           <a href="#a">{windowWidth < 467 ? "About" : "About Us"}</a>
         </li>
+        {!isAuthenticated && (
         <li>
           <a href="/join">Sign-Up</a>
         </li>
+        )}
       </ul>
       <div className="navbar-buttons">
         {!isAuthenticated ? (
@@ -66,7 +71,7 @@ function Navbar() {
           </div>
         ) : (
           <div>
-            <button className="login-button" onClick={handleSignOutClick}>Sign Out</button>
+            <button className="login-button" onClick={handleSignOutClick}>Log Out</button>
           </div>
         )}
       </div>

@@ -43,7 +43,7 @@ function App() {
           <Route path="/prescription/:prescriptionId/:disease" element={<Prescription />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/join" element={<CreateAcc />} />
-          {/* <Route path="/chat/:prescriptionId" element={<Chat />} /> */}
+          <Route path="/chat/:prescriptionId" element={<Chat />} />
           <Route path="/allreq" element={<RequestFeed />} />
           <Route path="/operatorfeed" element={<OperatorFeed />} />
         </Routes>
