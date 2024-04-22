@@ -12,18 +12,18 @@ const UsageHeader = () => {
 
   return (
     <div>
-      <div className="workflow-heading">
+      {/* <div className="workflow-heading">
         <h1 className="workflow-head">Overview</h1>
-      </div>
-        
+      </div> */}
+
       <div className="workflow-heading">
         <h1 className="workflow-head">Workflow Diagram</h1>
       </div>
       <div className="workflow-diagram">
         <img
           className="workflow-img"
-          src="https://i.imgur.com/RGk4r1V.png"
-          alt="loda"
+          src="https://i.imgur.com/236wvwO.png"
+          alt="workflow diagram"
         ></img>
       </div>
     </div>
