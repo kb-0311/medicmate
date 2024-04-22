@@ -32,13 +32,13 @@ const Footer = () => {
           >
             <div>
               <Typography variant="h2" component="div">
-                Medi
+                Medic
                 <img
                   className="navbar-logo"
                   src="https://i.imgur.com/V7hGxsI.png"
                   alt="logo"
                 ></img>
-                Search
+                Mate
               </Typography>
             </div>
             <div>

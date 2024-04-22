@@ -6,17 +6,17 @@ const MediaCards = () => {
   return (
     <>
       <div className="mediacards-full">
-        <h1 className="mediacards-heading">Why MediSearch ?</h1>
+        <h1 className="mediacards-heading">Why MedicMate ?</h1>
         <div className="mediacards-row">
           <MediaSingleCard
             title="24 Hours Service"
             link="https://img.freepik.com/premium-vector/24hr-service-vector-illustration_624938-729.jpg?w=2000"
-            sub_title="MediSearch's 24/7 Service is a crucial aspect of our project, ensuring that healthcare assistance and information are accessible to users round the clock, improving healthcare access, reducing delays, and enhancing patient care in both urban and rural areas."
+            sub_title="MedicMate's 24/7 Service is a crucial aspect of our project, ensuring that healthcare assistance and information are accessible to users round the clock, improving healthcare access, reducing delays, and enhancing patient care in both urban and rural areas."
           />
           <MediaSingleCard
             title="Fine Tuned AI Engine"
             link="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt98d8a946b63c9b5f/64b7170ab314c94aa481d8c3/Untitled_design_(1).jpg"
-            sub_title="The Heart of MediSearch is LLAMA2-7B which essentially gives a list of most probable diseases to the doctor. It's core component responsible for accurately predicting diseases based on the symptoms provided by the patients. This AI engine has been specifically trained and fine-tuned to excel in the field of medical diagnosis."
+            sub_title="The Heart of MedicMate is LLAMA2-7B which essentially gives a list of most probable diseases to the doctor. It's core component responsible for accurately predicting diseases based on the symptoms provided by the patients. This AI engine has been specifically trained and fine-tuned to excel in the field of medical diagnosis."
           />
           <MediaSingleCard
             title="Express Diagnosis & Prescription Generation"
