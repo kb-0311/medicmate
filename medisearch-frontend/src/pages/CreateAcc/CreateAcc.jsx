@@ -3,10 +3,7 @@ import SignupCSS from "./CreateAcc.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
-
-const API_BASE_URL = 'http://localhost:8000/api/v1'; // Define your API base URL
-
+const API_BASE_URL = "http://localhost:8000/api/v1"; // Define your API base URL
 
 const CreateAcc = () => {
   const [username, setUsername] = useState("");
@@ -19,7 +16,6 @@ const CreateAcc = () => {
   const navigate = useNavigate();
 
   const handleCreateAcc = async () => {
-
     try {
       const response = await axios.post(`${API_BASE_URL}/register`, {
         name: fullname,
@@ -51,14 +47,13 @@ const CreateAcc = () => {
             className={SignupCSS["input-field"]}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            >
-            
+          >
             <option value="">Select a role</option>
             <option value="doctor">Doctor</option>
             <option value="operator">Operator</option>
             <option value="pharmacy">Pharmacy</option>
           </select>
-            {console.log(username)}
+          {console.log(username)}
 
           <input
             className={SignupCSS["input-field"]}
@@ -89,7 +84,7 @@ const CreateAcc = () => {
           <input
             className={SignupCSS["input-field"]}
             type="password"
-            placeholder="Password"
+            placeholder="Password (min 8 characters)"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -104,12 +99,12 @@ const CreateAcc = () => {
 
           <input
             className={SignupCSS["input-field"]}
-            type="text"
+            type="number"
             placeholder="Age"
             value={age}
             onChange={(e) => setage(e.target.value)}
           />
-          
+
           <div className={SignupCSS["action-buttons"]}>
             <button
               className={SignupCSS["submit-button"]}
@@ -118,6 +113,9 @@ const CreateAcc = () => {
               Create Account
             </button>
           </div>
+          <p className={CreateAcc["signup-link"]}>
+            Already have an account? <a href="/login">Login</a>
+          </p>
         </div>
       </div>
     </div>
