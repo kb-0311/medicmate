@@ -21,18 +21,17 @@ const Header = () => {
         <div className="header-row">
           <div className="header-row-left-column">
             <h1 className="header-row-left-column-head">
-              AI-based Medical Assistant
+              GenAI-based Medical Assistant
             </h1>
             <div className="header-row-left-column-desc">
               <p>
                 In a world where data-driven decision-making is transforming
-                industries, healthcare remains ripe for innovation. "MediSearch"
+                industries, healthcare remains ripe for innovation. "MedicMate"
                 is a groundbreaking project aimed at revolutionizing healthcare
-                by harnessing the power of Machine Learning and Generative AI.
-                We understand that every individual's health needs are unique,
-                and our mission is to provide personalized medicine
-                recommendations for various diseases, ensuring the most
-                effective treatments for all.
+                by harnessing the power of Generative AI. We understand that
+                every individual's health needs are unique, and our mission is
+                to provide personalized medicine recommendations for various
+                diseases, ensuring the most effective treatments for all.
               </p>
               <div className="header-row-left-column-desc-buttons">
                 <button
@@ -40,7 +39,7 @@ const Header = () => {
                   className="usage-guide-button"
                   onClick={usageGuide}
                 >
-                  Overview & Workflow
+                  Workflow
                 </button>
                 <button
                   type="button"
@@ -56,7 +55,7 @@ const Header = () => {
             <img
               className="phone-img"
               src="https://i.imgur.com/a8MM9fw.png"
-              alt="loda"
+              alt="app"
             ></img>
           </div>
         </div>

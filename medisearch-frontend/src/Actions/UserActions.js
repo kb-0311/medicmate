@@ -39,32 +39,34 @@ export const loadUser = () => async (dispatch) => {
       });
 
     } catch (error) {
+      console.log(error);
       dispatch({
         type: "LoadUserFailure",
-        payload: error.response.data.message,
+        payload: error,
       });
     }
   };
 
-
 export const logoutUser = () => async (dispatch) => {
-    try {
-        dispatch({
-            type: "LogoutRequest",
-        });
-      
-        dispatch({
-            type: "LogoutSuccess",
-        });
-      
-    } catch (error) {
+  try {
       dispatch({
-        type: "LogoutFailure",
-        payload: error.response.data.message,
+          type: "LogoutRequest",
       });
-    }
+
+      // Backend has a logout endpoint that clears the cookie
+      await axios.get("http://localhost:8000/api/v1/logout", { withCredentials: true });
+
+      dispatch({
+          type: "LogoutSuccess",
+      });
+    
+  } catch (error) {
+    dispatch({
+      type: "LogoutFailure",
+      payload: error.response ? error.response.data.message : error.message,
+    });
+  }
 };
-  
 
 export const loaddiseases = (Symptoms) => async (dispatch) => {
   try {

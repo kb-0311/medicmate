@@ -39,7 +39,9 @@ const LoginForm = () => {
           <img
             src="https://i.imgur.com/ogkauCf.png"
             alt="logo"
-            style={{ width: "20%", marginBottom: "10px", borderRadius: "20px" }}
+            // style={{ width: "20%", marginBottom: "10px", borderRadius: "20px" }}
+            style={{ width: "20%", marginBottom: "10px", borderRadius: "20px", cursor: "pointer" }}
+            // onClick={() => navigate('/')}
           ></img>
           <div className={LoginCSS.logo}>Login</div>
           <select
@@ -68,7 +70,7 @@ const LoginForm = () => {
           />
           <div className={LoginCSS["action-buttons"]}>
             <button className={LoginCSS["submit-button"]} onClick={handleLogin}>
-              Sign In
+              Log In
             </button>
           </div>
           <button className={LoginCSS["forgot-password-button"]}>

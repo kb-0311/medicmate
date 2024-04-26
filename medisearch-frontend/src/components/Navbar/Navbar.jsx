@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import { loginUser, logoutUser } from '../../Actions/UserActions';
+import { useNavigate } from "react-router-dom";
+import { loginUser, logoutUser } from "../../Actions/UserActions";
 import { useDispatch, useSelector } from "react-redux";
 
-
-
 function Navbar() {
+  const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
   const { isAuthenticated, loading } = useSelector((state) => state.user);
-  
+
   // Function to handle logout
   const handleSignOutClick = () => {
     dispatch(logoutUser()); // Dispatch the logout action
-    alert("Logged Out")
-    // Iske Baad redirect the user to the homepage or login page
-    window.location.reload(); // Reload krdiya.. (just a Hack for logout)
+    alert("Logged Out");
+    // window.location.reload();
+    window.location.reload();
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -33,15 +34,18 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        {windowWidth >= 550 && "Medic"}
-        <img
-          className="navbar-logo"
-          src="https://i.imgur.com/V7hGxsI.png"
-          alt="logo"
-        ></img>
-        {windowWidth >= 550 && "Mate"}
-      </div>
+      <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <div className="navbar-brand">
+          {windowWidth >= 550 && "Medic"}
+
+          <img
+            className="navbar-logo"
+            src="https://i.imgur.com/V7hGxsI.png"
+            alt="logo"
+          ></img>
+          {windowWidth >= 550 && "Mate"}
+        </div>
+      </a>
 
       <ul className="navbar-links">
         <li>
@@ -53,20 +57,24 @@ function Navbar() {
         <li>
           <a href="#a">{windowWidth < 467 ? "About" : "About Us"}</a>
         </li>
-        <li>
-          <a href="/join">Sign-Up</a>
-        </li>
+        {!isAuthenticated && (
+          <li>
+            <a href="/signup">Sign-Up</a>
+          </li>
+        )}
       </ul>
       <div className="navbar-buttons">
         {!isAuthenticated ? (
           <div>
             <a href="/login" className="login-button">
-          Login
-        </a>
+              Login
+            </a>
           </div>
         ) : (
           <div>
-            <button className="login-button" onClick={handleSignOutClick}>Sign Out</button>
+            <button className="login-button" onClick={handleSignOutClick}>
+              Log Out
+            </button>
           </div>
         )}
       </div>

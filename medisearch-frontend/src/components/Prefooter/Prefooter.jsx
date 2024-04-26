@@ -10,7 +10,7 @@ const Prefooter = () => {
             Backed by Healtcare Practitioners
           </h1>
           <p className="prefooter-desc">
-            The appreciation by doctors for "Medi-Search" underscores the
+            The appreciation by doctors for "MedicMate" underscores the
             project's commitment to enhancing patient care, reducing errors, and
             streamlining the healthcare process. The endorsement of medical
             professionals highlights our project's potential to revolutionize

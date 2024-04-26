@@ -32,13 +32,13 @@ const Footer = () => {
           >
             <div>
               <Typography variant="h2" component="div">
-                Medi
+                Medic
                 <img
                   className="navbar-logo"
                   src="https://i.imgur.com/V7hGxsI.png"
                   alt="logo"
                 ></img>
-                Search
+                Mate
               </Typography>
             </div>
             <div>
@@ -52,9 +52,9 @@ const Footer = () => {
                 <ListItem button>
                   <ListItemText primary="Contact Us" />
                 </ListItem>
-                {/* <ListItem button>
+                <ListItem button>
                   <ListItemText primary="About Us" />
-                </ListItem> */}
+                </ListItem>
               </List>
             </div>
             <div>
@@ -74,8 +74,7 @@ const Footer = () => {
           </Box>
           <Divider style={{ marginTop: "20px", backgroundColor: "white" }} />
           <Typography variant="body2" style={{ marginTop: "10px" }}>
-            © {new Date().getFullYear()} CureCode Crew (IIIT-Pune Nexus
-            Hackathon). All rights reserved.
+            © {new Date().getFullYear()}. All rights reserved.
           </Typography>
         </Container>
       </div>
