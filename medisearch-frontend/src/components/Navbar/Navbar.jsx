@@ -49,6 +49,9 @@ function Navbar() {
 
       <ul className="navbar-links">
         <li>
+          <a href="/request/1">DummyRequest</a>
+        </li>
+        <li>
           <a href="/allreq">All Requests</a>
         </li>
         <li>

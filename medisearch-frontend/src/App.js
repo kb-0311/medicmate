@@ -6,15 +6,14 @@ import { DiseasePage } from "./pages/DiseasePage";
 import { UsagePage } from "./pages/UsagePage";
 import { Prescription } from "./pages/Prescription/Prescription";
 import LoginForm from "./pages/Login/Login";
-import Signup from "./pages/Signup/Signup";
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import RequestFeed from "./pages/RequestFeed/RequestFeed";
 import OperatorFeed from "./pages/OperatorFeed/OperatorFeed";
-import store from "./store";
 import CreateAcc from "./pages/CreateAcc/CreateAcc";
 import Chat from "./components/Chat/Chat";
 import { useEffect } from "react";
 import { loadUser } from "./Actions/UserActions";
+import { Request } from "./pages/AcceptedRequest/Request";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +32,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/diagnosis" element={<InputPage />} />
-        <Route path="/disease-list/:id" element={<DiseasePage />} />
+        {/* <Route path="/disease-list/:id" element={<DiseasePage />} /> */}
+        <Route path="/request/:id" element={<Request />} />
         <Route path="/usage" element={<UsagePage />} />
         <Route
           path="/prescription/:prescriptionId/:disease"

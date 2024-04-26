@@ -1,41 +1,42 @@
 .card {
-    border: 2px solid #ddd;
-    border-radius: 16px;
-    margin: 10px;
-    width: 400px;
-    /* Adjust the width as needed */
-    display: inline-block;
+  display: flex;
+  border-radius: 1rem;
+  margin: 10px;
+  background-color: #fff;
+  padding: 0.5rem;
 }
 
 .card-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
 }
 
 .disease-info {
-    flex: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
 .disease-name {
-    font-size: 18px;
-    margin: 0;
+  font-size: 18px;
+  margin: 0;
 }
 
 .disease-type {
-    font-size: 14px;
-    margin: 0;
+  font-size: 14px;
+  margin: 0;
 }
 
 .generate-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 .generate-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
