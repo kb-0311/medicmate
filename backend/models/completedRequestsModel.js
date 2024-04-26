@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const acceptedRequestSchema = new mongoose.Schema({
+const completedRequestSchema = new mongoose.Schema({
     patientName : {
         type : String , 
         required : [true , "Please enter valid  name"] ,
@@ -23,4 +23,4 @@ const acceptedRequestSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model("AcceptedRequest" , acceptedRequestSchema);
+module.exports = mongoose.model("CompletedRequest" , completedRequestSchema);

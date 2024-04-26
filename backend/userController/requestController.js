@@ -1,7 +1,7 @@
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require ("../middleware/catchAsyncErros.js") ;
 const PendingRequest = require("../models/pendingRequestsModel.js");
-
+const CompletedRequest = require("../models/completedRequestsModel.js");
 
 exports.addPendingRequest = catchAsyncErrors( async (req , res ,next)=> {
 
@@ -22,21 +22,61 @@ exports.addPendingRequest = catchAsyncErrors( async (req , res ,next)=> {
 
 })
 
-exports.completeRequest = catchAsyncErrors( async (req , res ,next)=> {
+exports.getAllRequests = catchAsyncErrors( async (req , res ,next)=> {
 
-    const {patientName , symptoms , age} = req.body;
 
-    const pendingRequest = await PendingRequest.create(
-        {
-            patientName,
-            age,
-            symptoms,
-        }
-    )
+    const pendingRequest = await PendingRequest.find();
 
     res.status(200).json({
         success : true ,
         pendingRequest
+    })
+
+})
+
+exports.completeRequest = catchAsyncErrors( async (req , res ,next)=> {
+
+    const {requestId , predictedDisease , predictedPrescription} = req.body;
+
+    const pendingRequest = await PendingRequest.find(
+        {
+            _id:requestId
+        }
+    )
+
+    delete pendingRequest[0]._id;
+
+    const completedRequest= await CompletedRequest.create(
+        {
+            patientName:pendingRequest[0].patientName,
+            symptoms :pendingRequest[0].symptoms,
+            predictedDisease,
+            predictedPrescription,
+            age:pendingRequest[0].age
+
+        }
+    );
+
+
+    await PendingRequest.deleteOne({
+        _id:requestId
+    })
+
+    res.status(200).json({
+        success : true ,
+        completedRequest
+    })
+
+})
+
+exports.getAllCompletedRequests = catchAsyncErrors( async (req , res ,next)=> {
+
+
+    const completedRequests = await CompletedRequest.find();
+
+    res.status(200).json({
+        success : true ,
+        completedRequests
     })
 
 })
