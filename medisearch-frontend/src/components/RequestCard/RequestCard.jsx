@@ -2,34 +2,32 @@ import React from 'react';
 import styles from './RequestCard.module.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function RequestCard({ request, onAccept, access }) {
+export default function RequestCard({ patientName, symptoms, age, onAccept, access }) {
   const navigate = useNavigate();
   
   const handleAcceptClick = () => {
-    const requestId = request.prescriptionId;
-    navigate(`/disease-list/${requestId}`);
+    navigate(`/disease-list/${patientName}`);
   };
 
   const handleDetailsClick = () => {
-    const requestId = request.prescriptionId;
-    navigate(`/disease-list/${requestId}`);
+    navigate(`/disease-list/${patientName}`);
   };
 
   return (
     <div className={styles.customCard}>
       <div className={styles.cardContent}>
         <h5 className={styles.cardTitle}>
-        PrescriptionId:{request.prescriptionId} 
+          Patient Name: {patientName} 
         </h5>
         <p className={styles.cardText}>
-          <strong>Symptoms:</strong> {request.symptoms} 
+          <strong>Symptoms:</strong> {symptoms} 
         </p>
         <p className={styles.cardText}>
-          <strong>Disease:</strong> {request.disease} 
+          <strong>Age:</strong> {age} 
         </p>
 
         {/* Chat Button */}
-        <button className={styles.chatButton} onClick={() => navigate(`/chat/${request.prescriptionId}`)}>
+        <button className={styles.chatButton} onClick={() => navigate(`/chat/${patientName}`)}>
           P2P Chat
         </button>
 
