@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./Home.css";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import DiseaseHeader from "../components/DiseaseHeader/DiseaseHeader";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import { useParams } from "react-router";
+import RequestCard from "../../components/AcceptedRequestCard/RequestCard";
+import "./Request.css";
 
 export const Request = () => {
   const dummydata = {
@@ -36,7 +36,7 @@ export const Request = () => {
   return (
     <div className="page">
       <Navbar />
-      <DiseaseHeader data={dummydata} />
+      <RequestCard data={dummydata} />
       <Footer />
     </div>
   );

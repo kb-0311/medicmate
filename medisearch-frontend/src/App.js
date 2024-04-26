@@ -13,7 +13,7 @@ import CreateAcc from "./pages/CreateAcc/CreateAcc";
 import Chat from "./components/Chat/Chat";
 import { useEffect } from "react";
 import { loadUser } from "./Actions/UserActions";
-import { Request } from "./pages/Request";
+import { Request } from "./pages/AcceptedRequest/Request";
 
 function App() {
   const dispatch = useDispatch();
