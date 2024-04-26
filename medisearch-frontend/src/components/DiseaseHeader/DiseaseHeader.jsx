@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./DiseaseHeader.css";
 import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 
-const DiseaseHeader = ({data}) => {
+const DiseaseHeader = ({ data }) => {
   const { prescriptionID, patientData, diseaseData } = data;
 
   const groupedDiseaseData = [];
@@ -12,7 +12,7 @@ const DiseaseHeader = ({data}) => {
   }
 
   useEffect(() => {
-    console.log(data, "ghdghfg")
+    console.log(data, "ghdghfg");
   }, []);
 
   return (
@@ -40,15 +40,15 @@ const DiseaseHeader = ({data}) => {
           }}
         >
           <h1 className="patient-heading">Patient Details</h1>
-          <p>Name: {patientData.patientName}</p>
-          <p>Gender: {patientData.patientGender}</p>
-          <p>Age: {patientData.patientAge}</p>
-          <button
+          <p>Name: {patientData.name}</p>
+          <p>Age: {patientData.age}</p>
+          <p>Gender: {patientData.gender}</p>
+          {/* <button
             // onClick={navigate('/prescription/:pro')}
             className="request-history-button"
           >
             Request Patient Medical History
-          </button>
+          </button> */}
         </div>
 
         <div
