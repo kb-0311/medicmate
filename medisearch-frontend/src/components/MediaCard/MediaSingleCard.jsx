@@ -6,7 +6,17 @@ import Typography from "@mui/material/Typography";
 
 export default function MediaSingleCard(props) {
   return (
-    <Card sx={{ maxWidth: 345, borderRadius: 10, boxShadow: 5 }}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        borderRadius: 10,
+        boxShadow: 5,
+        transition: "transform 0.3s",
+        "&:hover": {
+          transform: "scale(1.075)",
+        },
+      }}
+    >
       <CardMedia sx={{ height: 200 }} image={props.link} title="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" color="#34C9B6">
