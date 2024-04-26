@@ -1,95 +1,95 @@
 .bg-container {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-form {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 400px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box; 
-  }
-  
-  .action-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 20px;
-    
-  }
-  
-  .submit-button {
-    background-color: #fff;
-    color: #333;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .forgot-password-button {
-    background-color: #fff;
-    color: #333;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  /* Login.css */
-  /* ... Other styles ... */
-  
-  .submit-button,
-  .cancel-button,
-  .forgot-password-button {
-    background-color: #fff;
-    color: #333;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .submit-button:hover,
-  .cancel-button:hover,
-  .forgot-password-button:hover {
-    background-color: #608f98;
-    color: #fff;
-  }
-  
-  .signup-link {
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  
-  .signup-link a {
-    color: #007bff;
-    text-decoration: underline;
-  }
+  margin-top: -2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.forgot-password-button {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Login.css */
+/* ... Other styles ... */
+
+.submit-button,
+.cancel-button,
+.forgot-password-button {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-button:hover,
+.cancel-button:hover,
+.forgot-password-button:hover {
+  background-color: #608f98;
+  color: #fff;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: underline;
+}

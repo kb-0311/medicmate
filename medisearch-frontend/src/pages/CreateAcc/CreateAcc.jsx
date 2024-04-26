@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SignupCSS from "./CreateAcc.module.css";
+import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -35,6 +36,7 @@ const CreateAcc = () => {
 
   return (
     <div className={SignupCSS["bg-container"]}>
+      <Navbar />
       <div className={SignupCSS.container}>
         <div className={SignupCSS["login-form"]}>
           <img
