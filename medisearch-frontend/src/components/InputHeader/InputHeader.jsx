@@ -1,6 +1,6 @@
-
-import React, { Children, useEffect } from "react";
+import React, { Children, useState, useEffect } from "react";
 import "./InputHeader.css";
+import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 import { abi, contractAddress } from "../../data/metamask";
@@ -14,34 +14,39 @@ var inpsymp;
 var stringList;
 var Dlist;
 
-async function writeContract() {
-  if (typeof window.ethereum !== "undefined") {
-    const abi = abiobj;
-    const contractAddress = contractAddressobj;
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    const contract = new ethers.Contract(contractAddress, abi, signer);
-    try {
-      // const deseaseList =
-      console.log(Dlist.data.Diseases, "geted")
-      const tx = await contract.addPrescriptionStep1(stringList, Dlist.data.Diseases);
-      console.log("Transaction Hash: ", tx.hash);
-      const receipt = await tx.wait();
-      console.log("Transaction Receipt: ", receipt);
+// async function writeContract() {
+//   if (typeof window.ethereum !== "undefined") {
+//     const abi = abiobj;
+//     const contractAddress = contractAddressobj;
+//     const provider = new ethers.BrowserProvider(window.ethereum);
+//     const signer = await provider.getSigner();
+//     const contract = new ethers.Contract(contractAddress, abi, signer);
+//     try {
+//       // const deseaseList =
+//       console.log(Dlist.data.Diseases, "geted")
+//       const tx = await contract.addPrescriptionStep1(stringList, Dlist.data.Diseases);
+//       console.log("Transaction Hash: ", tx.hash);
+//       const receipt = await tx.wait();
+//       console.log("Transaction Receipt: ", receipt);
       
-    } catch (error) {
-      alert("Error writing to contract: " + error.message);
-    }
-  } else {
-    alert("MetaMask is not installed.");
-  }
-}
+//     } catch (error) {
+//       alert("Error writing to contract: " + error.message);
+//     }
+//   } else {
+//     alert("MetaMask is not installed.");
+//   }
+// }
 
 const InputHeader = () => {
-  const isButtonEnabled = true; 
+  
   const navigate = useNavigate();
-  const Diseases = useSelector((state) => state.user.Diseases);
   const dispatch = useDispatch();
+  const Diseases = useSelector((state) => state.user.Diseases);
+
+  const [symptoms, setSymptoms] = useState("");
+  const [patientName, setPatientName] = useState("");
+  const [age, setAge] = useState("");
+  var Dlist;
 
   useEffect(() => {
     Dlist = Diseases;
@@ -51,17 +56,46 @@ const InputHeader = () => {
     navigate("/disease-list");
   };
 
-  const [symptoms, setSymptoms] = React.useState("");
   const handleSymptomsChange = (event) => {
     setSymptoms(event.target.value);
   };
 
+  const handleNameChange = (event) => {
+    setPatientName(event.target.value);
+  };
+
+  const handleAgeChange = (event) => {
+    setAge(event.target.value);
+  };
+
   async function handleClick(e) {
-    console.log({ symptoms });
-    inpsymp = symptoms;
-    stringList = inpsymp.split(",");
-    await dispatch(loaddiseases(symptoms))
-    writeContract();
+    // console.log({ symptoms });
+    // inpsymp = symptoms;
+    // stringList = inpsymp.split(",");
+    // await dispatch(loaddiseases(symptoms))
+    // writeContract();
+  
+
+
+
+    
+
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8000/api/v1/request/add', {
+          patientName,
+          age: parseInt(age, 10),
+          symptoms
+      }, {
+          withCredentials: true // Include cookies in cross-origin requests
+      });
+
+      console.log('Success:', response.data);
+      // Optionally handle further actions here, like navigation or state updates
+  } catch (error) {
+      console.error('Error:', error);
+      alert("Error in SUBMITTING: " + error.message);
+  }
   }
 
   return (
@@ -119,24 +153,28 @@ const InputHeader = () => {
             }}
           >
             <TextField
-              id="outlined-multiline-static"
+              // id="outlined-multiline-static"
+              id="patient-name"
               label="Patient's Full Name"
-              // multiline
-              // rows={1}
               placeholder="Mr./Mrs./Ms. Name LastName"
               style={{ width: "75%" }}
+              value={patientName}
+              onChange={handleNameChange}
             />
             <div style={{ margin: "8px 0" }}>
               {/* Add margin (space) between the two TextField components */}
             </div>
             <TextField
-              id="outlined-number"
+              // id="outlined-number"
+              id="patient-age"
               label="Patient's Age"
               type="number"
               InputLabelProps={{
                 shrink: true,
               }}
               style={{ width: "75%" }}
+              value={age}
+              onChange={handleAgeChange}
             />
             <div style={{ margin: "8px 0" }}>
               {/* Add margin (space) between the two TextField components */}
