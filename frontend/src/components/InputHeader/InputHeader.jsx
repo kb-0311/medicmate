@@ -3,16 +3,16 @@ import "./InputHeader.css";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
-import { abi, contractAddress } from "../../data/metamask";
+// import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
-import { loaddiseases } from "../../Actions/UserActions";
+// import { loaddiseases } from "../../Actions/UserActions";
 
-const abiobj = abi;
-const contractAddressobj = contractAddress;
-const ethers = require("ethers");
-var inpsymp;
-var stringList;
-var Dlist;
+// const abiobj = abi;
+// const contractAddressobj = contractAddress;
+// const ethers = require("ethers");
+// var inpsymp;
+// var stringList;
+// var Dlist;
 
 // async function writeContract() {
 //   if (typeof window.ethereum !== "undefined") {
@@ -28,7 +28,7 @@ var Dlist;
 //       console.log("Transaction Hash: ", tx.hash);
 //       const receipt = await tx.wait();
 //       console.log("Transaction Receipt: ", receipt);
-      
+
 //     } catch (error) {
 //       alert("Error writing to contract: " + error.message);
 //     }
@@ -38,7 +38,6 @@ var Dlist;
 // }
 
 const InputHeader = () => {
-  
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const Diseases = useSelector((state) => state.user.Diseases);
@@ -74,28 +73,30 @@ const InputHeader = () => {
     // stringList = inpsymp.split(",");
     // await dispatch(loaddiseases(symptoms))
     // writeContract();
-  
-
-
-
-    
 
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/request/add', {
+      const response = await axios.post(
+        "http://localhost:8000/api/v1/request/add",
+        {
           patientName,
           age: parseInt(age, 10),
-          symptoms
-      }, {
-          withCredentials: true // Include cookies in cross-origin requests
-      });
+          symptoms,
+        },
+        {
+          withCredentials: true, // Include cookies in cross-origin requests
+        }
+      );
 
-      console.log('Success:', response.data);
+      console.log("Success:", response.data);
+
+      alert("Entry has been successfully added to request feed.");
+      window.location.reload();
       // Optionally handle further actions here, like navigation or state updates
-  } catch (error) {
-      console.error('Error:', error);
+    } catch (error) {
+      console.error("Error:", error);
       alert("Error in SUBMITTING: " + error.message);
-  }
+    }
   }
 
   return (
@@ -104,8 +105,8 @@ const InputHeader = () => {
         <h1 className="input-heading">Input Patient Symptoms</h1>
         <p className="input-heading-desc">
           In Order to Predict the Disease, You need to Provided us what are the
-          symptoms that you are facing right now. MediSearch AI Engine will
-          Predict your disease based on your virtual Diagnosis.
+          symptoms that you are facing right now. MedicMate AI Engine will
+          predict your disease based on your virtual Diagnosis.
         </p>
         <div className="inputarea-1">
           <h2 className="inputarea-1-head">

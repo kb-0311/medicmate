@@ -79,51 +79,53 @@ export const Prescription = () => {
     setNewMedicineName(event.target.value);
   };
 
+  const handlesubmit = async () => {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, abi, signer);
 
-  const handlesubmit = async() => {
-        const provider = new ethers.BrowserProvider(window.ethereum);
-        const signer = await provider.getSigner();
-      const contract = new ethers.Contract(contractAddress, abi, signer);
-      
-      const concatenatedMedicines = medicines.map((medicine) => {
-        return `${medicine.name}#${medicine.strength}#${medicine.dose}#${medicine.duration}`;
-      });
-    
-    console.log(concatenatedMedicines, "hellojkgfhh")
-        
-        const tx = await contract.addPrescriptionStep2(prescriptionId, disease, concatenatedMedicines);
+    const concatenatedMedicines = medicines.map((medicine) => {
+      return `${medicine.name}#${medicine.strength}#${medicine.dose}#${medicine.duration}`;
+    });
+
+    console.log(concatenatedMedicines, "hellojkgfhh");
+
+    const tx = await contract.addPrescriptionStep2(
+      prescriptionId,
+      disease,
+      concatenatedMedicines
+    );
     // const array = tx.map((item) => item.toString());
-    console.log("hello", tx)
+    console.log("hello", tx);
   };
 
+  // useEffect(() => {
+  //   async function getReq() {
+  //     if (typeof window.ethereum !== "undefined") {
+  //       const provider = new ethers.BrowserProvider(window.ethereum);
+  //       const signer = await provider.getSigner();
+  //       const contract = new ethers.Contract(contractAddress, abi, signer);
+  //       try {
+  //         const prescription = await contract.getPrescription(prescriptionId);
+  //         const arrayx = prescription.map((item) => item.toString());
+  //         console.log(arrayx, "hello");
+  //         const symptoms = arrayx[5];
+
+  //         dispatch(loadPrescription(symptoms, disease));
+  //       } catch (error) {
+  //         alert("Error writing to contract: " + error.message);
+  //       }
+  //     } else {
+  //       alert("MetaMask is not installed.");
+  //     }
+  //   }
+
+  //   getReq();
+  // }, [prescriptionId, disease]);
+
   useEffect(() => {
-    async function getReq() {
-      if (typeof window.ethereum !== "undefined") {
-        const provider = new ethers.BrowserProvider(window.ethereum);
-        const signer = await provider.getSigner();
-        const contract = new ethers.Contract(contractAddress, abi, signer);
-        try {
-          const prescription = await contract.getPrescription(prescriptionId);
-          const arrayx = prescription.map((item) => item.toString());
-          console.log(arrayx, "hello");
-          const symptoms = arrayx[5];
-
-          dispatch(loadPrescription(symptoms, disease));
-        } catch (error) {
-          alert("Error writing to contract: " + error.message);
-        }
-      } else {
-        alert("MetaMask is not installed.");
-      }
-    }
-
-    getReq();
-  }, [prescriptionId, disease]);
-
-  useEffect(() => {
-    console.log(prescription, "f")
+    console.log(prescription, "f");
     if (prescription && prescription.length > 0) {
-      
       const newMedicines = prescription.map((medicineName) => ({
         name: medicineName,
         strength: "0mg",
@@ -145,27 +147,52 @@ export const Prescription = () => {
           duration: "0 weeks",
         },
       ]);
-      setNewMedicineName(""); 
+      setNewMedicineName("");
+      setSearchVisible(false);
     }
   };
+
+  const currentDate = new Date();
+
+  // Get the year, month, and day
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // Months are zero-indexed, so January is 0
+  const day = currentDate.getDate();
+
+  // Format the date as desired (e.g., YYYY-MM-DD)
+  const formattedDate = `${day.toString().padStart(2, "0")}-${month
+    .toString()
+    .padStart(2, "0")}-${year}`;
+
+  console.log(formattedDate);
 
   return (
     <>
       <Navbar />
       <div className={styles.testContainer}>
-        <h1 className={styles.testTitle}>Prescription</h1>
+        <h1 className={styles.testTitle}>Prescription for _DieseaseName_</h1>
         <div className={styles.patientDoctorInfo}>
-          <div>
-            <strong>Doctor:</strong> Dr. Sushrut Lachure
+          <div className={styles.patientInfo}>
+            <div>
+              <strong>Patient Name:</strong> Vishal Singh Tanwar
+            </div>
+            <div>
+              <strong>Patient Age:</strong> 12 years
+            </div>
+            <div>
+              <strong>Patient Gender:</strong> Male
+            </div>
           </div>
-          <div>
-            <strong>Patient Name:</strong> Vishal Singh Tanwar
-          </div>
-          <div>
-            <strong>Patient Age:</strong> 12 years
-          </div>
-          <div>
-            <strong>Patient Gender:</strong> Male
+          <div className={styles.doctorInfo}>
+            <div>
+              <strong>Doctor Name:</strong> Dr. Ankit
+            </div>
+            <div>
+              <strong>Doctor ID:</strong> abc123
+            </div>
+            <div>
+              <strong>Date:</strong> {formattedDate}
+            </div>
           </div>
         </div>
         <ul className={styles.medicinesList}>
@@ -186,37 +213,30 @@ export const Prescription = () => {
               </button>
             </div>
           ))}
-        </ul>
-        <div className={styles.addButtonContainer}>
-          {searchVisible ? (
-            <div className={styles.searchBar}>
-              {/* <input
-                type="text"
-                placeholder="Search for medicines"
-                value={searchText}
-                className={styles.searchBarinput}
-                onChange={handleSearchTextChange}
-              /> */}
-              <div>
-            <input
-              type="text"
-              placeholder="Enter Medicine Name"
-              value={newMedicineName}
-              onChange={handleNewMedicineNameChange}
-            />
-            <button onClick={handleAddNewMedicine}>Add Medicine</button>
+          <div className={styles.addButtonContainer}>
+            {searchVisible ? (
+              <div className={styles.searchBar}>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Enter Medicine Name"
+                    value={newMedicineName}
+                    onChange={handleNewMedicineNameChange}
+                  />
+                  <button onClick={handleAddNewMedicine}>Add Medicine</button>
+                </div>
+              </div>
+            ) : (
+              <div
+                className={styles.changeDosageButton}
+                onClick={toggleSearchBar}
+              >
+                Add new medicine
+              </div>
+            )}
           </div>
-            </div>
-          ) : (
-            <div
-              className={styles.changeDosageButton}
-              onClick={toggleSearchBar}
-            >
-              +
-            </div>
-          )}
-        </div>
-        {isAddingMedicine ? (
+        </ul>
+        {/* {isAddingMedicine ? (
           <div>
             <input
               type="text"
@@ -226,9 +246,11 @@ export const Prescription = () => {
             />
             <button onClick={handleAddNewMedicine}>Add Medicine</button>
           </div>
-        ) : null}
-        <div className={styles.submit} onClick={handlesubmit}>
-          Submit
+        ) : null} */}
+        <div className={styles.submitbuttoncontainer}>
+          <div className={styles.submit} onClick={handlesubmit}>
+            Submit
+          </div>
         </div>
       </div>
     </>
