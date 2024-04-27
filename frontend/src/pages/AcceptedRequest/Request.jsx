@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import RequestCard from "../../components/AcceptedRequestCard/DiseaseList";
 import "./Request.css";
 import axios from "axios";
+import { useLocation } from 'react-router-dom';
+
 
 export const Request = () => {
 
@@ -23,14 +25,14 @@ export const Request = () => {
   //   fetchPatientData();
   // }, []);
   // console.log(patientData);
-
+  
   const dummydata = {
     prescriptionID: 1,
     patientData: {
       name: "ACE",
       age: "30",
       gender: "Female",
-      symptoms: ["Fever", "Cough", "Fatigue"],
+      symptoms: "Fever, Cough, Fatigue"
     },
     diseaseData: [
       "Common Cold",
@@ -42,22 +44,37 @@ export const Request = () => {
     ],
   };
 
+
   const { id } = useParams();
+  // const location = useLocation();
+  // const { prescriptionID, patientName, symptoms, age, predictedDiseases } = location.state;
+  // const [diseaseData, setDiseaseData] = useState([]);
 
-  useEffect(() => {
-    console.log(id);
-    const fun = async () => {};
+  // useEffect(() => {
+  //   console.log(id);
+  //   const fun = async () => {};
 
-    fun();
-  }, [id]);
+  //   fun();
+  // }, [id]);
+  // useEffect(() => {
+  //   const fetchDiseaseData = async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:8000/api/v1/request/${id}`);
+  //       setDiseaseData(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching disease data:", error);
+  //     }
+  //   };
+
+  //   fetchDiseaseData();
+  // }, [id]);
+  
 
   return (
     <div className="page">
       <Navbar />
 
-
       <RequestCard data={dummydata} />      
-      
       <Footer />
     </div>
   );

@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import styles from './RequestCard.module.css';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 
 
 export default function RequestCard({ prescriptionId, patientName, symptoms, age, onAccept, access }) {
   const navigate = useNavigate();
 
-  const handleAcceptClick = () => {
-    
-    navigate(`/request/${prescriptionId}`);
+
+
+  const handleAcceptClick = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8000/api/v1/request/${prescriptionId}`, {withCredentials:true});
+      const { _id, patientName, symptoms, age } = response.data.pendingRequest;
+      
+      navigate(`/request/${prescriptionId}`, { state: {prescriptionID: _id, patientName, symptoms, age } });
+    } catch (error) {
+      console.error("Error accepting request:", error);
+    }
   };
 
   const handleDetailsClick = () => {
