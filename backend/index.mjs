@@ -14,10 +14,13 @@ import requests from "./routes/RequestRoutes.js"
 
 const app = express();
 app.use(express.json());
+
 app.use(cors({
   origin: 'http://localhost:3000',
   credentials: true
 }))
+
+
 app.use(bodyParser.urlencoded({ extended: true },{limit : '50mb'}));
 app.use(cookieParser());
 
