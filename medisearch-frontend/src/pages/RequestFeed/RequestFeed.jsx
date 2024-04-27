@@ -10,7 +10,8 @@ export default function RequestFeed() {
   const [requests, setRequests] = useState([]);
 
   const handleAcceptRequest = (acceptedRequest) => {
-    console.log("Accepted request ID:", acceptedRequest.prescriptionId);
+    // console.log("Accepted request ID:", acceptedRequest.prescriptionId);
+    // setSelectedRequest(acceptedRequest);
   };
 
   // useEffect(() => {
@@ -76,14 +77,16 @@ export default function RequestFeed() {
           <h1>Request Feed</h1>
         </div>
         <Grid container spacing={2}>
-          {requests.map((request, index) => (
+          {requests.map((request) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={request._id}>
-              <RequestCard
-                prescriptionId={index+1}
-                patientName={request.patientName}
-                symptoms={request.symptoms}
-                age={request.age}
-              />
+   
+                <RequestCard
+                  prescriptionId={request._id}
+                  patientName={request.patientName}
+                  symptoms={request.symptoms}
+                  age={request.age}
+                />
+
             </Grid>
           ))}
         </Grid>

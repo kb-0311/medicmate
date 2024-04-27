@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { useParams } from "react-router";
-import RequestCard from "../../components/AcceptedRequestCard/RequestCard";
+import RequestCard from "../../components/AcceptedRequestCard/DiseaseList";
 import "./Request.css";
 import axios from "axios";
 
@@ -54,7 +54,10 @@ export const Request = () => {
   return (
     <div className="page">
       <Navbar />
-      <RequestCard data={dummydata} />
+
+
+      <RequestCard data={dummydata} />      
+      
       <Footer />
     </div>
   );

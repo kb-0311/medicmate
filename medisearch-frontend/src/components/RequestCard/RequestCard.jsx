@@ -8,6 +8,7 @@ export default function RequestCard({ prescriptionId, patientName, symptoms, age
   const navigate = useNavigate();
 
   const handleAcceptClick = () => {
+    
     navigate(`/request/${prescriptionId}`);
   };
 

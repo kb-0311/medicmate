@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./RequestCard.css";
+import "./DiseaseList.css";
 import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 import Button from "@mui/material/Button";
 
