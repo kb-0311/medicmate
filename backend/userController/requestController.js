@@ -34,6 +34,23 @@ exports.getAllRequests = catchAsyncErrors( async (req , res ,next)=> {
 
 })
 
+exports.getSingleRequest = catchAsyncErrors( async (req , res ,next)=> {
+
+    const prescriptionId = req.params.prescriptionId;
+
+    const pendingRequest = await PendingRequest.findById(
+        {
+            _id:prescriptionId
+        }
+    )
+
+    res.status(200).json({
+        success : true ,
+        pendingRequest
+    })
+
+})
+
 exports.completeRequest = catchAsyncErrors( async (req , res ,next)=> {
 
     const {requestId , predictedDisease , predictedPrescription} = req.body;
@@ -43,6 +60,10 @@ exports.completeRequest = catchAsyncErrors( async (req , res ,next)=> {
             _id:requestId
         }
     )
+
+    if (pendingRequest==null) {
+        return next(new ErrorHandler("request not found" , 404));
+    }
 
     delete pendingRequest[0]._id;
 
