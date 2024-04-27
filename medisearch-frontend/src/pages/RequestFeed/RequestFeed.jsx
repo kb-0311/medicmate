@@ -5,14 +5,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import styles from "./RequestFeed.module.css";
 import axios from "axios";
 
+
 export default function RequestFeed() {
-  // const [cards, setCards] = useState([]);
   const [requests, setRequests] = useState([]);
-  // const dummyRequest = {
-  //   prescriptionId: '12345',
-  //   symptoms: 'Fever, Cough, Shortness of breath',
-  //   disease: 'COVID-19',
-  // };
 
   const handleAcceptRequest = (acceptedRequest) => {
     console.log("Accepted request ID:", acceptedRequest.prescriptionId);
@@ -73,23 +68,6 @@ export default function RequestFeed() {
     getRequests();
   }, []);
 
-  // return (
-  //   <>
-  //     <Navbar />
-  //     <div className={styles.feed}>
-  //       <div className={styles.title}>
-  //         <h1>Request Feed</h1>
-  //       </div>
-  //       <Grid container spacing={2}>
-  //         {/* Render the RequestCard with dummy data */}
-  //         <Grid item xs={12} sm={6} md={4} lg={3}>
-  //           {/* <RequestCard request={dummyRequest} onAccept={handleAcceptRequest} access="op-pending" /> */}
-  //         </Grid>   
-  //       </Grid>
-        
-  //     </div>
-  //   </>
-  // );
   return (
     <>
       <Navbar />
@@ -98,9 +76,10 @@ export default function RequestFeed() {
           <h1>Request Feed</h1>
         </div>
         <Grid container spacing={2}>
-          {requests.map((request) => (
+          {requests.map((request, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={request._id}>
               <RequestCard
+                prescriptionId={index+1}
                 patientName={request.patientName}
                 symptoms={request.symptoms}
                 age={request.age}

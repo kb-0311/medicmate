@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './RequestCard.module.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function RequestCard({ patientName, symptoms, age, onAccept, access }) {
+
+
+export default function RequestCard({ prescriptionId, patientName, symptoms, age, onAccept, access }) {
   const navigate = useNavigate();
-  
+
   const handleAcceptClick = () => {
-    navigate(`/disease-list/${patientName}`);
+    navigate(`/request/${prescriptionId}`);
   };
 
   const handleDetailsClick = () => {
-    navigate(`/disease-list/${patientName}`);
+    navigate(`/request/${prescriptionId}`);
   };
 
   return (
     <div className={styles.customCard}>
       <div className={styles.cardContent}>
         <h5 className={styles.cardTitle}>
-          Patient Name: {patientName} 
+          Presciption ID: {prescriptionId} 
         </h5>
+        <p className={styles.cardText}>
+        <strong>Patient Name:</strong> {patientName} 
+        </p>
         <p className={styles.cardText}>
           <strong>Symptoms:</strong> {symptoms} 
         </p>
@@ -27,7 +32,7 @@ export default function RequestCard({ patientName, symptoms, age, onAccept, acce
         </p>
 
         {/* Chat Button */}
-        <button className={styles.chatButton} onClick={() => navigate(`/chat/${patientName}`)}>
+        <button className={styles.chatButton} onClick={() => navigate(`/chat/${prescriptionId}`)}>
           P2P Chat
         </button>
 
