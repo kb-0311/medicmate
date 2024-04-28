@@ -54,7 +54,7 @@ const Header = () => {
           <div className="header-row-right-column">
             <img
               className="phone-img"
-              src="https://i.imgur.com/a8MM9fw.png"
+              src="/homepage-image.png"
               alt="app"
             ></img>
           </div>
