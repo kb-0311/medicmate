@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./DiseaseList.css";
 import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 import Button from "@mui/material/Button";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 const DiseaseHeader = ({ data }) => {
@@ -18,17 +18,21 @@ const DiseaseHeader = ({ data }) => {
     groupedDiseaseData.push(diseasePair);
   }
 
-  
   const handlePredictDiseases = () => {
-    axios.post('https://410d-2409-40c2-19-1c6f-d122-e478-5a2a-a9b2.ngrok-free.app/predict_disease', {
-      symptoms: symptoms
-    }, {withCredentials:true})
-    .then(response => {
-      setPredictedDiseases(response.data.diseases);
-    })
-    .catch(error => {
-      console.error('There was an error!', error);
-    });
+    axios
+      .post(
+        "https://f200-2409-40c2-2050-53fe-8150-fc3a-33cf-fb31.ngrok-free.app/predict_disease",
+        {
+          symptoms: symptoms,
+        },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        setPredictedDiseases(response.data.diseases);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
   };
 
   useEffect(() => {
@@ -41,10 +45,15 @@ const DiseaseHeader = ({ data }) => {
         <div className="patient-details">
           <h1 className="patient-heading">Patient Details</h1>
           <div className="patient-personal">
-
-            <p><strong>Name</strong>: {patientName}</p>
-            <p><strong>Age</strong>: {age}</p>
-            <p><strong>Prescription ID</strong>: {prescriptionID}</p> 
+            <p>
+              <strong>Name</strong>: {patientName}
+            </p>
+            <p>
+              <strong>Age</strong>: {age}
+            </p>
+            <p>
+              <strong>Prescription ID</strong>: {prescriptionID}
+            </p>
           </div>
         </div>
 
@@ -63,13 +72,9 @@ const DiseaseHeader = ({ data }) => {
           P2P Chat
         </Button>
 
-        <Button
-          component="a"
-          onClick={handlePredictDiseases}
-        >
+        <Button component="a" onClick={handlePredictDiseases}>
           Predict Diseases
         </Button>
-
       </div>
       <div className="right-container">
         <div className="disease-card">
