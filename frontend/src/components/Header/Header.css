@@ -18,6 +18,7 @@ header {
 .header-row-left-column {
   margin-left: 8rem;
   margin-top: 4rem;
+  margin-bottom: 2rem;
   float: left;
   width: 70%;
 }
@@ -44,7 +45,7 @@ header {
   font-size: 25px;
   font-weight: 400;
   letter-spacing: 0;
-  gap: 1rem;
+  gap: 2rem;
   line-height: normal;
   width: 700px;
 }
