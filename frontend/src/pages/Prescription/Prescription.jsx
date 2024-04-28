@@ -7,7 +7,7 @@ import { ethers } from "ethers";
 import Button from "@mui/material/Button";
 import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
-import { loadPrescription } from "../../Actions/UserActions";
+import { loadPrescription, loadRequest } from "../../Actions/UserActions";
 import axios from "axios";
 
 export const Prescription = () => {
@@ -31,7 +31,11 @@ export const Prescription = () => {
   const [newMedicineName, setNewMedicineName] = useState(""); // State for the new medicine input
   const [isAddingMedicine, setIsAddingMedicine] = useState(false); // State to toggle input field visibility
 
-  const prescription = useSelector((state) => state.user.Prescription);
+  // const  prescription  = useSelector((state) => state.user.Prescription);
+
+  const { account } = useSelector((state) => state.user);
+  const { pendingRequest } = useSelector((state)=>state.user);
+
 
   const { prescriptionId, disease } = useParams();
 
@@ -50,32 +54,9 @@ export const Prescription = () => {
   };
 
   const [searchVisible, setSearchVisible] = useState(false);
-  const [searchText, setSearchText] = useState("");
-  const [suggestedMedicines, setSuggestedMedicines] = useState([
-    "Suggested Medicine 1",
-    "Suggested Medicine 2",
-    "Suggested Medicine 3",
-  ]);
 
   const toggleSearchBar = () => {
     setSearchVisible(!searchVisible);
-  };
-
-  const handleSearchTextChange = (event) => {
-    setSearchText(event.target.value);
-  };
-
-  const addSuggestedMedicine = (suggestedMedicine) => {
-    setMedicines((prevMedicines) => [
-      ...prevMedicines,
-      {
-        name: suggestedMedicine,
-        strength: "0mg",
-        dose: "0-0-0",
-        duration: "0 weeks",
-      },
-    ]);
-    setSearchVisible(false);
   };
 
   const handleNewMedicineNameChange = (event) => {
@@ -102,42 +83,27 @@ export const Prescription = () => {
     console.log("hello", tx);
   };
 
-  // useEffect(() => {
-  //   async function getReq() {
-  //     if (typeof window.ethereum !== "undefined") {
-  //       const provider = new ethers.BrowserProvider(window.ethereum);
-  //       const signer = await provider.getSigner();
-  //       const contract = new ethers.Contract(contractAddress, abi, signer);
-  //       try {
-  //         const prescription = await contract.getPrescription(prescriptionId);
-  //         const arrayx = prescription.map((item) => item.toString());
-  //         console.log(arrayx, "hello");
-  //         const symptoms = arrayx[5];
-
-  //         dispatch(loadPrescription(symptoms, disease));
-  //       } catch (error) {
-  //         alert("Error writing to contract: " + error.message);
-  //       }
-  //     } else {
-  //       alert("MetaMask is not installed.");
-  //     }
-  //   }
-
-  //   getReq();
-  // }, [prescriptionId, disease]);
-
   useEffect(() => {
-    console.log(prescription, "f");
-    if (prescription && prescription.length > 0) {
-      const newMedicines = prescription.map((medicineName) => ({
-        name: medicineName,
-        strength: "0mg",
-        dose: "0-0-0",
-        duration: "0 weeks",
-      }));
-      setMedicines(newMedicines);
-    }
-  }, [prescription]);
+
+    // 662e788e35902d790d42b791
+    
+    dispatch(loadRequest(prescriptionId));
+  
+  }, [])
+  
+
+  // useEffect(() => {
+  //   console.log(prescription, "f");
+  //   if (prescription && prescription.length > 0) {
+  //     const newMedicines = prescription.map((medicineName) => ({
+  //       name: medicineName,
+  //       strength: "0mg",
+  //       dose: "0-0-0",
+  //       duration: "0 weeks",
+  //     }));
+  //     setMedicines(newMedicines);
+  //   }
+  // }, [prescription]);
 
   const handleAddNewMedicine = () => {
     if (newMedicineName) {
@@ -213,21 +179,18 @@ export const Prescription = () => {
         <div className={styles.patientDoctorInfo}>
           <div className={styles.patientInfo}>
             <div>
-              <strong>Patient Name:</strong> Vishal Singh Tanwar
+              <strong>Patient Name:</strong> {pendingRequest? pendingRequest.patientName:""}
             </div>
             <div>
-              <strong>Patient Age:</strong> 12 years
-            </div>
-            <div>
-              <strong>Patient Gender:</strong> Male
+              <strong>Patient Age:</strong> {pendingRequest? pendingRequest.age:""}
             </div>
           </div>
           <div className={styles.doctorInfo}>
             <div>
-              <strong>Doctor Name:</strong> Dr. Ankit
+              <strong>Doctor Name:</strong> {account?account.name:""}
             </div>
             <div>
-              <strong>Doctor ID:</strong> abc123
+              <strong>Doctor ID:</strong>  {account?account._id:""}
             </div>
             <div>
               <strong>Date:</strong> {formattedDate}

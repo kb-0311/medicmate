@@ -47,6 +47,8 @@ export const loadUser = () => async (dispatch) => {
     }
   };
 
+
+
 export const logoutUser = () => async (dispatch) => {
   try {
       dispatch({
@@ -124,6 +126,31 @@ export const loadPrescription = (Symptoms, disease) => async (dispatch) => {
     dispatch({
       type: "PrescriptionFailure",
       payload: error.response.data.message,
+    });
+  }
+};
+
+export const loadRequest = (requestId) => async (dispatch) => {
+  try {
+    dispatch({
+      type: "LoadRequestRequest",
+    });
+
+    const  {data}  = await axios.get(`http://localhost:8000/api/v1/request/${requestId}` , {
+      withCredentials:true
+    });
+
+
+    dispatch({
+      type: "LoadRequestSuccess",
+      pendingRequest: data.pendingRequest,
+    });
+
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: "LoadRequestFailure",
+      payload: error,
     });
   }
 };
