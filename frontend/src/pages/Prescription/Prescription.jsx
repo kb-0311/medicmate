@@ -4,26 +4,29 @@ import MedicineItem from "../../components/MedicineItem/MedicineItem";
 import styles from "./Prescription.module.css";
 import { useParams } from "react-router";
 import { ethers } from "ethers";
+import Button from "@mui/material/Button";
 import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPrescription } from "../../Actions/UserActions";
+import axios from "axios";
 
 export const Prescription = () => {
   const dispatch = useDispatch();
   const [medicines, setMedicines] = useState([
-    {
-      name: "Medicine A",
-      strength: "500mg",
-      dose: "1-0-1",
-      duration: "4 weeks",
-    },
-    {
-      name: "Medicine B",
-      strength: "250mg",
-      dose: "1-0-1",
-      duration: "3 weeks",
-    },
+    // {
+    //   name: "Medicine A",
+    //   strength: "500mg",
+    //   dose: "1-0-1",
+    //   duration: "4 weeks",
+    // },
+    // {
+    //   name: "Medicine B",
+    //   strength: "250mg",
+    //   dose: "1-0-1",
+    //   duration: "3 weeks",
+    // },
   ]);
+  const [predictedPrescription, setPredictedPrescription] = useState("Sushrut, Lachure, hehe");
 
   const [newMedicineName, setNewMedicineName] = useState(""); // State for the new medicine input
   const [isAddingMedicine, setIsAddingMedicine] = useState(false); // State to toggle input field visibility
@@ -152,6 +155,41 @@ export const Prescription = () => {
     }
   };
 
+  const handleLoadMedicines = async () => {
+    try {
+      const response = await axios.post('https://f200-2409-40c2-2050-53fe-8150-fc3a-33cf-fb31.ngrok-free.app/predict_medicine', {
+        disease: disease
+      });
+      const { medicines } = response.data;
+      setMedicines(medicines.map(medicine => ({
+        name: medicine,
+        strength: "0mg",
+        dose: "0-0-0",
+        duration: "0 weeks",
+      })));
+
+      // As a , separated string
+      const prescriptionString = medicines.join(', ');
+      setPredictedPrescription(prescriptionString);
+    console.log(predictedPrescription);
+    } catch (error) {
+      console.error('Error loading medicines:', error);
+    }
+  };
+
+  const handleMarkAsDone = async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/v1/request/done', {
+        requestId: prescriptionId,
+        predictedDisease: disease,
+        predictedPrescription: predictedPrescription
+      }, {withCredentials:true});
+      console.log('Request marked as done:', response.data);
+    } catch (error) {
+      console.error('Error marking request as done:', error);
+    }
+  };
+
   const currentDate = new Date();
 
   // Get the year, month, and day
@@ -170,7 +208,8 @@ export const Prescription = () => {
     <>
       <Navbar />
       <div className={styles.testContainer}>
-        <h1 className={styles.testTitle}>Prescription for _DieseaseName_</h1>
+        <h1 className={styles.testTitle}>Prescription for {disease} & prescriptionId: {prescriptionId} & predictedPrescription : {predictedPrescription}</h1>
+        {console.log(medicines)}
         <div className={styles.patientDoctorInfo}>
           <div className={styles.patientInfo}>
             <div>
@@ -195,6 +234,15 @@ export const Prescription = () => {
             </div>
           </div>
         </div>
+
+        
+        <Button
+            component="a"
+            onClick={handleLoadMedicines}
+          >
+            Load Medicines
+        </Button>
+
         <ul className={styles.medicinesList}>
           {medicines.map((medicine, index) => (
             <div key={index} className={styles.medicineRow}>
@@ -248,8 +296,13 @@ export const Prescription = () => {
           </div>
         ) : null} */}
         <div className={styles.submitbuttoncontainer}>
-          <div className={styles.submit} onClick={handlesubmit}>
-            Submit
+          <div className={styles.submit} onClick={handleMarkAsDone}>
+            Mark as Done
+          </div>
+        </div>
+        <div className={styles.submitbuttoncontainer}>
+          <div className={styles.submit}>
+            Download
           </div>
         </div>
       </div>

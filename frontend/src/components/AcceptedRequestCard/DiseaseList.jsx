@@ -20,7 +20,7 @@ const DiseaseHeader = ({ data }) => {
 
   
   const handlePredictDiseases = () => {
-    axios.post('https://410d-2409-40c2-19-1c6f-d122-e478-5a2a-a9b2.ngrok-free.app/predict_disease', {
+    axios.post('https://f200-2409-40c2-2050-53fe-8150-fc3a-33cf-fb31.ngrok-free.app/predict_disease', {
       symptoms: symptoms
     }, {withCredentials:true})
     .then(response => {

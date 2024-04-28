@@ -17,10 +17,10 @@ const DiseaseSingleCard = (props) => {
             navigate(
               `/prescription/${props.PrescriptionID}/${props.diseaseName}`
             );
-          }}
+          }}  
           className="generate-button"
         >
-          Generate Prescription
+          Select Disease
         </button>
       </div>
     </div>
