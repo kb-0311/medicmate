@@ -5,11 +5,9 @@ import { useParams } from "react-router";
 import RequestCard from "../../components/AcceptedRequestCard/DiseaseList";
 import "./Request.css";
 import axios from "axios";
-import { useLocation } from 'react-router-dom';
-
+import { useLocation } from "react-router-dom";
 
 export const Request = () => {
-
   // const [patientData, setPatientData] = useState({});
 
   // useEffect(() => {
@@ -25,14 +23,14 @@ export const Request = () => {
   //   fetchPatientData();
   // }, []);
   // console.log(patientData);
-  
+
   const dummydata = {
     prescriptionID: 1,
     patientData: {
       name: "ACE",
       age: "30",
       gender: "Female",
-      symptoms: "Fever, Cough, Fatigue"
+      symptoms: "Fever, Cough, Fatigue",
     },
     diseaseData: [
       "Common Cold",
@@ -43,7 +41,6 @@ export const Request = () => {
       "COVID-19",
     ],
   };
-
 
   const { id } = useParams();
   // const location = useLocation();
@@ -68,13 +65,12 @@ export const Request = () => {
 
   //   fetchDiseaseData();
   // }, [id]);
-  
 
   return (
     <div className="page">
       <Navbar />
 
-      <RequestCard data={dummydata} />      
+      <RequestCard data={dummydata} />
       <Footer />
     </div>
   );

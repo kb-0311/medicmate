@@ -9,12 +9,11 @@ export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
     console.log("login");
 
     dispatch({
-        type: "LoginSuccess",
-        account: account,
+      type: "LoginSuccess",
+      account: account,
     });
 
-      console.log("login succ");
-
+    console.log("login succ");
   } catch (error) {
     dispatch({
       type: "LoginFailure",
@@ -24,44 +23,42 @@ export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
 };
 
 export const loadUser = () => async (dispatch) => {
-    try {
-      dispatch({
-        type: "LoadUserRequest",
-      });
-  
-      const  {data}  = await axios.get("http://localhost:8000/api/v1/me" , {
-        withCredentials:true
-      });
+  try {
+    dispatch({
+      type: "LoadUserRequest",
+    });
 
-      dispatch({
-        type: "LoadUserSuccess",
-        account: data.user,
-      });
+    const { data } = await axios.get("http://localhost:8000/api/v1/me", {
+      withCredentials: true,
+    });
 
-    } catch (error) {
-      console.log(error);
-      dispatch({
-        type: "LoadUserFailure",
-        payload: error,
-      });
-    }
-  };
-
-
+    dispatch({
+      type: "LoadUserSuccess",
+      account: data.user,
+    });
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: "LoadUserFailure",
+      payload: error,
+    });
+  }
+};
 
 export const logoutUser = () => async (dispatch) => {
   try {
-      dispatch({
-          type: "LogoutRequest",
-      });
+    dispatch({
+      type: "LogoutRequest",
+    });
 
-      // Backend has a logout endpoint that clears the cookie
-      await axios.get("http://localhost:8000/api/v1/logout", { withCredentials: true });
+    // Backend has a logout endpoint that clears the cookie
+    await axios.get("http://localhost:8000/api/v1/logout", {
+      withCredentials: true,
+    });
 
-      dispatch({
-          type: "LogoutSuccess",
-      });
-    
+    dispatch({
+      type: "LogoutSuccess",
+    });
   } catch (error) {
     dispatch({
       type: "LogoutFailure",
@@ -72,25 +69,26 @@ export const logoutUser = () => async (dispatch) => {
 
 export const loaddiseases = (Symptoms) => async (dispatch) => {
   try {
-      dispatch({
-          type: "DiseasesRequest",
-      });
-    
-      const  data  = await axios.post(
-        `http://be65-34-83-73-24.ngrok-free.app/predict_disease`,
-        {Symptoms:Symptoms},
-      ).then((res) => { 
-        console.log(res, "res")
+    dispatch({
+      type: "DiseasesRequest",
+    });
+
+    const data = await axios
+      .post(
+        `https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_disease`,
+        { Symptoms: Symptoms }
+      )
+      .then((res) => {
+        console.log(res, "res");
         return res;
       });
-  
-    console.log(data, "fbgfjffashgaf")
-    
-      dispatch({
-        type: "DiseasesSuccess",
-        data:data,
-      });
-    
+
+    console.log(data, "fbgfjffashgaf");
+
+    dispatch({
+      type: "DiseasesSuccess",
+      data: data,
+    });
   } catch (error) {
     dispatch({
       type: "DiseasesFailure",
@@ -101,27 +99,29 @@ export const loaddiseases = (Symptoms) => async (dispatch) => {
 
 export const loadPrescription = (Symptoms, disease) => async (dispatch) => {
   try {
-      dispatch({
-          type: "PrescriptionRequest",
-      });
-    
-    const { data }  = await axios.post(
-        `http://6491-34-125-63-211.ngrok-free.app/predict_medicine`,
+    dispatch({
+      type: "PrescriptionRequest",
+    });
+
+    const { data } = await axios
+      .post(
+        `https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_medicine`,
         {
           Symptoms: Symptoms,
-          Disease: disease,},
-      ).then((res) => { 
-        console.log(res.data.Medicines, "res")
+          Disease: disease,
+        }
+      )
+      .then((res) => {
+        console.log(res.data.Medicines, "res");
         return res;
       });
-    
+
     // console.log(data.Medicines, "kkkkkk")
-    
-      dispatch({
-        type: "PrescriptionSuccess",
-        data:data.Medicines,
-      });
-    
+
+    dispatch({
+      type: "PrescriptionSuccess",
+      data: data.Medicines,
+    });
   } catch (error) {
     dispatch({
       type: "PrescriptionFailure",
@@ -136,16 +136,17 @@ export const loadRequest = (requestId) => async (dispatch) => {
       type: "LoadRequestRequest",
     });
 
-    const  {data}  = await axios.get(`http://localhost:8000/api/v1/request/${requestId}` , {
-      withCredentials:true
-    });
-
+    const { data } = await axios.get(
+      `http://localhost:8000/api/v1/request/${requestId}`,
+      {
+        withCredentials: true,
+      }
+    );
 
     dispatch({
       type: "LoadRequestSuccess",
       pendingRequest: data.pendingRequest,
     });
-
   } catch (error) {
     console.log(error);
     dispatch({

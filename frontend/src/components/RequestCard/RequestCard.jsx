@@ -1,34 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import styles from './RequestCard.module.css';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import styles from "./RequestCard.module.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-
-export default function RequestCard({ prescriptionId, patientName, symptoms, age, onAccept, access }) {
+export default function RequestCard({
+  prescriptionId,
+  patientName,
+  symptoms,
+  age,
+  onAccept,
+  access,
+}) {
   const navigate = useNavigate();
 
   const [predictedDiseases, setPredictedDiseases] = useState([]);
   const predictDiseases = async () => {
     try {
-      const response = await axios.post('https://410d-2409-40c2-19-1c6f-d122-e478-5a2a-a9b2.ngrok-free.app/predict_disease', {
-        symptoms: symptoms
-      }, {withCredentials:true});
+      const response = await axios.post(
+        "https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_disease",
+        {
+          symptoms: symptoms,
+        },
+        { withCredentials: true }
+      );
       setPredictedDiseases(response.data.diseases);
       console.log(predictDiseases);
     } catch (error) {
-      console.error('There was an error predicting diseases!', error);
+      console.error("There was an error predicting diseases!", error);
     }
   };
 
   const handleAcceptClick = async () => {
     try {
-      
-      const response = await axios.get(`http://localhost:8000/api/v1/request/${prescriptionId}`, {withCredentials:true});
-      
-      
+      const response = await axios.get(
+        `http://localhost:8000/api/v1/request/${prescriptionId}`,
+        { withCredentials: true }
+      );
+
       const { _id, patientName, symptoms, age } = response.data.pendingRequest;
-      
-      navigate(`/request/${prescriptionId}`, { state: {prescriptionID: _id, patientName, symptoms, age } });
+
+      navigate(`/request/${prescriptionId}`, {
+        state: { prescriptionID: _id, patientName, symptoms, age },
+      });
       // predictDiseases();
     } catch (error) {
       console.error("Error accepting request:", error);
@@ -43,16 +56,16 @@ export default function RequestCard({ prescriptionId, patientName, symptoms, age
     <div className={styles.customCard}>
       <div className={styles.cardContent}>
         <p className={styles.cardText}>
-          <strong>Presciption ID:</strong> {prescriptionId} 
+          <strong>Presciption ID:</strong> {prescriptionId}
         </p>
         <p className={styles.cardText}>
-        <strong>Patient Name:</strong> {patientName} 
+          <strong>Patient Name:</strong> {patientName}
         </p>
         <p className={styles.cardText}>
-          <strong>Symptoms:</strong> {symptoms} 
+          <strong>Symptoms:</strong> {symptoms}
         </p>
         <p className={styles.cardText}>
-          <strong>Age:</strong> {age} 
+          <strong>Age:</strong> {age}
         </p>
 
         {/* Chat Button */}
@@ -60,11 +73,11 @@ export default function RequestCard({ prescriptionId, patientName, symptoms, age
           P2P Chat
         </button> */}
 
-        {access === 'op-accepted' ? (
+        {access === "op-accepted" ? (
           <button className={styles.stateButton} onClick={handleDetailsClick}>
             Details
           </button>
-        ) : access === 'op-pending' ? (
+        ) : access === "op-pending" ? (
           <button className={styles.pendingButton} disabled>
             Pending...
           </button>
