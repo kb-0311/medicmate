@@ -6,12 +6,12 @@ import Navbar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
 // import { useSelector } from 'react-redux';
 
+// Establish socket connection when component mounts
 const socket = io("http://localhost:8000", {
   query: {
     prescriptionId: window.location.href.split("/chat/")[1],
   },
 });
-
 function Chat() {
   const { prescriptionId } = useParams();
   const [message, setMessage] = useState("");
