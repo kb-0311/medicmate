@@ -174,7 +174,7 @@ export const Prescription = () => {
     <>
       <Navbar />
       <div className={styles.testContainer}>
-        <h1 className={styles.testTitle}>Prescription for {disease} & prescriptionId: {prescriptionId} & predictedPrescription : {predictedPrescription}</h1>
+        <h1 className={styles.testTitle}>Prescription for {disease}</h1>        
         {console.log(medicines)}
         <div className={styles.patientDoctorInfo}>
           <div className={styles.patientInfo}>
@@ -264,10 +264,11 @@ export const Prescription = () => {
           </div>
         </div>
         <div className={styles.submitbuttoncontainer}>
-          <div className={styles.submit}>
+          <div className={styles.submit} onClick={() => window.print()}>
             Download
           </div>
         </div>
+
       </div>
     </>
   );
