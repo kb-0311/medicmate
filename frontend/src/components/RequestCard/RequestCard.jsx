@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./RequestCard.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { llm_url } from "../../../../config";
 
 export default function RequestCard({
   prescriptionId,
@@ -17,7 +18,7 @@ export default function RequestCard({
   const predictDiseases = async () => {
     try {
       const response = await axios.post(
-        "https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_disease",
+        `${llm_url}/predict_disease`,
         {
           symptoms: symptoms,
         },

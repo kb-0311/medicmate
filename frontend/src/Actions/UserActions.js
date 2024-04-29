@@ -1,4 +1,5 @@
 import axios from "axios";
+import { llm_url } from "../../../config";
 
 export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
   try {
@@ -74,10 +75,7 @@ export const loaddiseases = (Symptoms) => async (dispatch) => {
     });
 
     const data = await axios
-      .post(
-        `https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_disease`,
-        { Symptoms: Symptoms }
-      )
+      .post(`${llm_url}/predict_disease`, { Symptoms: Symptoms })
       .then((res) => {
         console.log(res, "res");
         return res;
@@ -104,13 +102,10 @@ export const loadPrescription = (Symptoms, disease) => async (dispatch) => {
     });
 
     const { data } = await axios
-      .post(
-        `https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_medicine`,
-        {
-          Symptoms: Symptoms,
-          Disease: disease,
-        }
-      )
+      .post(`${llm_url}/predict_medicine`, {
+        Symptoms: Symptoms,
+        Disease: disease,
+      })
       .then((res) => {
         console.log(res.data.Medicines, "res");
         return res;

@@ -9,6 +9,7 @@ import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPrescription, loadRequest } from "../../Actions/UserActions";
 import axios from "axios";
+import { llm_url } from "../../config";
 
 export const Prescription = () => {
   const dispatch = useDispatch();
@@ -121,12 +122,9 @@ export const Prescription = () => {
 
   const handleLoadMedicines = async () => {
     try {
-      const response = await axios.post(
-        "https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_medicine",
-        {
-          disease: disease,
-        }
-      );
+      const response = await axios.post(`${llm_url}/predict_medicine`, {
+        disease: disease,
+      });
       const { medicines } = response.data;
       setMedicines(
         medicines.map((medicine) => ({

@@ -4,6 +4,7 @@ import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 import Button from "@mui/material/Button";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { llm_url } from "../../../../config";
 
 const DiseaseHeader = ({ data }) => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const DiseaseHeader = ({ data }) => {
   const handlePredictDiseases = () => {
     axios
       .post(
-        "https://ffce-2409-40c2-205e-868-ace0-23a5-b140-b40d.ngrok-free.app/predict_disease",
+        `${llm_url}/predict_disease`,
         {
           symptoms: symptoms,
         },
