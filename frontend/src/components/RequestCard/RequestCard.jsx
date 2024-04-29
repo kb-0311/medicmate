@@ -42,9 +42,9 @@ export default function RequestCard({ prescriptionId, patientName, symptoms, age
   return (
     <div className={styles.customCard}>
       <div className={styles.cardContent}>
-        <h5 className={styles.cardTitle}>
-          Presciption ID: {prescriptionId} 
-        </h5>
+        <p className={styles.cardText}>
+          <strong>Presciption ID:</strong> {prescriptionId} 
+        </p>
         <p className={styles.cardText}>
         <strong>Patient Name:</strong> {patientName} 
         </p>
@@ -56,9 +56,9 @@ export default function RequestCard({ prescriptionId, patientName, symptoms, age
         </p>
 
         {/* Chat Button */}
-        <button className={styles.chatButton} onClick={() => navigate(`/chat/${prescriptionId}`)}>
+        {/* <button className={styles.chatButton} onClick={() => navigate(`/chat/${prescriptionId}`)}>
           P2P Chat
-        </button>
+        </button> */}
 
         {access === 'op-accepted' ? (
           <button className={styles.stateButton} onClick={handleDetailsClick}>

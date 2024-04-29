@@ -1,7 +1,7 @@
 /* RequestCard.module.css */
 .customCard {
     width: 350px;
-    height: 320px;
+    height: 300px;
     margin: 16px;
     border: 1px solid #000000; /* Add border style */
     border-radius: 10px; /* Add border radius for rounded corners */
@@ -54,6 +54,7 @@
 .stateButton {
     background-color: #345171;
     color: white;
+    width: 320px;
     padding: 10px;
     border: none;
     cursor: pointer;
