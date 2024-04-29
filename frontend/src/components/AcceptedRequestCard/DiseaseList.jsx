@@ -13,11 +13,11 @@ const DiseaseHeader = ({ data }) => {
   const { patientData, diseaseData } = data;
 
   const [predictedDiseases, setPredictedDiseases] = useState([]);
-  const [newDisease, setNewDisease] = useState('');
+  const [newDisease, setNewDisease] = useState("");
 
   const handleAddDisease = () => {
-    setPredictedDiseases(prevDiseases => [...prevDiseases, newDisease]);
-    setNewDisease('');
+    setPredictedDiseases((prevDiseases) => [...prevDiseases, newDisease]);
+    setNewDisease("");
   };
 
   const groupedDiseaseData = [];
@@ -72,24 +72,49 @@ const DiseaseHeader = ({ data }) => {
           </div>
         </div>
 
-        <TextField
-          label="Add a new disease"
-          value={newDisease}
-          onChange={(e) => setNewDisease(e.target.value)}
-        />
-        <Button onClick={handleAddDisease}>Add Disease</Button>
+        <div className="options">
+          <Button
+            variant="contained"
+            component="a"
+            href={`/chat/${prescriptionID}`}
+          >
+            Doctor - Operator Chat
+          </Button>
 
-        <Button
-          variant="contained"
-          component="a"
-          href={`/chat/${prescriptionID}`}
-        >
-          P2P Chat
-        </Button>
+          <Button
+            component="a"
+            onClick={handlePredictDiseases}
+            variant="contained"
+          >
+            Predict Diseases
+          </Button>
+        </div>
 
-        <Button component="a" onClick={handlePredictDiseases}>
-          Predict Diseases
-        </Button>
+        <div className="add-disease-container">
+          <TextField
+            label="Add a new disease"
+            className="disease-input"
+            value={newDisease}
+            onChange={(e) => setNewDisease(e.target.value)}
+          />
+          {/* <Button onClick={handleAddDisease} className="add-diesease-button">
+            Add Disease
+          </Button>
+
+          <input
+            type="text"
+            placeholder="Type a message..."
+            className="disease-input"
+            value={newDisease}
+            onChange={(e) => setNewDisease(e.target.value)}
+          /> */}
+          <Button component="a" onClick={handleAddDisease} variant="contained">
+            Add Disease
+          </Button>
+          {/* <button onClick={handleAddDisease} className="add-diesease-button">
+            Send
+          </button> */}
+        </div>
       </div>
       <div className="right-container">
         <div className="disease-card">

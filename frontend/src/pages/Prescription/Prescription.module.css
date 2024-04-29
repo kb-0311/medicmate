@@ -4,6 +4,7 @@
   /* Style for the main container */
   /* max-width: 600px;  */
   padding: 2rem;
+  padding-bottom: 6rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
@@ -125,13 +126,19 @@
   justify-content: space-between;
 }
 
+.searchBar {
+  width: 100%;
+}
+
 .searchBarinput {
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd;
   border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 10px; */
+  /* padding: 10px; */
   background-color: #fff;
   display: flex;
+  align-items: center;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -166,8 +173,10 @@
 .submitbuttoncontainer {
   width: 100%;
   display: flex;
+  gap: 3rem;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5rem;
 }
 
 .submit {
@@ -187,4 +196,25 @@
 .addButtonContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.addContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.medicineInput {
+  display: flex;
+  width: 50%;
+}
+
+@media print {
+  @page {
+    size: landscape;
+  }
 }

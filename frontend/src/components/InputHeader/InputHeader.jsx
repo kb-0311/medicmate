@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 // import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
+import { backend_url } from "../../config";
 // import { loaddiseases } from "../../Actions/UserActions";
 
 // const abiobj = abi;
@@ -83,7 +84,7 @@ const InputHeader = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/request/add",
+        `${backend_url}/api/v1/request/add`,
         {
           patientName,
           age: parseInt(age, 10),

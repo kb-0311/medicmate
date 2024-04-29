@@ -9,7 +9,8 @@ import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPrescription, loadRequest } from "../../Actions/UserActions";
 import axios from "axios";
-import { llm_url } from "../../config";
+import { llm_url, backend_url } from "../../config";
+import TextField from "@mui/material/TextField";
 
 export const Prescription = () => {
   const dispatch = useDispatch();
@@ -147,7 +148,7 @@ export const Prescription = () => {
   const handleMarkAsDone = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/request/done",
+        `${backend_url}/api/v1/request/done`,
         {
           requestId: prescriptionId,
           predictedDisease: disease,
@@ -193,7 +194,8 @@ export const Prescription = () => {
               {pendingRequest ? pendingRequest.age : ""}
             </div>
             <div>
-              <strong>Patient Gender:</strong> {pendingRequest ? pendingRequest.gender : ""}
+              <strong>Patient Gender:</strong>{" "}
+              {pendingRequest ? pendingRequest.gender : ""}
             </div>
           </div>
           <div className={styles.doctorInfo}>
@@ -210,7 +212,11 @@ export const Prescription = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <Button component="a" onClick={handleLoadMedicines}>
+          <Button
+            component="a"
+            variant="contained"
+            onClick={handleLoadMedicines}
+          >
             Load Medicines
           </Button>
         </div>
@@ -236,14 +242,27 @@ export const Prescription = () => {
           <div className={styles.addButtonContainer}>
             {searchVisible ? (
               <div className={styles.searchBar}>
-                <div>
-                  <input
+                <div className={styles.addContainer}>
+                  {/* <input
                     type="text"
                     placeholder="Enter Medicine Name"
                     value={newMedicineName}
                     onChange={handleNewMedicineNameChange}
+                  /> */}
+                  <TextField
+                    label="Enter Medicine Name"
+                    value={newMedicineName}
+                    className={styles.medicineInput}
+                    onChange={handleNewMedicineNameChange}
                   />
-                  <button onClick={handleAddNewMedicine}>Add Medicine</button>
+                  {/* <button onClick={handleAddNewMedicine}>Add Medicine</button> */}
+                  <Button
+                    component="a"
+                    onClick={handleAddNewMedicine}
+                    variant="contained"
+                  >
+                    Add Medicine
+                  </Button>
                 </div>
               </div>
             ) : (
@@ -271,8 +290,8 @@ export const Prescription = () => {
           <div className={styles.submit} onClick={handleMarkAsDone}>
             Mark as Done
           </div>
-        </div>
-        <div className={styles.submitbuttoncontainer}>
+          {/* </div>
+        <div className={styles.submitbuttoncontainer}> */}
           <div className={styles.submit} onClick={() => window.print()}>
             Download
           </div>

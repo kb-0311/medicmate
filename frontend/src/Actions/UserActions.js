@@ -1,5 +1,5 @@
 import axios from "axios";
-import { llm_url } from "../config";
+import { llm_url, backend_url } from "../config";
 
 export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
   try {
@@ -29,7 +29,7 @@ export const loadUser = () => async (dispatch) => {
       type: "LoadUserRequest",
     });
 
-    const { data } = await axios.get("http://localhost:8000/api/v1/me", {
+    const { data } = await axios.get(`${backend_url}/api/v1/me`, {
       withCredentials: true,
     });
 
@@ -53,7 +53,7 @@ export const logoutUser = () => async (dispatch) => {
     });
 
     // Backend has a logout endpoint that clears the cookie
-    await axios.get("http://localhost:8000/api/v1/logout", {
+    await axios.get(`${backend_url}/api/v1/logout`, {
       withCredentials: true,
     });
 
@@ -132,7 +132,7 @@ export const loadRequest = (requestId) => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      `http://localhost:8000/api/v1/request/${requestId}`,
+      `${backend_url}/api/v1/request/${requestId}`,
       {
         withCredentials: true,
       }

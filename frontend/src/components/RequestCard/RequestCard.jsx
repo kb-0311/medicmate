@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./RequestCard.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { llm_url } from "../../config";
+import { llm_url, backend_url } from "../../config";
 
 export default function RequestCard({
   prescriptionId,
@@ -34,7 +34,7 @@ export default function RequestCard({
   const handleAcceptClick = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/request/${prescriptionId}`,
+        `${backend_url}/api/v1/request/${prescriptionId}`,
         { withCredentials: true }
       );
 
