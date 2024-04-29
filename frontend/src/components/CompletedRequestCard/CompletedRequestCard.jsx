@@ -29,23 +29,19 @@ export default function CompletedRequestCard({
           <strong>Age:</strong> {age}
         </p>
         <p className={styles.cardText}>
-          <strong>Predicted Disease:</strong> {predictedDisease}
+          <strong>Disease:</strong> {predictedDisease}
         </p>
         <p className={styles.cardText}>
-          <strong>Predicted Prescription:</strong> {predictedPrescription}
+          <strong>Medicines:</strong> {predictedPrescription}
         </p>
       </div>
 
-      {/* <button className={styles.stateButton} onClick={() => navigate(`/chat/${prescriptionId}`)}>
+      <button className={styles.stateButton} onClick={() => {
+        navigate(`/chat/${prescriptionId}`);
+        window.location.reload();
+      }}>
         Chat
-      </button> */}
-        <Button
-          variant="contained"
-          component="a"
-          href={`/chat/${prescriptionId}`}
-        >
-          P2P Chat
-        </Button>
+      </button>
 
     </div>
   );
