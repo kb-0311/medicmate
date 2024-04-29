@@ -6,10 +6,10 @@ import Navbar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
 // import { useSelector } from 'react-redux';
 
-const socket = io("http://localhost:8000" , {
+const socket = io("http://localhost:8000", {
   query: {
-    prescriptionId:window.location.href.split("/chat/")[1]
-  }
+    prescriptionId: window.location.href.split("/chat/")[1],
+  },
 });
 
 function Chat() {
@@ -19,9 +19,7 @@ function Chat() {
   // const userEmail = useSelector((state) => state.user.email);
   const { account } = useSelector((state) => state.user);
 
-
   useEffect(() => {
-
     socket.on("message", (msg) => {
       setChat((prevChat) => [...prevChat, msg]);
     });
@@ -30,16 +28,18 @@ function Chat() {
     return () => socket.off("message");
   }, []);
 
-  
-
   const sendMessage = (e) => {
     e.preventDefault();
     if (message.trim()) {
-      socket.emit("message", { text: message, prescriptionId , role:account?account.role:"" , name:account?account.name:"" });
+      socket.emit("message", {
+        text: message,
+        prescriptionId,
+        role: account ? account.role : "",
+        name: account ? account.name : "",
+      });
       // socket.emit('message', { text: message, prescriptionId, email: userEmail });
       setMessage("");
-    } 
-
+    }
   };
 
   return (
@@ -50,20 +50,22 @@ function Chat() {
         <div className={styles.messagesContainer}>
           {chat.map((msg, index) => (
             <div className={styles.chatMessageContainer}>
-              {msg.role=="doctor" ? (
-                <>
+              {msg.role === "doctor" ? (
+                <div className={styles.chatMessageContainerDOC}>
                   <img src="/doctor-icon.png" alt="DOC" />
                   <div className={styles.chatMessageDOC}>
+                    <h5 className={styles.messageName}>Dr. {msg.name}</h5>
                     <p key={index}>{msg.text}</p>
                   </div>
-                </>
+                </div>
               ) : (
-                <>
-                  <img src="/operator-icon.png" alt="OP" />
+                <div className={styles.chatMessageContainerOP}>
                   <div className={styles.chatMessageOP}>
+                    <h5 className={styles.messageName}>{msg.name}</h5>
                     <p key={index}>{msg.text}</p>
                   </div>
-                </>
+                  <img src="/operator-icon.png" alt="OP" />
+                </div>
               )}
             </div>
             // <p key={index}><strong>{msg.email}:</strong> {msg.text}</p>
