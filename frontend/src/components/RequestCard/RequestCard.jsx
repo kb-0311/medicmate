@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./RequestCard.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { llm_url } from "../../../../config";
+import { llm_url } from "../../config";
 
 export default function RequestCard({
   prescriptionId,

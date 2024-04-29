@@ -1,5 +1,5 @@
 import axios from "axios";
-import { llm_url } from "../../../config";
+import { llm_url } from "../config";
 
 export const loginUser = (account, MetaMaskProvider) => async (dispatch) => {
   try {

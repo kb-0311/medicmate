@@ -4,7 +4,7 @@ import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 import Button from "@mui/material/Button";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { llm_url } from "../../../../config";
+import { llm_url } from "../../config";
 
 const DiseaseHeader = ({ data }) => {
   const location = useLocation();

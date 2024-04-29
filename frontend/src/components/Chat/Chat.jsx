@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 import styles from "./Chat.module.css";
@@ -18,6 +18,7 @@ function Chat() {
   const [chat, setChat] = useState([]);
   // const userEmail = useSelector((state) => state.user.email);
   const { account } = useSelector((state) => state.user);
+  const messagesEndRef = useRef(null); // Reference to the last message container
 
   useEffect(() => {
     socket.on("message", (msg) => {
@@ -41,6 +42,12 @@ function Chat() {
       setMessage("");
     }
   };
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [chat]);
 
   return (
     <div className={styles.container}>
@@ -67,6 +74,7 @@ function Chat() {
                   <img src="/operator-icon.png" alt="OP" />
                 </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
             // <p key={index}><strong>{msg.email}:</strong> {msg.text}</p>
           ))}
