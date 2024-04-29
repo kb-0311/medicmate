@@ -55,6 +55,9 @@ function Navbar() {
           <a href="/allreq">All Requests</a>
         </li>
         <li>
+          <a href="/completedreq">Completed Requests</a>
+        </li>
+        <li>
           <a href="#a">Pricing</a>
         </li>
         <li>

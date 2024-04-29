@@ -74,7 +74,7 @@ export default function RequestFeed() {
       <Navbar />
       <div className={styles.feed}>
         <div className={styles.title}>
-          <h1>Request Feed</h1>
+          <h1>Pending Request Feed</h1>
         </div>
         <Grid container spacing={2}>
           {requests.map((request) => (

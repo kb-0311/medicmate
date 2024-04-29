@@ -1,0 +1,58 @@
+/* CompletedRequestCard.module.css */
+.customCard {
+    width: 350px;
+    height: 430px;
+    margin: 16px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px #00000033;
+    transition: transform 0.3s;
+    background-color: #d8f0f9;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.customCard::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.customCard:hover {
+    transform: scale(1.08);
+    background-color: #d0eefa;
+}
+
+.cardContent {
+    padding: 16px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.cardText {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+
+.stateButton {
+    background-color: #16af2a;
+    color: white;
+    width: 320px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.stateButton:hover {
+    background-color: #11263D;
+}
