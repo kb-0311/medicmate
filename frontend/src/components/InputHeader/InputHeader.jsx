@@ -45,6 +45,8 @@ const InputHeader = () => {
   const [symptoms, setSymptoms] = useState("");
   const [patientName, setPatientName] = useState("");
   const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
+
   var Dlist;
 
   useEffect(() => {
@@ -67,6 +69,10 @@ const InputHeader = () => {
     setAge(event.target.value);
   };
 
+  const handleGenderChange = (event) =>{
+    setGender(event.target.value);
+  } 
+
   async function handleClick(e) {
     // console.log({ symptoms });
     // inpsymp = symptoms;
@@ -82,6 +88,7 @@ const InputHeader = () => {
           patientName,
           age: parseInt(age, 10),
           symptoms,
+          gender
         },
         {
           withCredentials: true, // Include cookies in cross-origin requests
@@ -176,6 +183,20 @@ const InputHeader = () => {
               style={{ width: "75%" }}
               value={age}
               onChange={handleAgeChange}
+            />
+             <div style={{ margin: "8px 0" }}>
+              {/* Add margin (space) between the two TextField components */}
+            </div>
+            <TextField
+              // id="outlined-number"
+              id="patient-gender"
+              label="Patient's Gender"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              style={{ width: "75%" }}
+              value={gender}
+              onChange={handleGenderChange}
             />
             <div style={{ margin: "8px 0" }}>
               {/* Add margin (space) between the two TextField components */}

@@ -193,7 +193,7 @@ export const Prescription = () => {
               {pendingRequest ? pendingRequest.age : ""}
             </div>
             <div>
-              <strong>Patient Gender:</strong> Male
+              <strong>Patient Gender:</strong> {pendingRequest ? pendingRequest.gender : ""}
             </div>
           </div>
           <div className={styles.doctorInfo}>
