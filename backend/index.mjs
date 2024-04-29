@@ -57,11 +57,14 @@ app.get('/', (req, res) => {
 // });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+
+  console.log('a user connected '+socket.handshake.query.prescriptionId);
+  socket.join(socket.handshake.query.prescriptionId)
   
   socket.on('message', (msg) => {
     // Broadcast message to all clients
-    io.emit('message', msg);
+    console.log(msg);
+    io.to(msg.prescriptionId ).emit('message', msg);
   });
 
   socket.on('disconnect', () => {

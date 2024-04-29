@@ -3,18 +3,25 @@ import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 import styles from "./Chat.module.css";
 import Navbar from "../Navbar/Navbar";
+import { useSelector } from "react-redux";
 // import { useSelector } from 'react-redux';
 
-const socket = io("http://localhost:8000");
+const socket = io("http://localhost:8000" , {
+  query: {
+    prescriptionId:window.location.href.split("/chat/")[1]
+  }
+});
 
 function Chat() {
   const { prescriptionId } = useParams();
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
   // const userEmail = useSelector((state) => state.user.email);
-  const [isDoctor, setIsDoctor] = useState(true);
+  const { account } = useSelector((state) => state.user);
+
 
   useEffect(() => {
+
     socket.on("message", (msg) => {
       setChat((prevChat) => [...prevChat, msg]);
     });
@@ -23,13 +30,16 @@ function Chat() {
     return () => socket.off("message");
   }, []);
 
+  
+
   const sendMessage = (e) => {
     e.preventDefault();
     if (message.trim()) {
-      socket.emit("message", { text: message, prescriptionId });
+      socket.emit("message", { text: message, prescriptionId , role:account?account.role:"" , name:account?account.name:"" });
       // socket.emit('message', { text: message, prescriptionId, email: userEmail });
       setMessage("");
-    }
+    } 
+
   };
 
   return (
@@ -40,7 +50,7 @@ function Chat() {
         <div className={styles.messagesContainer}>
           {chat.map((msg, index) => (
             <div className={styles.chatMessageContainer}>
-              {isDoctor ? (
+              {msg.role=="doctor" ? (
                 <>
                   <img src="/doctor-icon.png" alt="DOC" />
                   <div className={styles.chatMessageDOC}>
