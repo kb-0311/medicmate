@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import MedicineItem from "../../components/MedicineItem/MedicineItem";
-import styles from "./Prescription.module.css";
+import styles from "./PrescriptionDownload.module.css";
 import { useParams } from "react-router";
 import { ethers } from "ethers";
 import Button from "@mui/material/Button";
@@ -11,7 +11,7 @@ import { loadPrescription, loadRequest } from "../../Actions/UserActions";
 import axios from "axios";
 import { llm_url } from "../../config";
 
-export const Prescription = () => {
+export const PrescriptionDownload = () => {
   const dispatch = useDispatch();
   const [medicines, setMedicines] = useState([
     // {
@@ -156,7 +156,6 @@ export const Prescription = () => {
         { withCredentials: true }
       );
       console.log("Request marked as done:", response.data);
-      alert("Request marked as done");
     } catch (error) {
       console.error("Error marking request as done:", error);
     }
@@ -209,11 +208,9 @@ export const Prescription = () => {
           </div>
         </div>
 
-        <div className={styles.buttonContainer}>
-          <Button component="a" onClick={handleLoadMedicines}>
-            Load Medicines
-          </Button>
-        </div>
+        <Button component="a" onClick={handleLoadMedicines}>
+          Load Medicines
+        </Button>
 
         <ul className={styles.medicinesList}>
           {medicines.map((medicine, index) => (

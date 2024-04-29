@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 import styles from "./Chat.module.css";
@@ -6,23 +6,21 @@ import Navbar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
 // import { useSelector } from 'react-redux';
 
-
-    // Establish socket connection when component mounts
-    const socket = io("http://localhost:8000", {
-      query: {
-        prescriptionId: window.location.href.split("/chat/")[1]
-      }
-    });
+// Establish socket connection when component mounts
+const socket = io("http://localhost:8000", {
+  query: {
+    prescriptionId: window.location.href.split("/chat/")[1],
+  },
+});
 function Chat() {
   const { prescriptionId } = useParams();
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
   // const userEmail = useSelector((state) => state.user.email);
   const { account } = useSelector((state) => state.user);
-
+  const messagesEndRef = useRef(null); // Reference to the last message container
 
   useEffect(() => {
-
     socket.on("message", (msg) => {
       setChat((prevChat) => [...prevChat, msg]);
     });
@@ -31,17 +29,25 @@ function Chat() {
     return () => socket.off("message");
   }, []);
 
-  
-
   const sendMessage = (e) => {
     e.preventDefault();
     if (message.trim()) {
-      socket.emit("message", { text: message, prescriptionId , role:account?account.role:"" , name:account?account.name:"" });
+      socket.emit("message", {
+        text: message,
+        prescriptionId,
+        role: account ? account.role : "",
+        name: account ? account.name : "",
+      });
       // socket.emit('message', { text: message, prescriptionId, email: userEmail });
       setMessage("");
-    } 
-
+    }
   };
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [chat]);
 
   return (
     <div className={styles.container}>
@@ -51,21 +57,24 @@ function Chat() {
         <div className={styles.messagesContainer}>
           {chat.map((msg, index) => (
             <div className={styles.chatMessageContainer}>
-              {msg.role=="doctor" ? (
-                <>
+              {msg.role === "doctor" ? (
+                <div className={styles.chatMessageContainerDOC}>
                   <img src="/doctor-icon.png" alt="DOC" />
                   <div className={styles.chatMessageDOC}>
+                    <h5 className={styles.messageName}>Dr. {msg.name}</h5>
                     <p key={index}>{msg.text}</p>
                   </div>
-                </>
+                </div>
               ) : (
-                <>
-                  <img src="/operator-icon.png" alt="OP" />
+                <div className={styles.chatMessageContainerOP}>
                   <div className={styles.chatMessageOP}>
+                    <h5 className={styles.messageName}>{msg.name}</h5>
                     <p key={index}>{msg.text}</p>
                   </div>
-                </>
+                  <img src="/operator-icon.png" alt="OP" />
+                </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
             // <p key={index}><strong>{msg.email}:</strong> {msg.text}</p>
           ))}

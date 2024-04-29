@@ -68,9 +68,28 @@
   gap: 1rem;
 }
 
+.chatMessageContainerDOC {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.chatMessageContainerOP {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .chatMessageDOC {
   padding: 0.75rem 1rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
   background-color: #80c3e1;
 }
 
@@ -78,4 +97,10 @@
   padding: 0.75rem 1rem;
   border-radius: 1rem;
   background-color: #b4c89c;
+}
+
+.messageName {
+  font-weight: bold;
+  margin: 0rem;
+  margin-bottom: 0.2rem;
 }

@@ -14,6 +14,7 @@ import Chat from "./components/Chat/Chat";
 import { useEffect } from "react";
 import { loadUser } from "./Actions/UserActions";
 import { Request } from "./pages/AcceptedRequest/Request";
+import { PrescriptionDownload } from "./pages/PrescriptionDownload/PrescriptionDownload";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,10 @@ function App() {
         <Route
           path="/prescription/:prescriptionId/:disease"
           element={<Prescription />}
+        />
+        <Route
+          path="/prescription/:prescriptionId/:disease/download"
+          element={<PrescriptionDownload />}
         />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<CreateAcc />} />

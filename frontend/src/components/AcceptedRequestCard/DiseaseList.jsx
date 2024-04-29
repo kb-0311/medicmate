@@ -4,6 +4,7 @@ import DiseaseSingleCard from "../DiseaseCard/DiseaseSingleCard";
 import Button from "@mui/material/Button";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { llm_url } from "../../config";
 
 const DiseaseHeader = ({ data }) => {
   const location = useLocation();
@@ -19,15 +20,20 @@ const DiseaseHeader = ({ data }) => {
   }
 
   const handlePredictDiseases = () => {
-    axios.post('https://f200-2409-40c2-2050-53fe-8150-fc3a-33cf-fb31.ngrok-free.app/predict_disease', {
-      symptoms: symptoms
-    }, {withCredentials:true})
-    .then(response => {
-      setPredictedDiseases(response.data.diseases);
-    })
-    .catch(error => {
-      console.error('There was an error!', error);
-    });
+    axios
+      .post(
+        `${llm_url}/predict_disease`,
+        {
+          symptoms: symptoms,
+        },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        setPredictedDiseases(response.data.diseases);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
   };
 
   useEffect(() => {
