@@ -48,18 +48,26 @@ function Navbar() {
       </a>
 
       <ul className="navbar-links">
+        
         {/* <li>
-          <a href="/request/1">DummyRequest</a>
-        </li> */}
-        <li>
           <a href="/allreq">All Requests</a>
         </li>
         <li>
-          <a href="#a">Pricing</a>
-        </li>
-        <li>
-          <a href="#a">Services</a>
-        </li>
+          <a href="/completedreq">Completed Requests</a>
+        </li> */}
+
+        {isAuthenticated && (
+          <li>
+            <a href="/allreq">All Requests</a>
+          </li>
+        )}
+        {isAuthenticated && (
+          <li>
+            <a href="/completedreq">Completed Requests</a>
+          </li>
+        )}
+
+
         <li>
           <a href="#a">{windowWidth < 467 ? "About" : "About Us"}</a>
         </li>

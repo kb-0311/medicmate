@@ -5,13 +5,14 @@ const CompletedRequest = require("../models/completedRequestsModel.js");
 
 exports.addPendingRequest = catchAsyncErrors( async (req , res ,next)=> {
 
-    const {patientName , symptoms , age} = req.body;
+    const {patientName , symptoms , age , gender} = req.body;
 
     const pendingRequest = await PendingRequest.create(
         {
             patientName,
             age,
             symptoms,
+            gender
         }
     )
 
@@ -61,7 +62,7 @@ exports.completeRequest = catchAsyncErrors( async (req , res ,next)=> {
         }
     )
 
-    if (pendingRequest==null) {
+    if (!pendingRequest) {
         return next(new ErrorHandler("request not found" , 404));
     }
 
@@ -73,8 +74,8 @@ exports.completeRequest = catchAsyncErrors( async (req , res ,next)=> {
             symptoms :pendingRequest[0].symptoms,
             predictedDisease,
             predictedPrescription,
-            age:pendingRequest[0].age
-
+            age:pendingRequest[0].age,
+            gender:pendingRequest[0].gender
         }
     );
 

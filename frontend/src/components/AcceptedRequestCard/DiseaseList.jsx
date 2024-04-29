@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { llm_url } from "../../config";
+import TextField from "@mui/material/TextField";
 
 const DiseaseHeader = ({ data }) => {
   const location = useLocation();
@@ -12,6 +13,12 @@ const DiseaseHeader = ({ data }) => {
   const { patientData, diseaseData } = data;
 
   const [predictedDiseases, setPredictedDiseases] = useState([]);
+  const [newDisease, setNewDisease] = useState('');
+
+  const handleAddDisease = () => {
+    setPredictedDiseases(prevDiseases => [...prevDiseases, newDisease]);
+    setNewDisease('');
+  };
 
   const groupedDiseaseData = [];
   for (let i = 0; i < diseaseData.length; i += 2) {
@@ -64,6 +71,13 @@ const DiseaseHeader = ({ data }) => {
             <p>{symptoms}</p>
           </div>
         </div>
+
+        <TextField
+          label="Add a new disease"
+          value={newDisease}
+          onChange={(e) => setNewDisease(e.target.value)}
+        />
+        <Button onClick={handleAddDisease}>Add Disease</Button>
 
         <Button
           variant="contained"
