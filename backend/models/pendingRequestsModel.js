@@ -13,6 +13,9 @@ const pendingRequestSchema = new mongoose.Schema({
     age : {
         type: Number,
     } ,
+    gender : {
+        type: String,
+    } ,
     predictedDisease : {
         type: String,
     } ,
