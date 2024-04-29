@@ -4,10 +4,11 @@ import io from "socket.io-client";
 import styles from "./Chat.module.css";
 import Navbar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
+import { backend_url } from "../../config";
 // import { useSelector } from 'react-redux';
 
 // Establish socket connection when component mounts
-const socket = io("http://localhost:8000", {
+const socket = io(`${backend_url}`, {
   query: {
     prescriptionId: window.location.href.split("/chat/")[1],
   },

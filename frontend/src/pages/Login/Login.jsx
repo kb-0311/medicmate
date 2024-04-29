@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../Actions/UserActions";
+import { backend_url } from "../../config";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const LoginForm = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/login",
+        `${backend_url}/api/v1/login`,
         {
           email,
           password,

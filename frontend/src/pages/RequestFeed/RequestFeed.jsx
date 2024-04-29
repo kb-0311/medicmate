@@ -4,7 +4,7 @@ import RequestCard from "../../components/RequestCard/RequestCard";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./RequestFeed.module.css";
 import axios from "axios";
-
+import { backend_url } from "../../config";
 
 export default function RequestFeed() {
   const [requests, setRequests] = useState([]);
@@ -24,14 +24,14 @@ export default function RequestFeed() {
   //         // const tx = await contract.getPending();
   //         // const array = tx.map((item) => item.toString());
   //         // // console.log(array)
-      
-  //         // const requests = []; 
+
+  //         // const requests = [];
 
   //         // for (var i = 0; i < array.length; i++) {
-  //         //   const index = parseInt(array[i], 10); 
+  //         //   const index = parseInt(array[i], 10);
   //         //   const prescription = await contract.getPrescription(index);
   //         //   const arrayx = prescription.map((item) => item.toString());
- 
+
   //         //   requests.push({
   //         //     prescriptionId: arrayx[0],
   //         //     operatorId: arrayx[2],
@@ -59,7 +59,9 @@ export default function RequestFeed() {
   useEffect(() => {
     async function getRequests() {
       try {
-        const response = await axios.get('http://localhost:8000/api/v1/request/all', {withCredentials:true});
+        const response = await axios.get(`${backend_url}/api/v1/request/all`, {
+          withCredentials: true,
+        });
         setRequests(response.data.pendingRequest);
       } catch (error) {
         console.error("Error fetching requests:", error);
@@ -79,14 +81,12 @@ export default function RequestFeed() {
         <Grid container spacing={2}>
           {requests.map((request) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={request._id}>
-   
-                <RequestCard
-                  prescriptionId={request._id}
-                  patientName={request.patientName}
-                  symptoms={request.symptoms}
-                  age={request.age}
-                />
-
+              <RequestCard
+                prescriptionId={request._id}
+                patientName={request.patientName}
+                symptoms={request.symptoms}
+                age={request.age}
+              />
             </Grid>
           ))}
         </Grid>

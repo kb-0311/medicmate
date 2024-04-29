@@ -3,8 +3,9 @@ import SignupCSS from "./CreateAcc.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { backend_url } from "../../config";
 
-const API_BASE_URL = "http://localhost:8000/api/v1"; // Define your API base URL
+const API_BASE_URL = `${backend_url}/api/v1`; // Define your API base URL
 
 const CreateAcc = () => {
   const [username, setUsername] = useState("");

@@ -9,7 +9,7 @@ import { abi, contractAddress } from "../../data/metamask";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPrescription, loadRequest } from "../../Actions/UserActions";
 import axios from "axios";
-import { llm_url } from "../../config";
+import { llm_url, backend_url } from "../../config";
 
 export const PrescriptionDownload = () => {
   const dispatch = useDispatch();
@@ -147,7 +147,7 @@ export const PrescriptionDownload = () => {
   const handleMarkAsDone = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/request/done",
+        `${backend_url}/api/v1/request/done`,
         {
           requestId: prescriptionId,
           predictedDisease: disease,

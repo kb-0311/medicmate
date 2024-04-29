@@ -6,6 +6,7 @@ import RequestCard from "../../components/AcceptedRequestCard/DiseaseList";
 import "./Request.css";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { backend_url } from "../../config";
 
 export const Request = () => {
   // const [patientData, setPatientData] = useState({});
