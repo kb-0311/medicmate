@@ -1,116 +1,105 @@
-<!--![Replit logo](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/220px-New_Replit_Logo.svg.png)-->
+# MedicMate: Generative AI powered Web Application for Clinical Diagnosis Assistance for Doctors
 
-# MediSearch: AI-Based Medical Assistant with Blockchain Integration
+![MedicMate Logo](https://i.imgur.com/p0S57hP.png)
 
-![MediSearch Logo](https://i.imgur.com/tQLXK20.png)
+**MedicMate** is a Generative AI-powered web application designed to assist doctors with clinical diagnosis. This innovative solution integrates advanced AI models, real-time collaboration features, and seamless EHR integration to enhance the healthcare experience and improve diagnostic accuracy.
 
-MediSearch is an innovative healthcare solution developed by "Cure Code Crew." This web application leverages the power of AI and blockchain technology to provide medical assistance in underserved regions, particularly rural areas with limited access to healthcare facilities. It aims to bridge the healthcare gap by enabling remote symptom assessment, disease prediction, prescription generation, and maintaining transparent healthcare records using blockchain.
 
-## Table of Contents
+It aims to revolutionize healthcare delivery by integrating AI models into clinical practice, providing accurate diagnoses, and enhancing the efficiency of healthcare professionals. By fostering collaboration and leveraging data-driven insights, MedicMate is set to improve healthcare outcomes, especially in underserved rural areas. 
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Collaborators](#project-collaborators)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [How It Works](#how-it-works)
-- [Contribution Guidelines](#contribution-guidelines)
-- [Project Collaborators](#project-collaborators)
-
-## Introduction
-
-MediSearch is designed to assist three primary types of users:
-
-1. *Doctors*: Healthcare professionals who diagnose and prescribe treatment.
-2. *Rural Healthcare Operators*: Local volunteers who gather patient information in rural areas.
-3. *Pharmacy*: Users who receive prescriptions and provide medications to patients.
-
-The workflow involves Rural Healthcare Operators collecting patient data, which is then processed by a Large Language Model (LLAMA2-7B) and a Blockchain Smart Contract. The AI model predicts probable diseases based on the patient's symptoms and history. The doctor can then select the correct disease from the list of predictions, customize the prescription, and finalize the prescription. All information regarding the disease and prescribed medicines is stored on the blockchain for transparency.
+The project's innovative approach, combining AI technology with human expertise, ensures the reliability and accuracy of diagnostic recommendations, ultimately leading to better patient care.
 
 ## Features
 
-- *Remote Healthcare Assessment*: Enables rural healthcare operators to collect patient data in areas with limited healthcare access.
-- *Disease Prediction*: Utilizes AI to predict probable diseases based on patient symptoms and history.
-- *Customizable Prescriptions*: Doctors can customize prescriptions based on their expertise.
-- *Blockchain Integration*: Maintains a transparent record of disease diagnoses and prescribed medications.
-- *User Authentication*: Ensures only authorized individuals can access and edit patient data.
-- *Easy-to-Use Interface*: A user-friendly web application built with ReactJS and Material UI.
+### GenAI-powered Diagnosis
+- Utilizes fine-tuned LLAMA 2-7B model.
+- Analyzes patient symptoms to predict potential diseases.
+- Provides disease predictions, treatment recommendations, and generates personalized prescriptions.
 
-## Tech Stack
+### Real-Time Collaboration
+- Facilitates real-time peer-to-peer chat among healthcare professionals.
+- Enables doctors to consult, suggest additional tests, and finalize treatment plans collectively.
 
-MediSearch is built with the following technologies:
+### Integration with Electronic Health Records (EHR)
+- Seamlessly integrates with existing EHR systems.
+- Allows access to and updates patient medical histories, test results, and treatment plans within a unified platform.
 
-- *Frontend*:
-  - ReactJS
-  - Redux
-  - Material UI
-  - CoreUI
+### User-Friendly Interface
+- Designed for ease of use by healthcare professionals.
+- Simplifies patient information input and collaboration with medical staff.
 
-- *Backend*:
-  - Python (API tunnel)
-  - Large Language Model (LLAMA2-7B)
+## Technology Stack
 
-- *Blockchain*:
-  - Solidity
-  - EtherJS
-  - MetaMask
+### Frontend
+- **React.js**
+- **Redux**
+- **Material-UI**
+- **CSS**
 
-## Powered By
+### Backend
+- **Node.js**
+- **Express.js**
+- **Redis**
+- **MongoDB**
 
-![MediSearch Demo](https://assets.devfolio.co/company/24e5677d6dee43868247d75fa77e4628/assets/favicon.png)
+### AI Model and Containerization
+- **LLAMA 2-7B**
+- **Flask**
+- **Hugging Face**
+- **Docker**
 
-## Getting Started
+## Running the Project
 
-To get started with MediSearch, follow these steps:
+### Prerequisites
+- Node.js
+- Docker
 
-1. Clone this repository to your local machine.
-2. Install the required dependencies for the frontend and backend.
-3. Set up the blockchain infrastructure and connect MetaMask.
-4. Configure the Large Language Model (LLAMA2-7B) for AI-based diagnosis.
-5. Run the application locally or deploy it to a web server.
+### Steps to Run
 
-Detailed instructions can be found in the project's [Getting Started Guide](/docs/getting-started.md).
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/kb-0311/medicmate.git
+    ```
 
-## Usage
+2. **Install Frontend Dependencies**
+    ```bash
+    cd medicmate/frontend
+    npm install
+    ```
 
-1. Register or log in as a doctor, rural healthcare operator, or pharmacy user.
-2. Rural healthcare operators collect patient information and submit it.
-3. The AI model predicts probable diseases.
-4. Doctors select the correct disease and customize the prescription.
-5. Generate the final prescription, which is recorded on the blockchain.
+3. **Install Backend Dependencies**
+    ```bash
+    cd ../backend
+    npm install
+    ```
 
-For a more detailed guide on using MediSearch, please refer to the [User Manual](/docs/user-manual.md).
+4. **Setup Environment Variables**
+    - Create a `.env` file in the `backend` directory to store your credentials.
 
-## How It Works
+5. **Start Docker Daemon**
+    - Ensure Docker Desktop or Docker Daemon is running.
 
-![MediSearch Workflow](/path/to/your/workflow.png)
+6. **Run Backend Server**
+    ```bash
+    cd backend
+    docker compose up --build
+    ```
 
-1. *Data Collection*: Rural healthcare operators collect patient data.
-2. *AI-Based Diagnosis*: AI model processes symptoms and history to predict diseases.
-3. *Doctor's Review*: Doctors review and select the correct disease.
-4. *Prescription Customization*: Doctors customize prescriptions as needed.
-5. *Blockchain Record*: Disease and medication information is recorded on the blockchain for transparency.
+7. **Run Frontend Server**
+    ```bash
+    cd ../frontend
+    npm start
+    ```
 
-## Video Demonstration and screenshots
+8. **Configuration for AI Model Endpoints**
+    - Modify the `config.js` file in the frontend directory to update the AI model's tunnelled endpoints as needed.
 
-Watch MediSearch in action in our video demonstration: [MediSearch Demo](https://www.youtube.com/watch?v=G9tcq9y0dK8)
+If everything is set up correctly, MedicMate should run successfully on your local device.
 
-- Screenshots
-![HomePage](https://i.imgur.com/6SEXLXB.jpg)
-![InputPage](https://i.imgur.com/HOHIY6I.jpg)
-![PatientDetails](https://i.imgur.com/t7Lq0rq.png)
-![DiseasePredictionResult](https://i.imgur.com/A1dpID2.png)
-![DoctorsFeed](https://i.imgur.com/b4byHXO.jpg)
-![PrescriptionEdit](https://i.imgur.com/bBn27R9.jpg)
-![PolygonBlockchainPortal](https://i.imgur.com/cbKKW4L.jpg)
+## Contributors
 
-## Contribution Guidelines
-
-Contributions to MediSearch are Welcome! If you encounter any issues or have ideas for improvements, feel free to submit a pull request or open an issue in the repository.
-
-## Project Collaborators
-
-- Sushrut Lachure ([@Sushrut22](https://github.com/Sushrut22))
-- Varshil Kavathiya ([@varshil27](https://github.com/varshil27))
-- Vishal Singh Tanwar ([@V22X4](https://github.com/V22X4))
+- **Sushrut Lachure** ([Sushrut22](https://github.com/Sushrut22))
+- **Kanishka Bansode** ([kb-0311](https://github.com/kb-0311))
+- **Yash Harne** ([yashharne](https://github.com/yashharne))
+- **Varshil Kavathiya** ([varshil27](https://github.com/varshil27))
+- **Atharv Patil** ([atharv-patil](https://github.com/atharv-patil))
